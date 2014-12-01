@@ -1,29 +1,33 @@
 package com.example.faceoff;
 
+import java.util.ArrayList;
+
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 
 public class profile {
-
+		
+		//Name of the profile
 		String profileName;
+		
+		//Amount of points this profile is carrying
 		int points;
 		
-		/*
-		 * (x,y) values for the base face, for a total of 68 points
-		 * As of now, we only care about 15 - 20 (left eyebrow), 21-26 (right eyebrow),
-		 * 27-30 (right eye excluding pupil), 32 - 35 (left eye excluding pupil), 48 - 66 (mouth).
-		 * */
+		/* ArrayList of specified points on the face, 68 (x,y) coordinates packed into a 135 element array with the format of:
+		 * X coordinates first (0-67) followed by the y coordinates (68-135)
+		 * */ 
+		ArrayList<Double> baseFace;
 		
-		int [] x ; //x values of the baseface (should be 68 in size)
-		int [] y ; //y values of the baseface (should be 68 in size)
+		//The element of the current profile. assuming many will be stored
+		int profileNum;
 		
-		int profileNum; //The element of the current profile. assuming many will be stored
-		
-		public profile(String name, double [] arrayMap, int index)
+		//Constructor for a profile
+		public profile(String name, ArrayList<Double> arrayMap, int index)
 		{
 			profileName = name;
 			points = 0;
 			profileNum = index;
+			baseFace = arrayMap;
 		}
 		
 		public int getPoints()
