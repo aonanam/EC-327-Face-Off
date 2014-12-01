@@ -49,9 +49,10 @@ public class CreateProfile extends Activity {
 	
 /*
  * The DoThings() function is where the user-desired name and the bitmap of the picture should go.
+ * Once the name and BitMap of the image is received, invome ProfileCreationLogic.CreateProfile(name,picture)
+ * to create a profile
+ *
+ * 
  * */
-	public static void DoThings(String name, Bitmap picture)
-	{
-		ProfileCreationLogic.CreateProfile(name,picture);
-	}
+
 }

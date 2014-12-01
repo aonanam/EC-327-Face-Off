@@ -14,18 +14,16 @@ public class profile {
 		 * 27-30 (right eye excluding pupil), 32 - 35 (left eye excluding pupil), 48 - 66 (mouth).
 		 * */
 		
-		int [] x ; //x values of the baseface (should be 68)
-		int [] y ; //y values of the baseface (should be 68)
+		int [] x ; //x values of the baseface (should be 68 in size)
+		int [] y ; //y values of the baseface (should be 68 in size)
 		
 		int profileNum; //The element of the current profile. assuming many will be stored
 		
-		public profile(String name, HttpResponse<JsonNode> picture, int index)
+		public profile(String name, double [] arrayMap, int index)
 		{
 			profileName = name;
 			points = 0;
 			profileNum = index;
-			
-			//logic to extract x y from picture into x and y array here
 		}
 		
 		public int getPoints()

@@ -29,15 +29,16 @@ public class ProfileCreationLogic
 		//Attempts to ping the server with the photo and receives a JSON object, response, back
 		try
 		{
-			
 		// These code snippets use an open-source library. http://unirest.io/java
 			HttpResponse<JsonNode> response = Unirest.post("https://apicloud-facemark.p.mashape.com/process-file.json")
 			.header("X-Mashape-Key", "jzKWjgvbrgmshp8BRxWzfgKzmBXBp1GvMeVjsnE2ursJJYsuCe")
 			.field("image", new File("<file goes here>"))
 			.asJson();
 			
+			double [] arrayMap = PictureInterpretation.Decode(response);
+			
 			//Adds a new profile object into the list Profiles
-			Profiles.add(new profile(name,response,Profiles.size()));
+			Profiles.add(new profile(name,arrayMap,Profiles.size()));
 			
 			//JSONObject object = new JSONObject(response);
 		}
