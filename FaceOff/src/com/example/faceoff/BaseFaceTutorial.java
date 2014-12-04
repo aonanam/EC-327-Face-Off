@@ -8,11 +8,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-public class BaseFaceTutorial extends Activity {
+public class BaseFaceTutorial extends Activity 
+{
 	Button baseface_button;
-
+	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) 
+	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_base_face_tutorial);
 		
@@ -20,21 +22,21 @@ public class BaseFaceTutorial extends Activity {
 		baseface_button = (Button) findViewById(R.id.baseface_button);
 				
 				//Capture button clicks
-				baseface_button.setOnClickListener(new OnClickListener() {
-					public void onClick(View arg0) {
-							
-				//Start BaseFace class
+				baseface_button.setOnClickListener(new OnClickListener() 
+				{
+					public void onClick(View arg0) 
+					{		
+						//Start BaseFace class
 						Intent intent1 = new Intent(BaseFaceTutorial.this, BaseFace.class);
 						startActivity(intent1);
 					}
 				});
 	}
-
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
+	public boolean onCreateOptionsMenu(Menu menu) 
+	{
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.base_face_tutorial, menu);
 		return true;
 	}
-
 }

@@ -19,7 +19,7 @@ import com.mashape.unirest.http.exceptions.UnirestException;
  * */
 
 public class ProfileCreationLogic 
-{	
+{
 	//The list of objects (should find out how to store in memory)
 	static ArrayList<profile> Profiles = new ArrayList<profile>();
 	

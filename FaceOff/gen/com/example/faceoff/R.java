@@ -37,7 +37,7 @@ public final class R {
         public static final int action_settings=0x7f080011;
         public static final int baseface_button=0x7f080002;
         public static final int baseface_tut_button=0x7f080003;
-        public static final int button_camera=0x7f080001;
+        public static final int camera_button=0x7f080001;
         public static final int single_phone_button=0x7f080005;
         public static final int start_button=0x7f08000b;
         public static final int textView1=0x7f080000;

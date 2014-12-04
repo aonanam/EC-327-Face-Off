@@ -34,7 +34,8 @@ public class ComparisonLogic
 		
 		/*Loops through the ArrayList of points, formatted as all x values then y values (0-67 x, 68 - 135 y) and compares the differences
 		 * between the two points in question. The baseface coordinates are centered to the newface by calculating the differences in 
-		 * the location of pupils as done above. The loop appends the differences into an ArrayList called diffFromBase and returns it.*/
+		 * the location of pupils as done above. The loop appends the differences into an ArrayList called diffFromBase and returns it.
+		 * */
 		for(int x = 15; x < p.baseFace.size(); x++)
 		{
 			if(x <= 68)
@@ -66,11 +67,10 @@ public class ComparisonLogic
 		 * Therefore, the closer to 0 the value is, the better the faces at that point match. Need
 		 * to add an algorithm to take care of only the points we need and add them to points.
 		 * (x,y) values for the base face, for a total of 68 points
-	 * As of now, we only care about 15 - 20 (left eyebrow), 21-26 (right eyebrow),
-	 * 27-30 (right eye excluding pupil), 32 - 35 (left eye excluding pupil), 48 - 66 (mouth).
-	 * The total number of relevant points is 34 as of now. So each point will be weighted with the 
-	 * value of 1/34
-		 */
+		 * As of now, we only care about 15 - 20 (left eyebrow), 21-26 (right eyebrow),
+		 * 27-30 (right eye excluding pupil), 32 - 35 (left eye excluding pupil), 48 - 66 (mouth).
+		 * The total number of relevant points is 34 as of now. So each point will be weighted with the 
+		 * value of 1/34*/
 		
 		
 		/*The following are the X values of landmark points being compared. If the are in the general direction of the moved point, the user will
