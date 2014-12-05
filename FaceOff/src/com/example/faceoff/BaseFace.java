@@ -17,8 +17,6 @@ import android.widget.Button;
 
 public class BaseFace extends Activity 
 {
-	/*Sup bro, from Jules*/
-	
 	Button camera_button;
 	private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
 	private Uri fileUri;
