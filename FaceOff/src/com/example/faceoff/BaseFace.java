@@ -31,6 +31,7 @@ public class BaseFace extends Activity
 		}
 		catch(RuntimeException e)
 		{
+			System.out.println("Hit 1");
 			e.printStackTrace();
 		}
 		
@@ -42,7 +43,10 @@ public class BaseFace extends Activity
 		// To be safe, you should check that the SDCard is mounted
 	    // using Environment.getExternalStorageState() before doing this.
 		
+		System.out.println(Environment.getExternalStorageState());
+		
 		File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "FaceOff");
+		System.out.println(mediaStorageDir.getPath());
 		// This location works best if you want the created images to be shared
 	    // between applications and persist after your app has been uninstalled.
 
@@ -51,9 +55,10 @@ public class BaseFace extends Activity
 	    {
 	        if (! mediaStorageDir.mkdirs())
 	        {
-	            Log.d("FaceOff", "failed to create directory");
-	            return null;
+	        	System.out.println("FaceOff" + "failed to create directory");
+	        	return null;
 	        }
+	    
 	    }
 	    // Create a media file name
 	    String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
@@ -85,12 +90,14 @@ public class BaseFace extends Activity
 	    }
 	    catch(Exception e)
 	    {
+	    	System.out.println("Hit 2");
 	    	e.printStackTrace();
 	    }
 	    intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
 	    
 	  //start the image capture Intent
 	    startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+	  //PictureInterpretation.Decode(fileUri);
 	    
 	  //Locate buttons in activity_base_face.xml
 	  		camera_button = (Button) findViewById(R.id.camera_button);

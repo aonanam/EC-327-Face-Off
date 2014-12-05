@@ -5,6 +5,7 @@ import java.util.*;
 import org.json.*; //May or may not need that
 
 import android.graphics.Bitmap;
+import android.net.Uri;
 
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
@@ -24,7 +25,7 @@ public class ProfileCreationLogic
 	static ArrayList<profile> Profiles = new ArrayList<profile>();
 	
 	//Method for creating the Profile Object with a name and BaseFace
-	public static void CreateProfile(String name, Bitmap picture)
+	public static void CreateProfile(String name, Uri picture)
 	{	
 			//Interprets the face into an ArrayList of points
 			ArrayList<Double> arrayMap = PictureInterpretation.Decode(picture);

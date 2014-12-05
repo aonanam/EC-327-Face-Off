@@ -2,23 +2,20 @@ package com.example.faceoff;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
 
-import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.AsyncTask;
-import android.widget.TextView;
 
-import com.mashape.unirest.http.HttpResponse;
-import com.mashape.unirest.http.JsonNode;
-import com.mashape.unirest.http.Unirest;
-import com.mashape.unirest.http.exceptions.UnirestException;
 import com.mashape.unirest.http.*;
+import com.mashape.unirest.http.exceptions.UnirestException;
+import com.mashape.*;
+import com.mashape.unirest.*;
 
 import org.json.*;
 
 public class PictureInterpretation 
 {
-	public static ArrayList<Double> Decode(final Bitmap picture)
+	public static ArrayList<Double> Decode(final Uri picture)
 	{    
 		class CallMashapeAsync extends AsyncTask<String, Integer, HttpResponse<JsonNode>> 
 		{	
@@ -28,13 +25,22 @@ public class PictureInterpretation
 	    	protected HttpResponse<JsonNode> doInBackground(String... msg) 
 	    	{
 	    		HttpResponse<JsonNode> request = null;
-	    		Bitmap transfer = picture;
+	    		
+	    		if(picture != null)
+	    		{
+	    			System.out.println("Picture is real! " + picture.getPath());
+	    			
+	    		}
+	    		else
+	    		{
+	    			System.out.println("Picture is not real");
+	    		}
 	    		
 				try 
 				{
 					request = Unirest.post("https://apicloud-facemark.p.mashape.com/process-file.json")
 							.header("X-Mashape-Key", "O5pPl3KTaVmshRGGD5FykeKF31gXp15vSBMjsnfMHFofluIQtP")
-							.field("image", new File("/storage/sdcard0/DCIM/Camera/20141202_212057.jpg"))
+							.field("image", new File(picture.getPath()))
 							.asJson();
 				} 
 				catch (UnirestException e) 
@@ -65,7 +71,7 @@ public class PictureInterpretation
 						interpretedVals.add(Array.getJSONObject(0).getJSONArray("faces").getJSONObject(0).getJSONArray("landmarks").getJSONObject(0).getDouble("y"));
 					}
 					
-					delegate.finishedProcess(interpretedVals);
+					//delegate.finishedProcess(interpretedVals);
 	        	} 
 	        	catch (JSONException e) 
 	        	{
