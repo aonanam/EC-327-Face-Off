@@ -17,12 +17,8 @@ import android.widget.Button;
 
 public class BaseFace extends Activity 
 {
-	//What's up?
-	
-	
-	//Yoooo
+	//Sup Brett
 	Button camera_button;
-	//Hey
 	private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
 	private Uri fileUri;
 	public static final int MEDIA_TYPE_IMAGE = 1;
