@@ -19,10 +19,7 @@ public class BaseFace extends Activity
 {
 	//Sup Brett
 	Button camera_button;
-<<<<<<< HEAD
-	
-=======
->>>>>>> origin/Dev
+
 	private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
 	private Uri fileUri;
 	public static final int MEDIA_TYPE_IMAGE = 1;
