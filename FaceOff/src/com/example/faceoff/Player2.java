@@ -6,10 +6,11 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 
 public class Player2 extends Activity {
-	Button P2_Profile_button;
 	Button start_button;
 
 	@Override
@@ -17,19 +18,19 @@ public class Player2 extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_player2);
 		
-		//Locate buttons in activity_player2.xml
-		P2_Profile_button = (Button) findViewById(R.id.P2_Profile_button);
-		start_button = (Button) findViewById(R.id.start_button);
+		//Drop Down menu of profiles. Accesses array in strings.xml under values folder
+		Spinner spinner = (Spinner) findViewById(R.id.profiles_spinner_p2);
+		// Create an ArrayAdapter using the string array and a default spinner layout
+		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+		        R.array.profiles_array, android.R.layout.simple_spinner_item);
+		// Specify the layout to use when the list of choices appears
+		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		// Apply the adapter to the spinner
+		spinner.setAdapter(adapter);
 		
-		//Capture button clicks
-		P2_Profile_button.setOnClickListener(new OnClickListener() {
-			public void onClick(View arg0) {
-			
-				//Start CreateProfile class
-				Intent intent1 = new Intent(Player2.this, CreateProfile.class);
-				startActivity(intent1);
-			}
-		});
+		
+		//Locate buttons in activity_player2.xml
+		start_button = (Button) findViewById(R.id.start_button);
 		
 		//Capture button clicks
 		start_button.setOnClickListener(new OnClickListener() {

@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 
 /* Need to implement a dropdown menu instead of a single button.
  * As of now, the only button on this page is tutorial, I don't think it actually
@@ -19,22 +20,26 @@ import android.widget.Button;
  * */
 
 public class CreateProfile extends Activity {
-	Button baseface_tut_button;
+	Button baseface_button;
+	EditText name_entry;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_create_profile);
 		
+		name_entry = (EditText)findViewById(R.id.name_entry);
+		name_entry.getText().toString();	//Name stored in name_entry
+		
 		//Locate buttons in activity_create_profile.xml
-		baseface_tut_button = (Button) findViewById(R.id.baseface_tut_button);
+		baseface_button = (Button) findViewById(R.id.baseface_button);
 		
 		//Capture button clicks
-		baseface_tut_button.setOnClickListener(new OnClickListener() {
+		baseface_button.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
 					
 		//Start BaseFaceTutorial class
-				Intent intent1 = new Intent(CreateProfile.this, BaseFaceTutorial.class);
+				Intent intent1 = new Intent(CreateProfile.this, BaseFace.class);
 				startActivity(intent1);
 			}
 		});
@@ -49,7 +54,7 @@ public class CreateProfile extends Activity {
 	
 /*
  * The DoThings() function is where the user-desired name and the bitmap of the picture should go.
- * Once the name and BitMap of the image is received, invome ProfileCreationLogic.CreateProfile(name,picture)
+ * Once the name and BitMap of the image is received, invoke ProfileCreationLogic.CreateProfile(name,picture)
  * to create a profile
  *
  * 

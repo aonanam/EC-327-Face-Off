@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="106dp"
+        android:layout_marginTop="89dp"
         android:text="Create Base Face"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -22,9 +22,27 @@
         android:id="@+id/camera_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="126dp"
-        android:text="Take Picture!" />
+        android:layout_marginTop="48dp"
+        android:text="Try again?" />
+
+    <Button
+        android:id="@+id/another_profile_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/camera_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:text="Create another profile?" />
+
+    <Button
+        android:id="@+id/main_menu_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/another_profile_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:text="Main Menu" />
 
 </RelativeLayout>
