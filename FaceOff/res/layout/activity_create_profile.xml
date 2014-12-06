@@ -19,13 +19,27 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
-        android:id="@+id/baseface_tut_button"
+        android:id="@+id/baseface_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="107dp"
-        android:text="Base Face Tutorial"
-        android:onClick="activity_base_face_tutorial" />
+        android:layout_marginBottom="87dp"
+        android:onClick="activity_base_face_tutorial"
+        android:text="Create Base Face!" />
+
+    <EditText
+        android:id="@+id/name_entry"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:hint="Enter Name..."
+        android:imeOptions="actionDone"
+        android:inputType="textCapWords" >
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>
