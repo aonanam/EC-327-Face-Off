@@ -19,12 +19,14 @@ import android.widget.EditText;
  * In the future we should have a "Is this ok? Y/N option but for now it is fine.
  * */
 
-public class CreateProfile extends Activity {
+public class CreateProfile extends Activity 
+{
 	Button baseface_button;
 	EditText name_entry;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) 
+	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_create_profile);
 		
@@ -35,12 +37,21 @@ public class CreateProfile extends Activity {
 		baseface_button = (Button) findViewById(R.id.baseface_button);
 		
 		//Capture button clicks
-		baseface_button.setOnClickListener(new OnClickListener() {
-			public void onClick(View arg0) {
-				
+		baseface_button.setOnClickListener(new OnClickListener() 
+		{
+			public void onClick(View arg0) 
+			{
+				//Creates a profile with the name entered
 				ProfileCreationLogic.CreateProfile(name);
+				System.out.println(ProfileCreationLogic.Profiles.size());
 				
-		//Start BaseFaceTutorial class
+				for(int x = 0; x < ProfileCreationLogic.Profiles.size(); x++)
+				{
+					System.out.println(ProfileCreationLogic.Profiles.get(x).getProfileName());
+					System.out.println("Hit loop" + x);
+				}
+				
+				//Start BaseFace class
 				Intent intent1 = new Intent(CreateProfile.this, BaseFace.class);
 				startActivity(intent1);
 			}
@@ -48,7 +59,8 @@ public class CreateProfile extends Activity {
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
+	public boolean onCreateOptionsMenu(Menu menu) 
+	{
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.create_profile, menu);
 		return true;

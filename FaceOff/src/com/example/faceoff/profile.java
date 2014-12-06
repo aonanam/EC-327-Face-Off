@@ -21,6 +21,9 @@ public class profile
 		//The element of the current profile. assuming many will be stored
 		int profileNum;
 		
+		//The string path to the picture
+		String path;
+		
 		//Constructor for a profile
 		public profile(String name, ArrayList<Double> arrayMap, int index)
 		{
