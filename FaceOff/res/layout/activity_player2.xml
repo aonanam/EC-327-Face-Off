@@ -24,18 +24,18 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="161dp"
-        android:text="Create Profile"
-        android:onClick="activity_create_profile" />
+        android:layout_marginTop="125dp"
+        android:onClick="activity_create_profile"
+        android:text="Choose Profile: drop down" />
 
     <Button
         android:id="@+id/start_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/P2_Profile_button"
         android:layout_below="@+id/P2_Profile_button"
-        android:layout_marginTop="33dp"
-        android:text="Start Face Off"
-        android:onClick="activity_start_face_off" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:onClick="activity_start_face_off"
+        android:text="Face Off!" />
 
 </RelativeLayout>

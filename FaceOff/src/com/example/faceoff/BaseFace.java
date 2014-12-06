@@ -17,9 +17,9 @@ import android.widget.Button;
 
 public class BaseFace extends Activity 
 {
-	//Sup Brett
 	Button camera_button;
-
+	Button another_profile_button;
+	Button main_menu_button;
 	private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
 	private Uri fileUri;
 	public static final int MEDIA_TYPE_IMAGE = 1;
@@ -103,17 +103,39 @@ public class BaseFace extends Activity
 	    
 	  //Locate buttons in activity_base_face.xml
 	  		camera_button = (Button) findViewById(R.id.camera_button);
+	  		another_profile_button = (Button) findViewById(R.id.another_profile_button);
+	  		main_menu_button = (Button) findViewById(R.id.main_menu_button);
 	  				
-	  				//Capture button clicks
-	  				camera_button.setOnClickListener(new OnClickListener() 
-	  				{
-	  					public void onClick(View arg0)
-	  					{
-	  						//Start BaseFace class
-	  						Intent intent1 = new Intent(BaseFace.this, BaseFace.class);
-	  						startActivity(intent1);
-	  					}
-	  				});
+	  //Capture button clicks
+	  		camera_button.setOnClickListener(new OnClickListener() 
+	  		{
+	  			public void onClick(View arg0)
+	  			{
+	  				//Start BaseFace class which opens camera
+	  				Intent intent1 = new Intent(BaseFace.this, BaseFace.class);
+	  				startActivity(intent1);
+	  			}
+	  		});
+	  		
+	  		another_profile_button.setOnClickListener(new OnClickListener() 
+	  		{
+	  			public void onClick(View arg0)
+	  			{
+	  				//Start CreateProfile class so user can make another profile if his opponent needs to make one
+	  				Intent intent2 = new Intent(BaseFace.this, CreateProfile.class);
+	  				startActivity(intent2);
+	  			}
+	  		});
+	  		
+	  		main_menu_button.setOnClickListener(new OnClickListener() 
+	  		{
+	  			public void onClick(View arg0)
+	  			{
+	  				//Go back to main menu after they're done taking the base face
+	  				Intent intent2 = new Intent(BaseFace.this, MainActivity.class);
+	  				startActivity(intent2);
+	  			}
+	  		});
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) 
