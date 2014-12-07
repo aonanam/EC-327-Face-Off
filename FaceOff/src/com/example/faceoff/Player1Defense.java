@@ -68,7 +68,6 @@ public class Player1Defense extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_player1_defense);
 		
-<<<<<<< HEAD
 		//create Intent to take a picture and return control to the calling application
 	    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 	    
@@ -92,15 +91,14 @@ public class Player1Defense extends Activity {
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
 		jpgview.setImageBitmap(bm);
 		
-=======
-		String path = MainActivity.activePlayers.get(1).path;//Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/test.jpg";
+	/*	String path = MainActivity.activePlayers.get(1).path;//Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/test.jpg";
 		ImageView jpgview = (ImageView)findViewById(R.id.jpgview);
 		BitmapFactory.Options options = new BitmapFactory.Options();
 		  options.inSampleSize = 2;
 		  Bitmap bm = BitmapFactory.decodeFile(path, options);
-		  jpgview.setImageBitmap(bm);
+		  jpgview.setImageBitmap(bm); 
 		
-		  System.out.println(MainActivity.activePlayers.get(1).baseFace);
+		  System.out.println(MainActivity.activePlayers.get(1).baseFace); */
 		  
 		 /* double difference = ComparisonLogic.FaceVsFace(MainActivity.activePlayers.get(0).baseFace,MainActivity.activePlayers.get(1).baseFace);
 		  
@@ -108,7 +106,6 @@ public class Player1Defense extends Activity {
 		  
 		  System.out.println("Players1Defense trololol");*/
 		  
->>>>>>> origin/Dev
 		//Locate buttons in activity_player1_defense.xml
 		compare2_button = (Button) findViewById(R.id.compare2_button);
 						
