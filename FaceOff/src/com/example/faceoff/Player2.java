@@ -6,9 +6,11 @@ import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.AdapterView.OnItemSelectedListener;
 
 public class Player2 extends Activity {
 	Button start_button;
@@ -26,6 +28,31 @@ public class Player2 extends Activity {
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		// Apply the adapter to the spinner
 		profiles_spinner.setAdapter(adapter);
+		
+		profiles_spinner.setOnItemSelectedListener(new OnItemSelectedListener(){
+
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view, 
+		            int pos, long id) {
+				String selected_name = (String) parent.getItemAtPosition(pos);	//The name they chose is stored in selected_name
+				
+				for (int i=0; i<ProfileCreationLogic.Profiles.size(); i++)
+				{
+					if (selected_name == ProfileCreationLogic.Profiles.get(i).getProfileName())
+					{
+						MainActivity.activePlayers.add(ProfileCreationLogic.Profiles.get(i));
+					}
+				}
+				
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
 		
 		
 		//Locate buttons in activity_player2.xml

@@ -2,19 +2,19 @@ package com.example.faceoff;
 
 import java.util.ArrayList;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 public class MainActivity extends Activity {
 	ImageButton tut_button;
-	Button single_phone_button;
-	Button Profile_button;
+	ImageButton single_phone_button;
+	ImageButton Profile_button;
 	//ArrayList (like list from STL in c++) holds names of all profiles
 	public static ArrayList<String> profileArray = new ArrayList<String>();
 	public static ArrayList<profile> activePlayers = new ArrayList<profile>();
@@ -22,9 +22,18 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//Get the view from activity_main.xml
-		setContentView(R.layout.activity_main);
-	
+
+		 //Get the view from activity_main.xml
+  		setContentView(R.layout.activity_main);
+  		
+  		ImageView image = (ImageView) findViewById(R.id.logo);
+  		
+  		//Changes font for all text views on this screen
+		//Typeface tf = Typeface.createFromAsset(getAssets(),
+        //       "fonts/CaviarDreams.ttf");
+        // TextView tv = (TextView) findViewById(R.id.textView1);
+        //tv.setTypeface(tf);
+        
 		//Adds "Choose Profile" as first string in profileArray when app first runs
 		if (profileArray.size() == 0)
 		{
@@ -32,8 +41,8 @@ public class MainActivity extends Activity {
 		}
 		//Locate buttons in activity_main.xml
 		tut_button = (ImageButton) findViewById(R.id.tut_button);
-		single_phone_button = (Button) findViewById(R.id.single_phone_button);
-		Profile_button = (Button) findViewById(R.id.Profile_button);
+		single_phone_button = (ImageButton) findViewById(R.id.single_phone_button);
+		Profile_button = (ImageButton) findViewById(R.id.Profile_button);
 	
 		//Capture button clicks
 		tut_button.setOnClickListener(new OnClickListener() {

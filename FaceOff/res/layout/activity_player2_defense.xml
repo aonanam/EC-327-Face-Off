@@ -6,7 +6,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Player2Defense" >
+    tools:context=".Player2Defense"
+    android:background="@drawable/background" >
 
     <TextView
         android:id="@+id/textView1"
@@ -19,6 +20,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ImageView
+<<<<<<< HEAD
         android:id="@+id/jpgview_p2_defense"
         android:layout_width="wrap_content"
         android:layout_height="300dp"
@@ -29,6 +31,9 @@
 
     <Button
         android:id="@+id/compare_button"
+=======
+        android:id="@+id/jpgview"
+>>>>>>> origin/Dev
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -36,5 +41,15 @@
         android:layout_marginTop="26dp"
         android:onClick="activity_face_compare"
         android:text="Compare Faces" />
+
+    <Button
+        android:id="@+id/P2_Offense_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:onClick="activity_player2_offense"
+        android:text="Player 2 Offense" />
 
 </RelativeLayout>

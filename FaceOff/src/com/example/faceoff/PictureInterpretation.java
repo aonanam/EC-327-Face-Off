@@ -3,6 +3,8 @@ package com.example.faceoff;
 import java.io.File;
 import java.util.ArrayList;
 
+import android.app.ListActivity;
+import android.app.ProgressDialog;
 import android.net.Uri;
 import android.os.AsyncTask;
 
@@ -17,8 +19,10 @@ public class PictureInterpretation
 {
 	public static ArrayList<Double> Decode(final Uri picture)
 	{    
+		final ArrayList<Double> interpretedVals = new ArrayList<Double>();
+		
 		class CallMashapeAsync extends AsyncTask<String, Integer, HttpResponse<JsonNode>> 
-		{				
+		{	
 	    	protected HttpResponse<JsonNode> doInBackground(String... msg) 
 	    	{
 	    		HttpResponse<JsonNode> request = null;
@@ -48,7 +52,6 @@ public class PictureInterpretation
 	    	
 	    	protected void onPostExecute(HttpResponse<JsonNode> response) 
 	    	{
-	    		ArrayList<Double> interpretedVals = new ArrayList<Double>();
 	    		JSONArray Array = response.getBody().getArray();
 	    		String answer = Array.toString();
 	        	System.out.println(answer);
@@ -60,14 +63,12 @@ public class PictureInterpretation
 					
 					for(int x = 0; x < length; x++)
 					{
-						interpretedVals.add(Array.getJSONObject(0).getJSONArray("faces").getJSONObject(0).getJSONArray("landmarks").getJSONObject(0).getDouble("x"));
+						interpretedVals.add(Array.getJSONObject(0).getJSONArray("faces").getJSONObject(0).getJSONArray("landmarks").getJSONObject(x).getDouble("x"));
 					}
 					for(int x = 0; x < length; x++)
 					{
-						interpretedVals.add(Array.getJSONObject(0).getJSONArray("faces").getJSONObject(0).getJSONArray("landmarks").getJSONObject(0).getDouble("y"));
+						interpretedVals.add(Array.getJSONObject(0).getJSONArray("faces").getJSONObject(0).getJSONArray("landmarks").getJSONObject(x).getDouble("y"));
 					}
-					
-					//delegate.finishedProcess(interpretedVals);
 	        	} 
 	        	catch (JSONException e) 
 	        	{
@@ -75,7 +76,6 @@ public class PictureInterpretation
 				}
 	    	}
 		}
-		ArrayList<Double> interpretedVals = new ArrayList<Double>();
 		
 		new CallMashapeAsync().execute();
 		

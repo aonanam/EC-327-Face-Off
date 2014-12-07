@@ -32,7 +32,7 @@ public class CreateProfile extends Activity
 		setContentView(R.layout.activity_create_profile);
 		
 		name_entry = (EditText)findViewById(R.id.name_entry);
-
+		
 		//Locate buttons in activity_create_profile.xml
 		baseface_button = (Button) findViewById(R.id.baseface_button);
 		
@@ -50,7 +50,7 @@ public class CreateProfile extends Activity
 		 
 					// set dialog message
 					alertDialogBuilder
-						.setMessage("Remember to hold phone in landscape mode for picture!")
+						.setMessage("If you have a Samsung phone, hold it in landscape now")
 						.setCancelable(false)
 						.setPositiveButton("Continue to camera",new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog,int id) {
@@ -59,7 +59,7 @@ public class CreateProfile extends Activity
 								startActivity(intent1);
 							}
 						  })
-						.setNegativeButton("I don't like fun",new DialogInterface.OnClickListener() {
+						.setNegativeButton("Fuck Samsung",new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog,int id) {
 								// if this button is clicked, just close
 								// the dialog box and do nothing
