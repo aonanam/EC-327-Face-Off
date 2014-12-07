@@ -20,14 +20,27 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
-        android:id="@+id/Quit_button"
+<<<<<<< HEAD
+        android:id="@+id/compare2_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Next_Round_button"
+        android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:text="Quit"
-        android:onClick="activity_main" />
+        android:layout_marginTop="136dp"
+        android:text="Compare Faces"
+        android:onClick="activity_player1_offense" />
+
+    <ImageView
+        android:id="@+id/jpgview_p1_defense"
+=======
+        android:id="@+id/Quit_button"
+>>>>>>> origin/Dev
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="84dp"
+        android:src="@android:drawable/ic_menu_gallery" />
 
      <ImageView
          android:id="@+id/jpgview"

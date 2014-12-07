@@ -20,13 +20,27 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ImageView
+<<<<<<< HEAD
+        android:id="@+id/jpgview_p2_defense"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="77dp"
+        android:src="@android:drawable/ic_menu_gallery" />
+
+    <Button
+        android:id="@+id/compare_button"
+=======
         android:id="@+id/jpgview"
+>>>>>>> origin/Dev
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/P2_Offense_button"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="99dp"
-        android:src="@android:drawable/ic_menu_gallery" />
+        android:layout_marginTop="26dp"
+        android:onClick="activity_face_compare"
+        android:text="Compare Faces" />
 
     <Button
         android:id="@+id/P2_Offense_button"
