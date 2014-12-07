@@ -20,7 +20,7 @@ public class PictureInterpretation
 		class CallMashapeAsync extends AsyncTask<String, Integer, HttpResponse<JsonNode>> 
 		{	
 			//instance of the interface called ServerResponse
-			public ServerResponse delegate = null;
+			//public ServerResponse delegate = null;
 			
 	    	protected HttpResponse<JsonNode> doInBackground(String... msg) 
 	    	{
@@ -29,7 +29,6 @@ public class PictureInterpretation
 	    		if(picture != null)
 	    		{
 	    			System.out.println("Picture is real! " + picture.getPath());
-	    			
 	    		}
 	    		else
 	    		{

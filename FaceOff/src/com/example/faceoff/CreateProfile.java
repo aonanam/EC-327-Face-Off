@@ -3,7 +3,6 @@ package com.example.faceoff;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -24,7 +23,6 @@ public class CreateProfile extends Activity
 	Button baseface_button;
 	EditText name_entry;
 
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
@@ -33,26 +31,10 @@ public class CreateProfile extends Activity
 		
 		name_entry = (EditText)findViewById(R.id.name_entry);
 		
-
-		final String name = name_entry.getText().toString();	//Name stored in name_entry
-<<<<<<< HEAD
-
-=======
-		//ProfileCreationLogic.CreateProfile(name);
->>>>>>> a57541c94da752d82c3677ad4d84084feaafb285
-		
 		//Locate buttons in activity_create_profile.xml
 		baseface_button = (Button) findViewById(R.id.baseface_button);
 		
 		//Capture button clicks
-/*
-		baseface_button.setOnClickListener(new OnClickListener() {
-			public void onClick(View arg0) {
-				String name_text = name_entry.getText().toString();	//Name stored in name_text
-				MainActivity.profileArray.add(name_text);	//Name added to profileArray ArrayList
-				*/
-		
-				//Start BaseFaceTutorial class
 
 		baseface_button.setOnClickListener(new OnClickListener() 
 		{
@@ -61,17 +43,8 @@ public class CreateProfile extends Activity
 				
 				String name_text = name_entry.getText().toString();	//Name stored in name_text
 				MainActivity.profileArray.add(name_text);	//Name added to profileArray ArrayList
-				//Creates a profile with the name entered
-				System.out.println(ProfileCreationLogic.Profiles.size());
-				
-				System.out.println("Name: " + name);
-				
-				for(int x = 0; x < ProfileCreationLogic.Profiles.size(); x++)
-				{
-					System.out.println(ProfileCreationLogic.Profiles.get(x).getProfileName());
-					System.out.println("Hit loop" + x);
-				}
-				
+				ProfileCreationLogic.CreateProfile(name_text); //Creates a profile with the name entered
+
 				//Start BaseFace class
 
 				Intent intent1 = new Intent(CreateProfile.this, BaseFace.class);
