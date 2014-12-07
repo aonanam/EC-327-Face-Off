@@ -19,30 +19,56 @@ import android.widget.EditText;
  * In the future we should have a "Is this ok? Y/N option but for now it is fine.
  * */
 
-public class CreateProfile extends Activity {
+public class CreateProfile extends Activity 
+{
 	Button baseface_button;
 	EditText name_entry;
-	String name_text;
+
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) 
+	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_create_profile);
 		
 		name_entry = (EditText)findViewById(R.id.name_entry);
-		//name_entry.getText().toString();	//Name stored in name_entry
-		//MainActivity.profileArray.add(name_entry.toString());	//Name added to profileArray ArrayList
+		
+
+		final String name = name_entry.getText().toString();	//Name stored in name_entry
+
 		
 		//Locate buttons in activity_create_profile.xml
 		baseface_button = (Button) findViewById(R.id.baseface_button);
 		
 		//Capture button clicks
+/*
 		baseface_button.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
-				name_text = name_entry.getText().toString();
+				String name_text = name_entry.getText().toString();	//Name stored in name_text
 				MainActivity.profileArray.add(name_text);	//Name added to profileArray ArrayList
+				*/
 		
 				//Start BaseFaceTutorial class
+
+		baseface_button.setOnClickListener(new OnClickListener() 
+		{
+			public void onClick(View arg0) 
+			{
+				
+				String name_text = name_entry.getText().toString();	//Name stored in name_text
+				MainActivity.profileArray.add(name_text);	//Name added to profileArray ArrayList
+				//Creates a profile with the name entered
+				ProfileCreationLogic.CreateProfile(name);
+				System.out.println(ProfileCreationLogic.Profiles.size());
+				
+				for(int x = 0; x < ProfileCreationLogic.Profiles.size(); x++)
+				{
+					System.out.println(ProfileCreationLogic.Profiles.get(x).getProfileName());
+					System.out.println("Hit loop" + x);
+				}
+				
+				//Start BaseFace class
+
 				Intent intent1 = new Intent(CreateProfile.this, BaseFace.class);
 				startActivity(intent1);
 			}
@@ -50,7 +76,8 @@ public class CreateProfile extends Activity {
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
+	public boolean onCreateOptionsMenu(Menu menu) 
+	{
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.create_profile, menu);
 		return true;

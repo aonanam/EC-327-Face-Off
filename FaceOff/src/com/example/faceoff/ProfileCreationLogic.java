@@ -25,13 +25,10 @@ public class ProfileCreationLogic
 	static ArrayList<profile> Profiles = new ArrayList<profile>();
 	
 	//Method for creating the Profile Object with a name and BaseFace
-	public static void CreateProfile(String name, Uri picture)
-	{	
-			//Interprets the face into an ArrayList of points
-			ArrayList<Double> arrayMap = PictureInterpretation.Decode(picture);
-			
-			//Adds a new profile object into the list Profiles
-			Profiles.add(new profile(name,arrayMap,Profiles.size()));
+	public static void CreateProfile(String name)
+	{		
+		//Adds a new profile object into the list Profiles
+		Profiles.add(new profile(name,Profiles.size()));
 	}
 }
 
