@@ -2,6 +2,7 @@ package com.example.faceoff;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
@@ -31,17 +32,10 @@ public class CreateProfile extends Activity
 		
 		name_entry = (EditText)findViewById(R.id.name_entry);
 		
-<<<<<<< HEAD
 
 		final String name = name_entry.getText().toString();	//Name stored in name_entry
 
 
-
-		//ProfileCreationLogic.CreateProfile(name);
-
-		
-=======
->>>>>>> origin/Dev
 		//Locate buttons in activity_create_profile.xml
 		baseface_button = (Button) findViewById(R.id.baseface_button);
 		
@@ -51,7 +45,6 @@ public class CreateProfile extends Activity
 		{
 			public void onClick(View arg0) 
 			{
-				
 				String name_text = name_entry.getText().toString();	//Name stored in name_text
 				MainActivity.profileArray.add(name_text);	//Name added to profileArray ArrayList
 				ProfileCreationLogic.CreateProfile(name_text); //Creates a profile with the name entered
