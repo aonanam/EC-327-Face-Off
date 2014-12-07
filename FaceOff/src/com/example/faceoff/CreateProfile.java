@@ -59,7 +59,7 @@ public class CreateProfile extends Activity
 								startActivity(intent1);
 							}
 						  })
-						.setNegativeButton("I don't like fun",new DialogInterface.OnClickListener() {
+						.setNegativeButton("Fuck Samsung",new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog,int id) {
 								// if this button is clicked, just close
 								// the dialog box and do nothing

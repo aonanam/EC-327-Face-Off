@@ -17,6 +17,8 @@ public class PictureInterpretation
 {
 	public static ArrayList<Double> Decode(final Uri picture)
 	{    
+		final ArrayList<Double> interpretedVals = new ArrayList<Double>();
+		
 		class CallMashapeAsync extends AsyncTask<String, Integer, HttpResponse<JsonNode>> 
 		{				
 	    	protected HttpResponse<JsonNode> doInBackground(String... msg) 
@@ -48,7 +50,6 @@ public class PictureInterpretation
 	    	
 	    	protected void onPostExecute(HttpResponse<JsonNode> response) 
 	    	{
-	    		ArrayList<Double> interpretedVals = new ArrayList<Double>();
 	    		JSONArray Array = response.getBody().getArray();
 	    		String answer = Array.toString();
 	        	System.out.println(answer);
@@ -66,6 +67,7 @@ public class PictureInterpretation
 					{
 						interpretedVals.add(Array.getJSONObject(0).getJSONArray("faces").getJSONObject(0).getJSONArray("landmarks").getJSONObject(0).getDouble("y"));
 					}
+					
 	        	} 
 	        	catch (JSONException e) 
 	        	{
@@ -73,7 +75,6 @@ public class PictureInterpretation
 				}
 	    	}
 		}
-		ArrayList<Double> interpretedVals = new ArrayList<Double>();
 		
 		new CallMashapeAsync().execute();
 		

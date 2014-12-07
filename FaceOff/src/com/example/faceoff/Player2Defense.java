@@ -26,27 +26,12 @@ public class Player2Defense extends Activity {
 		setContentView(R.layout.activity_player2_defense);
 		
 		//Displays image of previously taken picture. Need to change test.jpg to whatever we call the picture, and increase the size
-		String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/test.jpg";
+		String path = MainActivity.activePlayers.get(0).path;//Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/test.jpg";
 		ImageView jpgview = (ImageView)findViewById(R.id.jpgview);
 		BitmapFactory.Options options = new BitmapFactory.Options();
 		  options.inSampleSize = 2;
 		  Bitmap bm = BitmapFactory.decodeFile(path, options);
 		  jpgview.setImageBitmap(bm);
-		    
-		
-		/*
-		File imgFile = new  File("/sdcard/Pictures/FaceOFf/test.jpg");
-
-		if(imgFile.exists()){
-
-		    Bitmap myBitmap = BitmapFactory.decodeFile(imgFile.getAbsolutePath());
-
-		    ImageView myImage = (ImageView) findViewById(R.id.imageView1);
-
-		    myImage.setImageBitmap(myBitmap);
-
-		}
-		*/
 		
 		//Locate buttons in activity_player2_defense.xml
 		P2_Offense_button = (Button) findViewById(R.id.P2_Offense_button);

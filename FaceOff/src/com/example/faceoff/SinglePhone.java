@@ -36,11 +36,14 @@ public class SinglePhone extends Activity {
 			public void onItemSelected(AdapterView<?> parent, View view, 
 		            int pos, long id) {
 				String selected_name = (String) parent.getItemAtPosition(pos);	//The name they chose is stored in selected_name
+				
 				for (int i=0; i<ProfileCreationLogic.Profiles.size(); i++)
 				{
 					if (selected_name == ProfileCreationLogic.Profiles.get(i).getProfileName())
 					{
 						MainActivity.activePlayers.add(ProfileCreationLogic.Profiles.get(i));
+						System.out.println(MainActivity.activePlayers.get(i).baseFace);
+						System.out.println(MainActivity.activePlayers.get(i).path);
 					}
 				}
 				
