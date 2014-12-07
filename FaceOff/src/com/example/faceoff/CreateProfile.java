@@ -35,11 +35,11 @@ public class CreateProfile extends Activity
 		
 
 		final String name = name_entry.getText().toString();	//Name stored in name_entry
-<<<<<<< HEAD
 
-=======
+
+
 		//ProfileCreationLogic.CreateProfile(name);
->>>>>>> a57541c94da752d82c3677ad4d84084feaafb285
+
 		
 		//Locate buttons in activity_create_profile.xml
 		baseface_button = (Button) findViewById(R.id.baseface_button);

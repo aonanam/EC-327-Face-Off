@@ -17,6 +17,7 @@ public class MainActivity extends Activity {
 	Button Profile_button;
 	//ArrayList (like list from STL in c++) holds names of all profiles
 	public static ArrayList<String> profileArray = new ArrayList<String>();
+	public static ArrayList<profile> activePlayers = new ArrayList<profile>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
