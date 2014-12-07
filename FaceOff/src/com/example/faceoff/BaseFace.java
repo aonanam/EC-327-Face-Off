@@ -26,15 +26,6 @@ public class BaseFace extends Activity
 	/** Create a file Uri for saving an image */
 	private static Uri getOutputMediaFileUri(int type)
 	{
-		/*try
-		{
-			System.out.println(Uri.fromFile(getOutputMediaFile(type)));
-		}
-		catch(RuntimeException e)
-		{
-			System.out.println("Hit 1");
-			e.printStackTrace();
-		}*/
 	      return Uri.fromFile(getOutputMediaFile(type));
 	}
 	/** Create a File for saving an image */
@@ -82,16 +73,9 @@ public class BaseFace extends Activity
 		
 		// create Intent to take a picture and return control to the calling application
 	    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-		
-	    try
-	    {
-	    	fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE); // create a file to save the image
-	    }
-	    catch(Exception e)
-	    {
-	    	System.out.println("Hit 2");
-	    	e.printStackTrace();
-	    }
+	    
+	    fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE); // create a file to save the image
+
 	    intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
 	    
 	  //start the image capture Intent
@@ -133,6 +117,15 @@ public class BaseFace extends Activity
 	  			}
 	  		});
 	}
+	
+	protected void onActivityResult(int requestCode, int resultCode, Intent data)
+	{
+		if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK)
+		{
+			ProfileCreationLogic.Profiles.get(ProfileCreationLogic.Profiles.size()-1).addBaseFace(PictureInterpretation.Decode(fileUri));
+		}
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) 
 	{
