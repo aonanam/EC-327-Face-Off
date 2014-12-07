@@ -32,7 +32,13 @@ public class Player2Defense extends Activity {
 		  options.inSampleSize = 2;
 		  Bitmap bm = BitmapFactory.decodeFile(path, options);
 		  jpgview.setImageBitmap(bm);
-		
+		  
+		  double difference = ComparisonLogic.FaceVsFace(MainActivity.activePlayers.get(0).baseFace,MainActivity.activePlayers.get(1).baseFace);
+		  
+		  System.out.println(difference);
+		  
+		  System.out.println("Players2Defense trololol");
+		  
 		//Locate buttons in activity_player2_defense.xml
 		P2_Offense_button = (Button) findViewById(R.id.P2_Offense_button);
 						

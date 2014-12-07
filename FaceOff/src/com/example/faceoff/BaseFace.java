@@ -143,6 +143,8 @@ public class BaseFace extends Activity
 		{
 			ProfileCreationLogic.Profiles.get(ProfileCreationLogic.Profiles.size()-1).addBaseFace(PictureInterpretation.Decode(fileUri));
 			ProfileCreationLogic.Profiles.get(ProfileCreationLogic.Profiles.size()-1).setPath(fileUri.getPath());
+			Intent intent2 = new Intent(BaseFace.this, MainActivity.class);
+			startActivity(intent2);
 		}
 	}
 	

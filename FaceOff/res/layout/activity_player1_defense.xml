@@ -29,16 +29,6 @@
         android:text="Quit"
         android:onClick="activity_main" />
 
-     <Button
-         android:id="@+id/Next_Round_button"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_below="@+id/textView1"
-         android:layout_centerHorizontal="true"
-         android:layout_marginTop="103dp"
-         android:onClick="activity_player1_offense"
-         android:text="Next Round" />
-
      <ImageView
          android:id="@+id/jpgview"
          android:layout_width="wrap_content"
@@ -47,5 +37,15 @@
          android:layout_centerHorizontal="true"
          android:layout_marginTop="68dp"
          android:src="@android:drawable/ic_menu_gallery" />
+
+     <Button
+         android:id="@+id/Next_Round_button"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/textView1"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="44dp"
+         android:onClick="activity_player1_offense"
+         android:text="Next Round" />
 
 </RelativeLayout>

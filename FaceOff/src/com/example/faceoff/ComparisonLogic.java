@@ -36,7 +36,7 @@ public class ComparisonLogic
 		 * between the two points in question. The baseface coordinates are centered to the newface by calculating the differences in 
 		 * the location of pupils as done above. The loop appends the differences into an ArrayList called diffFromBase and returns it.
 		 * */
-		for(int x = 15; x < p.baseFace.size(); x++)
+		/*for(int x = 15; x < p.baseFace.size(); x++)
 		{
 			if(x <= 68)
 			{
@@ -46,20 +46,28 @@ public class ComparisonLogic
 			{
 				diffFromBase.add(p.baseFace.get(x)+centerY - newFace.get(x));
 			}
-		}
+		}*/
 		
 		return diffFromBase;
 	}
 
-	public double FaceVsFace(ArrayList<Double> faceOne, ArrayList<Double> faceTwo)
+	public static double FaceVsFace(ArrayList<Double> faceOne, ArrayList<Double> faceTwo)
 	{
 		double points = 0;
-		ArrayList<Double> comparedPoints = new ArrayList<Double>();;
 			
 		/*Calculates the centering distance needed to transpose the pupils of face two onto face one to accurate facial feature change 
 		 * detection. */
 		double centerX = ((faceOne.get(30) - faceTwo.get(30)) + (faceOne.get(35) - faceTwo.get(35)))/2;
 		double centerY = ((faceOne.get(66) - faceTwo.get(66)) + (faceOne.get(103) - faceTwo.get(103)))/2;
+		
+		for(int x = 0; x < 68; x++)
+		{
+			faceTwo.set(x,faceTwo.get(x) - centerX);
+		}
+		for(int x = 68; x < faceOne.size(); x++)
+		{
+			
+		}
 			
 		/*
 		 * This loop adds the differences of differences for both faces and appends them to a list

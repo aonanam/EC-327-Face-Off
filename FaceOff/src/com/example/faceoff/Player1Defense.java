@@ -27,6 +27,13 @@ public class Player1Defense extends Activity {
 		  Bitmap bm = BitmapFactory.decodeFile(path, options);
 		  jpgview.setImageBitmap(bm);
 		
+		  
+		  double difference = ComparisonLogic.FaceVsFace(MainActivity.activePlayers.get(0).baseFace,MainActivity.activePlayers.get(1).baseFace);
+		  
+		  System.out.println(difference);
+		  
+		  System.out.println("Players1Defense trololol");
+		  
 		//Locate buttons in activity_player1_defense.xml
 		Next_Round_button = (Button) findViewById(R.id.Next_Round_button);
 		Quit_button = (Button) findViewById(R.id.Quit_button);
