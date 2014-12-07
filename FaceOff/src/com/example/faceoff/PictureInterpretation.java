@@ -66,8 +66,6 @@ public class PictureInterpretation
 					{
 						interpretedVals.add(Array.getJSONObject(0).getJSONArray("faces").getJSONObject(0).getJSONArray("landmarks").getJSONObject(0).getDouble("y"));
 					}
-					
-					//delegate.finishedProcess(interpretedVals);
 	        	} 
 	        	catch (JSONException e) 
 	        	{
