@@ -65,17 +65,23 @@ public class BaseFace extends Activity
 	    }
 	    return mediaFile;
 	}
-
+	
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_base_face);
 		
+		/*final Uri data = (Uri) getLastNonConfigurationInstance();
+  		if(data == null)
+  		{
+  			data = collectMyResourceData ();
+  		}*/
+		
 		// create Intent to take a picture and return control to the calling application
 	    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 	    
 	    fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE); // create a file to save the image
-
+	    
 	    intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
 	    
 	  //start the image capture Intent
@@ -85,7 +91,7 @@ public class BaseFace extends Activity
 	  		camera_button = (Button) findViewById(R.id.camera_button);
 	  		another_profile_button = (Button) findViewById(R.id.another_profile_button);
 	  		main_menu_button = (Button) findViewById(R.id.main_menu_button);
-	  				
+	  		
 	  //Capture button clicks
 	  		camera_button.setOnClickListener(new OnClickListener() 
 	  		{
