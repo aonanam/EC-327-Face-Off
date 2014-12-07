@@ -1,7 +1,5 @@
 package com.example.faceoff;
 
-import java.util.ArrayList;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -13,7 +11,6 @@ import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 public class SinglePhone extends Activity {
 	Button P2_button;
@@ -33,6 +30,29 @@ public class SinglePhone extends Activity {
 		profiles_spinner.setAdapter(adapter);
 		
 		
+		profiles_spinner.setOnItemSelectedListener(new OnItemSelectedListener(){
+
+			@Override
+			public void onItemSelected(AdapterView<?> parent, View view, 
+		            int pos, long id) {
+				String selected_name = (String) parent.getItemAtPosition(pos);	//The name they chose is stored in selected_name
+				for (int i=0; i<ProfileCreationLogic.Profiles.size(); i++)
+				{
+					if (selected_name == ProfileCreationLogic.Profiles.get(i).getProfileName())
+					{
+						MainActivity.activePlayers.add(ProfileCreationLogic.Profiles.get(i));
+					}
+				}
+				
+			}
+
+			@Override
+			public void onNothingSelected(AdapterView<?> arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
 		
 		//Locate buttons in activity_single_phone.xml
 		P2_button = (Button) findViewById(R.id.P2_button);
