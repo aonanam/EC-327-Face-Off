@@ -32,15 +32,6 @@ public class CreateProfile extends Activity
 		setContentView(R.layout.activity_create_profile);
 		
 		name_entry = (EditText)findViewById(R.id.name_entry);
-<<<<<<< HEAD
-
-		String name = name_entry.getText().toString();	//Name stored in name_entry
-=======
-		
-		final String name = name_entry.getText().toString();	//Name stored in name_entry
->>>>>>> origin/Dev
-
-		//ProfileCreationLogic.CreateProfile(name);
 		
 		//Locate buttons in activity_create_profile.xml
 		baseface_button = (Button) findViewById(R.id.baseface_button);

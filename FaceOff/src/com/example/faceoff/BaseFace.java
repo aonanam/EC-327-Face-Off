@@ -36,10 +36,7 @@ public class BaseFace extends Activity
 			System.out.println("Hit 1");
 			e.printStackTrace();
 		}
-<<<<<<< HEAD
-		
-=======
->>>>>>> origin/Dev
+
 	      return Uri.fromFile(getOutputMediaFile(type));
 	}
 	/** Create a File for saving an image */
