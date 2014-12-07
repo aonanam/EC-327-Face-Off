@@ -26,17 +26,18 @@ public final class R {
     }
     public static final class id {
         public static final int Next_Round_button=0x7f080009;
-        public static final int P1_Defense_button=0x7f08000f;
-        public static final int P1_Offense_button=0x7f080011;
+        public static final int P1_Defense_button=0x7f080010;
+        public static final int P1_Offense_button=0x7f080012;
         public static final int P2_Defense_button=0x7f08000b;
         public static final int P2_Offense_button=0x7f08000e;
-        public static final int P2_button=0x7f080010;
+        public static final int P2_button=0x7f080011;
         public static final int Profile_button=0x7f080008;
         public static final int Quit_button=0x7f08000a;
-        public static final int action_settings=0x7f080012;
+        public static final int action_settings=0x7f080013;
         public static final int another_profile_button=0x7f080002;
         public static final int baseface_button=0x7f080004;
         public static final int camera_button=0x7f080001;
+        public static final int jpgview=0x7f08000f;
         public static final int main_menu_button=0x7f080003;
         public static final int name_entry=0x7f080005;
         public static final int profiles_spinner_p1=0x7f08000d;
