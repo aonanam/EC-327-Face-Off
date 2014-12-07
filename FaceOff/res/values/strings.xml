@@ -18,13 +18,5 @@
     <string name="btnTxt">CreateProfile</string>
     
 
-    <string-array name="profiles_array">
-        <item>Select Profile</item>
-        <item>Dr. Astronaut, Phd</item>
-        <item>Shane "Shane" McCormack</item>
-        <item>Dougie Densmore</item>
-        <item>Ernst</item>
-    </string-array>
-
-
+    
 </resources>

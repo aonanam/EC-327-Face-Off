@@ -22,6 +22,7 @@ import android.widget.EditText;
 public class CreateProfile extends Activity {
 	Button baseface_button;
 	EditText name_entry;
+	String name_text;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,8 @@ public class CreateProfile extends Activity {
 		setContentView(R.layout.activity_create_profile);
 		
 		name_entry = (EditText)findViewById(R.id.name_entry);
-		name_entry.getText().toString();	//Name stored in name_entry
+		//name_entry.getText().toString();	//Name stored in name_entry
+		//MainActivity.profileArray.add(name_entry.toString());	//Name added to profileArray ArrayList
 		
 		//Locate buttons in activity_create_profile.xml
 		baseface_button = (Button) findViewById(R.id.baseface_button);
@@ -37,8 +39,10 @@ public class CreateProfile extends Activity {
 		//Capture button clicks
 		baseface_button.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
-					
-		//Start BaseFaceTutorial class
+				name_text = name_entry.getText().toString();
+				MainActivity.profileArray.add(name_text);	//Name added to profileArray ArrayList
+		
+				//Start BaseFaceTutorial class
 				Intent intent1 = new Intent(CreateProfile.this, BaseFace.class);
 				startActivity(intent1);
 			}

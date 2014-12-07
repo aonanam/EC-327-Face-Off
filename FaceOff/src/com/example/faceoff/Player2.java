@@ -18,15 +18,14 @@ public class Player2 extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_player2);
 		
-		//Drop Down menu of profiles. Accesses array in strings.xml under values folder
-		Spinner spinner = (Spinner) findViewById(R.id.profiles_spinner_p2);
+		//Drop down menu of profiles. Uses profileArray for the names
+		Spinner profiles_spinner = (Spinner) findViewById(R.id.profiles_spinner_p1);
 		// Create an ArrayAdapter using the string array and a default spinner layout
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-		        R.array.profiles_array, android.R.layout.simple_spinner_item);
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, MainActivity.profileArray);
 		// Specify the layout to use when the list of choices appears
 		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 		// Apply the adapter to the spinner
-		spinner.setAdapter(adapter);
+		profiles_spinner.setAdapter(adapter);
 		
 		
 		//Locate buttons in activity_player2.xml

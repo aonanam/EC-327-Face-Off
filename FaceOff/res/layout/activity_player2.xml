@@ -29,7 +29,7 @@
         android:text="Face Off!" />
     
     <Spinner
-        android:id="@+id/profiles_spinner_p2"
+        android:id="@+id/profiles_spinner_p1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"

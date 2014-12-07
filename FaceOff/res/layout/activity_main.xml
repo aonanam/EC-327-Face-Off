@@ -18,13 +18,14 @@
         android:text="Menu"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <Button
+    <ImageButton
         android:id="@+id/tut_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="73dp"
+        android:src="@drawable/cage"
         android:text="Tutorial" 
         android:onClick="activity_tutorial" />
 
