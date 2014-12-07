@@ -2,8 +2,9 @@ package com.example.faceoff;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -24,7 +25,6 @@ public class CreateProfile extends Activity
 	Button baseface_button;
 	EditText name_entry;
 
-
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
@@ -32,47 +32,58 @@ public class CreateProfile extends Activity
 		setContentView(R.layout.activity_create_profile);
 		
 		name_entry = (EditText)findViewById(R.id.name_entry);
+<<<<<<< HEAD
 		
 
 		final String name = name_entry.getText().toString();	//Name stored in name_entry
 
 		//ProfileCreationLogic.CreateProfile(name);
 		
+=======
+
+>>>>>>> origin/Dev
 		//Locate buttons in activity_create_profile.xml
 		baseface_button = (Button) findViewById(R.id.baseface_button);
 		
 		//Capture button clicks
-/*
-		baseface_button.setOnClickListener(new OnClickListener() {
-			public void onClick(View arg0) {
-				String name_text = name_entry.getText().toString();	//Name stored in name_text
-				MainActivity.profileArray.add(name_text);	//Name added to profileArray ArrayList
-				*/
-		
-				//Start BaseFaceTutorial class
-
+		final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 		baseface_button.setOnClickListener(new OnClickListener() 
 		{
 			public void onClick(View arg0) 
 			{
 				
+				//AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		 
+					// set title
+					alertDialogBuilder.setTitle("Base Face Warning");
+		 
+					// set dialog message
+					alertDialogBuilder
+						.setMessage("Remember to hold phone in landscape mode for picture!")
+						.setCancelable(false)
+						.setPositiveButton("Continue to camera",new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog,int id) {
+								//Start BaseFace class
+								Intent intent1 = new Intent(CreateProfile.this, BaseFace.class);
+								startActivity(intent1);
+							}
+						  })
+						.setNegativeButton("Fuck Samsung",new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog,int id) {
+								// if this button is clicked, just close
+								// the dialog box and do nothing
+								dialog.cancel();
+							}
+						});
+		 
+						// create alert dialog
+						AlertDialog alertDialog = alertDialogBuilder.create();
+		 
+						// show it
+						alertDialog.show();
 				String name_text = name_entry.getText().toString();	//Name stored in name_text
 				MainActivity.profileArray.add(name_text);	//Name added to profileArray ArrayList
-				//Creates a profile with the name entered
-				System.out.println(ProfileCreationLogic.Profiles.size());
-				
-				System.out.println("Name: " + name);
-				
-				for(int x = 0; x < ProfileCreationLogic.Profiles.size(); x++)
-				{
-					System.out.println(ProfileCreationLogic.Profiles.get(x).getProfileName());
-					System.out.println("Hit loop" + x);
-				}
-				
-				//Start BaseFace class
-
-				Intent intent1 = new Intent(CreateProfile.this, BaseFace.class);
-				startActivity(intent1);
+				ProfileCreationLogic.CreateProfile(name_text); //Creates a profile with the name entered
 			}
 		});
 	}

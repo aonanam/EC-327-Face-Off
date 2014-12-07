@@ -27,6 +27,7 @@ public class BaseFace extends Activity
 	/** Create a file Uri for saving an image */
 	private static Uri getOutputMediaFileUri(int type)
 	{
+<<<<<<< HEAD
 		try
 		{
 			System.out.println(Uri.fromFile(getOutputMediaFile(type)));
@@ -37,6 +38,8 @@ public class BaseFace extends Activity
 			e.printStackTrace();
 		}
 		
+=======
+>>>>>>> origin/Dev
 	      return Uri.fromFile(getOutputMediaFile(type));
 	}
 	/** Create a File for saving an image */
@@ -77,24 +80,23 @@ public class BaseFace extends Activity
 	    }
 	    return mediaFile;
 	}
-
+	
 	protected void onCreate(Bundle savedInstanceState)
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_base_face);
 		
+		/*final Uri data = (Uri) getLastNonConfigurationInstance();
+  		if(data == null)
+  		{
+  			data = collectMyResourceData ();
+  		}*/
+		
 		// create Intent to take a picture and return control to the calling application
 	    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-		
-	    try
-	    {
-	    	fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE); // create a file to save the image
-	    }
-	    catch(Exception e)
-	    {
-	    	System.out.println("Hit 2");
-	    	e.printStackTrace();
-	    }
+	    
+	    fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE); // create a file to save the image
+	    
 	    intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
 	    
 	  //start the image capture Intent
@@ -105,7 +107,7 @@ public class BaseFace extends Activity
 	  		camera_button = (Button) findViewById(R.id.camera_button);
 	  		another_profile_button = (Button) findViewById(R.id.another_profile_button);
 	  		main_menu_button = (Button) findViewById(R.id.main_menu_button);
-	  				
+	  		
 	  //Capture button clicks
 	  		camera_button.setOnClickListener(new OnClickListener() 
 	  		{
@@ -137,6 +139,16 @@ public class BaseFace extends Activity
 	  			}
 	  		});
 	}
+	
+	protected void onActivityResult(int requestCode, int resultCode, Intent data)
+	{
+		if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK)
+		{
+			ProfileCreationLogic.Profiles.get(ProfileCreationLogic.Profiles.size()-1).addBaseFace(PictureInterpretation.Decode(fileUri));
+			ProfileCreationLogic.Profiles.get(ProfileCreationLogic.Profiles.size()-1).setPath(fileUri.getPath());
+		}
+	}
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) 
 	{
