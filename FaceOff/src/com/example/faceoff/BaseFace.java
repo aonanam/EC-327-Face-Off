@@ -27,7 +27,6 @@ public class BaseFace extends Activity
 	/** Create a file Uri for saving an image */
 	private static Uri getOutputMediaFileUri(int type)
 	{
-<<<<<<< HEAD
 		try
 		{
 			System.out.println(Uri.fromFile(getOutputMediaFile(type)));
@@ -37,9 +36,6 @@ public class BaseFace extends Activity
 			System.out.println("Hit 1");
 			e.printStackTrace();
 		}
-		
-=======
->>>>>>> origin/Dev
 	      return Uri.fromFile(getOutputMediaFile(type));
 	}
 	/** Create a File for saving an image */
