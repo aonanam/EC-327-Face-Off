@@ -42,8 +42,6 @@ public class SinglePhone extends Activity {
 					if (selected_name == ProfileCreationLogic.Profiles.get(i).getProfileName())
 					{
 						MainActivity.activePlayers.add(ProfileCreationLogic.Profiles.get(i));
-						System.out.println(MainActivity.activePlayers.get(i).baseFace);
-						System.out.println(MainActivity.activePlayers.get(i).path);
 					}
 				}
 				
