@@ -1,4 +1,4 @@
-package com.example.faceoff;
+ package com.example.faceoff;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -9,6 +9,7 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -26,7 +27,7 @@ public class BaseFace extends Activity
 	/** Create a file Uri for saving an image */
 	private static Uri getOutputMediaFileUri(int type)
 	{
-		/*try
+		try
 		{
 			System.out.println(Uri.fromFile(getOutputMediaFile(type)));
 		}
@@ -34,7 +35,8 @@ public class BaseFace extends Activity
 		{
 			System.out.println("Hit 1");
 			e.printStackTrace();
-		}*/
+		}
+		
 	      return Uri.fromFile(getOutputMediaFile(type));
 	}
 	/** Create a File for saving an image */
@@ -58,6 +60,7 @@ public class BaseFace extends Activity
 	        	System.out.println("FaceOff" + "failed to create directory");
 	        	return null;
 	        }
+	    
 	    }
 	    // Create a media file name
 	    String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
@@ -96,6 +99,7 @@ public class BaseFace extends Activity
 	    
 	  //start the image capture Intent
 	    startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+	  //PictureInterpretation.Decode(fileUri);
 	    
 	  //Locate buttons in activity_base_face.xml
 	  		camera_button = (Button) findViewById(R.id.camera_button);
