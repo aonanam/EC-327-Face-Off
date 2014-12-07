@@ -22,7 +22,7 @@ public class ComparisonLogic
 	 * As of now, the only centering algorithms use the pupils as reference. If we want to streamline the code in the future,
 	 * we have access to many points on the nose as well as the outline of the face (ear to ear and along the jaw).
 	 * */
-	public ArrayList<Double>  VsBaseFace(profile p, ArrayList<Double> newFace)
+	public static ArrayList<Double>  VsBaseFace(profile p, ArrayList<Double> newFace)
 	{
 		//31 - Right Pupil, 36 Left Pupil, DON'T FORGET THAT INDICIES START AT 0, NOT 1
 		

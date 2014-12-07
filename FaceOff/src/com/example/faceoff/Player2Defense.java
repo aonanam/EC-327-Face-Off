@@ -1,6 +1,7 @@
 package com.example.faceoff;
 
 import java.io.File;
+import java.util.ArrayList;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -33,11 +34,13 @@ public class Player2Defense extends Activity {
 		  Bitmap bm = BitmapFactory.decodeFile(path, options);
 		  jpgview.setImageBitmap(bm);
 		  
-		  double difference = ComparisonLogic.FaceVsFace(MainActivity.activePlayers.get(0).baseFace,MainActivity.activePlayers.get(1).baseFace);
+		  System.out.println(MainActivity.activePlayers.get(0).baseFace);
 		  
-		  System.out.println(difference);
+		  //ArrayList<Double> difference = ComparisonLogic.VsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(1).baseFace);
 		  
-		  System.out.println("Players2Defense trololol");
+		  //System.out.println(difference);
+		  
+		 // System.out.println("Players2Defense trololol");
 		  
 		//Locate buttons in activity_player2_defense.xml
 		P2_Offense_button = (Button) findViewById(R.id.P2_Offense_button);
