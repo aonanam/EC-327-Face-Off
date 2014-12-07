@@ -18,10 +18,7 @@ public class PictureInterpretation
 	public static ArrayList<Double> Decode(final Uri picture)
 	{    
 		class CallMashapeAsync extends AsyncTask<String, Integer, HttpResponse<JsonNode>> 
-		{	
-			//instance of the interface called ServerResponse
-			//public ServerResponse delegate = null;
-			
+		{				
 	    	protected HttpResponse<JsonNode> doInBackground(String... msg) 
 	    	{
 	    		HttpResponse<JsonNode> request = null;
@@ -29,23 +26,23 @@ public class PictureInterpretation
 	    		if(picture != null)
 	    		{
 	    			System.out.println("Picture is real! " + picture.getPath());
+	    			
+	    			try 
+					{
+						request = Unirest.post("https://apicloud-facemark.p.mashape.com/process-file.json")
+								.header("X-Mashape-Key", "O5pPl3KTaVmshRGGD5FykeKF31gXp15vSBMjsnfMHFofluIQtP")
+								.field("image", new File(picture.getPath()))
+								.asJson();
+					} 
+					catch (UnirestException e) 
+					{
+						e.printStackTrace();
+					}	
 	    		}
 	    		else
 	    		{
 	    			System.out.println("Picture is not real");
 	    		}
-	    		
-				try 
-				{
-					request = Unirest.post("https://apicloud-facemark.p.mashape.com/process-file.json")
-							.header("X-Mashape-Key", "O5pPl3KTaVmshRGGD5FykeKF31gXp15vSBMjsnfMHFofluIQtP")
-							.field("image", new File(picture.getPath()))
-							.asJson();
-				} 
-				catch (UnirestException e) 
-				{
-					e.printStackTrace();
-				}	
 	    		return request;
 	    	}
 	    	

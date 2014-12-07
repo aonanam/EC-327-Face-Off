@@ -123,6 +123,7 @@ public class BaseFace extends Activity
 		if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK)
 		{
 			ProfileCreationLogic.Profiles.get(ProfileCreationLogic.Profiles.size()-1).addBaseFace(PictureInterpretation.Decode(fileUri));
+			//System.out.println(data.getData().getPath());
 		}
 	}
 	
