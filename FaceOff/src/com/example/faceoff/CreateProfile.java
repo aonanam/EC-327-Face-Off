@@ -40,7 +40,6 @@ public class CreateProfile extends Activity
 		{
 			public void onClick(View arg0) 
 			{
-				
 				String name_text = name_entry.getText().toString();	//Name stored in name_text
 				MainActivity.profileArray.add(name_text);	//Name added to profileArray ArrayList
 				ProfileCreationLogic.CreateProfile(name_text); //Creates a profile with the name entered
