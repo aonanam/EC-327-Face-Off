@@ -50,7 +50,7 @@ public class CreateProfile extends Activity
 		 
 					// set dialog message
 					alertDialogBuilder
-						.setMessage("Remember to hold phone in landscape mode for picture!")
+						.setMessage("If you have a Samsung phone, hold it in landscape now")
 						.setCancelable(false)
 						.setPositiveButton("Continue to camera",new DialogInterface.OnClickListener() {
 							public void onClick(DialogInterface dialog,int id) {

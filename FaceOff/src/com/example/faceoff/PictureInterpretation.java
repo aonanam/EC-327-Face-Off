@@ -61,13 +61,12 @@ public class PictureInterpretation
 					
 					for(int x = 0; x < length; x++)
 					{
-						interpretedVals.add(Array.getJSONObject(0).getJSONArray("faces").getJSONObject(0).getJSONArray("landmarks").getJSONObject(0).getDouble("x"));
+						interpretedVals.add(Array.getJSONObject(0).getJSONArray("faces").getJSONObject(0).getJSONArray("landmarks").getJSONObject(x).getDouble("x"));
 					}
 					for(int x = 0; x < length; x++)
 					{
-						interpretedVals.add(Array.getJSONObject(0).getJSONArray("faces").getJSONObject(0).getJSONArray("landmarks").getJSONObject(0).getDouble("y"));
+						interpretedVals.add(Array.getJSONObject(0).getJSONArray("faces").getJSONObject(0).getJSONArray("landmarks").getJSONObject(x).getDouble("y"));
 					}
-					
 	        	} 
 	        	catch (JSONException e) 
 	        	{
