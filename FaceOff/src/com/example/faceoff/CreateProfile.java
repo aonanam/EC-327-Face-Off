@@ -32,6 +32,7 @@ public class CreateProfile extends Activity
 		
 		name_entry = (EditText)findViewById(R.id.name_entry);
 		final String name = name_entry.getText().toString();	//Name stored in name_entry
+		//ProfileCreationLogic.CreateProfile(name);
 		
 		//Locate buttons in activity_create_profile.xml
 		baseface_button = (Button) findViewById(R.id.baseface_button);
@@ -42,8 +43,9 @@ public class CreateProfile extends Activity
 			public void onClick(View arg0) 
 			{
 				//Creates a profile with the name entered
-				ProfileCreationLogic.CreateProfile(name);
 				System.out.println(ProfileCreationLogic.Profiles.size());
+				
+				System.out.println("Name: " + name);
 				
 				for(int x = 0; x < ProfileCreationLogic.Profiles.size(); x++)
 				{
@@ -65,13 +67,4 @@ public class CreateProfile extends Activity
 		getMenuInflater().inflate(R.menu.create_profile, menu);
 		return true;
 	}
-	
-/*
- * The DoThings() function is where the user-desired name and the bitmap of the picture should go.
- * Once the name and BitMap of the image is received, invoke ProfileCreationLogic.CreateProfile(name,picture)
- * to create a profile
- *
- * 
- * */
-
 }
