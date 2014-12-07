@@ -28,4 +28,13 @@
         android:text="Player 2 Offense"
         android:onClick="activity_player2_offense" />
 
+    <ImageView
+        android:id="@+id/jpgview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/P2_Offense_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="99dp"
+        android:src="@android:drawable/ic_menu_gallery" />
+
 </RelativeLayout>
