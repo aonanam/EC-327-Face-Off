@@ -26,6 +26,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="136dp"
         android:text="Player 1 Defense"
-        android:onClick="activity_player_1_defense" />
+        android:onClick="activity_player1_defense" />
+
+    <ImageView
+        android:id="@+id/jpgview_p2_offense"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="59dp"
+        android:src="@android:drawable/ic_menu_gallery" />
 
 </RelativeLayout>
