@@ -34,6 +34,7 @@ public class CreateProfile extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_create_profile);
 		
+		//font for create profile text
 		Typeface tf = Typeface.createFromAsset(getAssets(),
                "fonts/CaviarDreams.ttf");
         TextView tv = (TextView)findViewById(R.id.create_profile);
