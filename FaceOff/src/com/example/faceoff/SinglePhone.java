@@ -3,6 +3,7 @@ package com.example.faceoff;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -10,15 +11,29 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 public class SinglePhone extends Activity {
-	Button P2_button;
+	ImageButton start_face_off_button;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_single_phone);
+		
+		//Changes font for p1 text
+		Typeface tf = Typeface.createFromAsset(getAssets(),
+               "fonts/CaviarDreams.ttf");
+        TextView tv = (TextView) findViewById(R.id.p1);
+        tv.setTypeface(tf);
+        
+        //Changes font for p2 text
+        Typeface tf2 = Typeface.createFromAsset(getAssets(),
+               "fonts/CaviarDreams.ttf");
+        TextView tv2 = (TextView) findViewById(R.id.p2);
+        tv2.setTypeface(tf2);
 		
 		//Drop down menu of profiles. Uses profileArray for the names
 		Spinner profiles_spinner = (Spinner) findViewById(R.id.profiles_spinner_p1);
@@ -56,14 +71,14 @@ public class SinglePhone extends Activity {
 		});
 		
 		//Locate buttons in activity_single_phone.xml
-		P2_button = (Button) findViewById(R.id.P2_button);
+		start_face_off_button = (ImageButton) findViewById(R.id.start_face_off);
 		
 		//Capture button clicks
-		P2_button.setOnClickListener(new OnClickListener() {
+		start_face_off_button.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
 				
-				//Start Player2 class
-				Intent intent1 = new Intent(SinglePhone.this, Player2.class);
+				//Start player 1 offense class
+				Intent intent1 = new Intent(SinglePhone.this, Player1Offense.class);
 				startActivity(intent1);
 			}
 		});
