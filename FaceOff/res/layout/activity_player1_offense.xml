@@ -23,11 +23,11 @@
         android:id="@+id/P2_Defense_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/textView1"
         android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
-        android:text="Player 2 Defense"
-        android:onClick="activity_player2_defense" />
+        android:layout_marginTop="32dp"
+        android:onClick="activity_player2_defense"
+        android:text="Player 2 Defense" />
 
     <ImageView
         android:id="@+id/jpgview_p1_offense"
@@ -35,7 +35,6 @@
         android:layout_height="300dp"
         android:layout_below="@+id/P2_Defense_button"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="59dp"
         android:src="@android:drawable/ic_menu_gallery" />
 
 </RelativeLayout>

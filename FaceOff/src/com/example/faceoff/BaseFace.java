@@ -27,16 +27,6 @@ public class BaseFace extends Activity
 	/** Create a file Uri for saving an image */
 	private static Uri getOutputMediaFileUri(int type)
 	{
-		try
-		{
-			System.out.println(Uri.fromFile(getOutputMediaFile(type)));
-		}
-		catch(RuntimeException e)
-		{
-			System.out.println("Hit 1");
-			e.printStackTrace();
-		}
-
 	      return Uri.fromFile(getOutputMediaFile(type));
 	}
 	/** Create a File for saving an image */
@@ -82,12 +72,6 @@ public class BaseFace extends Activity
 	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_base_face);
-		
-		/*final Uri data = (Uri) getLastNonConfigurationInstance();
-  		if(data == null)
-  		{
-  			data = collectMyResourceData ();
-  		}*/
 		
 		// create Intent to take a picture and return control to the calling application
 	    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -143,8 +127,6 @@ public class BaseFace extends Activity
 		{
 			PictureInterpretation.Decode(fileUri,ProfileCreationLogic.Profiles.get(ProfileCreationLogic.Profiles.size()-1),"base");
 			ProfileCreationLogic.Profiles.get(ProfileCreationLogic.Profiles.size()-1).setPath(fileUri.getPath());
-			Intent intent2 = new Intent(BaseFace.this, MainActivity.class);
-			startActivity(intent2);
 		}
 	}
 	

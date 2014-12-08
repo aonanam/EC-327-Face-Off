@@ -23,16 +23,12 @@ public class PictureInterpretation
 		
 		class CallMashapeAsync extends AsyncTask<String, Integer, HttpResponse<JsonNode>> 
 		{	
-			public ServerResponse delegate = null;
-			
 	    	protected HttpResponse<JsonNode> doInBackground(String... msg) 
 	    	{	
 	    		HttpResponse<JsonNode> request = null;
 	    		
 	    		if(picture != null)
 	    		{
-	    			System.out.println("Picture is real! " + picture.getPath());
-	    			
 	    			try 
 					{
 						request = Unirest.post("https://apicloud-facemark.p.mashape.com/process-file.json")
@@ -55,8 +51,8 @@ public class PictureInterpretation
 	    	protected void onPostExecute(HttpResponse<JsonNode> response) 
 	    	{
 	    		JSONArray Array = response.getBody().getArray();
-	    		String answer = Array.toString();
-	        	System.out.println(answer);
+	    		/*String answer = Array.toString();
+	        	System.out.println(answer);*/
 	        	System.out.println(response.getHeaders());
 	        	
 				try
@@ -77,12 +73,12 @@ public class PictureInterpretation
 					if(code == "base")
 					{
 						profile.addBaseFace(interpretedVals);
-						System.out.println(profile.baseFace);
+						//System.out.println(profile.baseFace);
 					}
 					else if(code == "face")
 					{
 						profile.setNewFace(interpretedVals);
-						System.out.println(profile.newFace);
+						//System.out.println(profile.newFace);
 					}
 				}
 				catch(Exception e)
@@ -95,8 +91,6 @@ public class PictureInterpretation
 		}
 		
 		new CallMashapeAsync().execute();
-		
-		System.out.println("InterpretedVals Return Length: " + interpretedVals.size());
 		
 		return interpretedVals;
 	}
