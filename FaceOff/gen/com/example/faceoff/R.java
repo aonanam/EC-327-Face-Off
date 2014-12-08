@@ -8,13 +8,15 @@
 package com.example.faceoff;
 
 public final class R {
-    public static final class array {
-        public static final int profiles_array=0x7f060000;
-    }
     public static final class attr {
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
+
+         Example customization of dimensions originally defined in res/values/dimens.xml
+         (such as screen margins) for screens with more than 820dp of available width. This
+         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
+    
 
          Customize dimensions originally defined in res/values/dimens.xml (such as
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
@@ -22,58 +24,93 @@ public final class R {
          */
         public static final int activity_horizontal_margin=0x7f040000;
         public static final int activity_vertical_margin=0x7f040001;
+        public static final int face_off_width=0x7f040002;
+        public static final int fifty_dp=0x7f040003;
     }
     public static final class drawable {
-        public static final int ic_launcher=0x7f020000;
+        public static final int background=0x7f020000;
+        public static final int cage=0x7f020001;
+        public static final int create_base_face_button=0x7f020002;
+        public static final int create_base_face_button_pressed=0x7f020003;
+        public static final int create_base_face_button_unpressed=0x7f020004;
+        public static final int create_profile_button=0x7f020005;
+        public static final int create_profile_button_pressed=0x7f020006;
+        public static final int create_profile_button_unpressed=0x7f020007;
+        public static final int face_off_logo=0x7f020008;
+        public static final int ic_launcher=0x7f020009;
+        public static final int profile_creation_background=0x7f02000a;
+        public static final int prototype_logo=0x7f02000b;
+        public static final int start_game_button=0x7f02000c;
+        public static final int start_game_button_pressed=0x7f02000d;
+        public static final int start_game_button_unpressed=0x7f02000e;
+        public static final int tutorial_button=0x7f02000f;
+        public static final int tutorial_button_pressed=0x7f020010;
+        public static final int tutorial_button_unpressed=0x7f020011;
+        public static final int tutorial_screen=0x7f020012;
     }
     public static final class id {
-        public static final int Next_Round_button=0x7f090009;
-        public static final int P1_Defense_button=0x7f09000f;
-        public static final int P1_Offense_button=0x7f090012;
-        public static final int P2_Defense_button=0x7f09000b;
-        public static final int P2_Offense_button=0x7f09000e;
-        public static final int P2_button=0x7f090010;
-        public static final int Profile_button=0x7f090008;
-        public static final int Quit_button=0x7f09000a;
-        public static final int action_settings=0x7f090013;
-        public static final int another_profile_button=0x7f090002;
-        public static final int baseface_button=0x7f090004;
-        public static final int camera_button=0x7f090001;
-        public static final int main_menu_button=0x7f090003;
-        public static final int name_entry=0x7f090005;
-        public static final int profiles_spinner_p1=0x7f090011;
-        public static final int profiles_spinner_p2=0x7f09000d;
-        public static final int single_phone_button=0x7f090007;
-        public static final int start_button=0x7f09000c;
-        public static final int textView1=0x7f090000;
-        public static final int tut_button=0x7f090006;
+        public static final int Next_Round_button=0x7f08000b;
+        public static final int P1_Defense_button=0x7f08001a;
+        public static final int P1_Offense_button=0x7f08001d;
+        public static final int P2_Defense_button=0x7f080014;
+        public static final int P2_Offense_button=0x7f080007;
+        public static final int P2_button=0x7f08001c;
+        public static final int Profile_button=0x7f08000f;
+        public static final int Quit_button=0x7f08000a;
+        public static final int action_settings=0x7f08001e;
+        public static final int another_profile_button=0x7f080002;
+        public static final int baseface_button=0x7f080005;
+        public static final int camera_button=0x7f080001;
+        public static final int compare2_button=0x7f080011;
+        public static final int compare_button=0x7f080019;
+        public static final int create_profile=0x7f080004;
+        public static final int face_off_name=0x7f080010;
+        public static final int imageView1=0x7f080008;
+        public static final int imageView2=0x7f080009;
+        public static final int jpgview=0x7f080013;
+        public static final int jpgview_p1_defense=0x7f080012;
+        public static final int jpgview_p1_offense=0x7f080015;
+        public static final int jpgview_p2_defense=0x7f080018;
+        public static final int jpgview_p2_offense=0x7f08001b;
+        public static final int logo=0x7f08000c;
+        public static final int main_menu_button=0x7f080003;
+        public static final int name_entry=0x7f080006;
+        public static final int profiles_spinner_p1=0x7f080017;
+        public static final int single_phone_button=0x7f08000e;
+        public static final int start_button=0x7f080016;
+        public static final int textView1=0x7f080000;
+        public static final int tut_button=0x7f08000d;
     }
     public static final class layout {
         public static final int activity_base_face=0x7f030000;
         public static final int activity_create_profile=0x7f030001;
-        public static final int activity_main=0x7f030002;
-        public static final int activity_player1_defense=0x7f030003;
-        public static final int activity_player1_offense=0x7f030004;
-        public static final int activity_player2=0x7f030005;
-        public static final int activity_player2_defense=0x7f030006;
-        public static final int activity_player2_offense=0x7f030007;
-        public static final int activity_single_phone=0x7f030008;
-        public static final int activity_start_face_off=0x7f030009;
-        public static final int activity_tutorial=0x7f03000a;
+        public static final int activity_face_compare=0x7f030002;
+        public static final int activity_face_compare2=0x7f030003;
+        public static final int activity_main=0x7f030004;
+        public static final int activity_player1_defense=0x7f030005;
+        public static final int activity_player1_offense=0x7f030006;
+        public static final int activity_player2=0x7f030007;
+        public static final int activity_player2_defense=0x7f030008;
+        public static final int activity_player2_offense=0x7f030009;
+        public static final int activity_single_phone=0x7f03000a;
+        public static final int activity_start_face_off=0x7f03000b;
+        public static final int activity_tutorial=0x7f03000c;
     }
     public static final class menu {
-        public static final int base_face=0x7f080000;
-        public static final int base_face_tutorial=0x7f080001;
-        public static final int create_profile=0x7f080002;
-        public static final int main=0x7f080003;
-        public static final int player1_defense=0x7f080004;
-        public static final int player1_offense=0x7f080005;
-        public static final int player2=0x7f080006;
-        public static final int player2_defense=0x7f080007;
-        public static final int player2_offense=0x7f080008;
-        public static final int single_phone=0x7f080009;
-        public static final int start_face_off=0x7f08000a;
-        public static final int tutorial=0x7f08000b;
+        public static final int base_face=0x7f070000;
+        public static final int base_face_tutorial=0x7f070001;
+        public static final int create_profile=0x7f070002;
+        public static final int face_compare=0x7f070003;
+        public static final int face_compare2=0x7f070004;
+        public static final int main=0x7f070005;
+        public static final int player1_defense=0x7f070006;
+        public static final int player1_offense=0x7f070007;
+        public static final int player2=0x7f070008;
+        public static final int player2_defense=0x7f070009;
+        public static final int player2_offense=0x7f07000a;
+        public static final int single_phone=0x7f07000b;
+        public static final int start_face_off=0x7f07000c;
+        public static final int tutorial=0x7f07000d;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
@@ -83,6 +120,8 @@ public final class R {
         public static final int title_activity_base_face=0x7f050007;
         public static final int title_activity_base_face_tutorial=0x7f050008;
         public static final int title_activity_create_profile=0x7f050005;
+        public static final int title_activity_face_compare=0x7f05000f;
+        public static final int title_activity_face_compare2=0x7f050010;
         public static final int title_activity_player1_defense=0x7f05000d;
         public static final int title_activity_player1_offense=0x7f05000a;
         public static final int title_activity_player2=0x7f050006;
@@ -114,11 +153,11 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f060000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
-        public static final int NoActionBar=0x7f070002;
+        public static final int AppTheme=0x7f060001;
+        public static final int NoActionBar=0x7f060002;
     }
 }

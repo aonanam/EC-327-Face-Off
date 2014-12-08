@@ -22,44 +22,75 @@ public class ComparisonLogic
 	 * As of now, the only centering algorithms use the pupils as reference. If we want to streamline the code in the future,
 	 * we have access to many points on the nose as well as the outline of the face (ear to ear and along the jaw).
 	 * */
-	public ArrayList<Double>  VsBaseFace(profile p, ArrayList<Double> newFace)
+	public static ArrayList<Double>  vsBaseFace(profile p, ArrayList<Double> newFace)
 	{
-		//31 - Right Pupil, 36 Left Pupil, DON'T FORGET THAT INDICIES START AT 0, NOT 1
+		//31 (30) - Right Pupil, 36 (35) Left Pupil, DON'T FORGET THAT INDICIES START AT 0, NOT 1
 		
 		ArrayList<Double> diffFromBase = new ArrayList<Double>();
+		ArrayList<Double> shiftedBase = new ArrayList<Double>();
 		
-		//Gets the average change between the two pupils of the two pictures to scale the differences
-		double centerX = ((p.baseFace.get(30) - newFace.get(30)) + (p.baseFace.get(35) - newFace.get(35)))/2;
-		double centerY = ((p.baseFace.get(66) - newFace.get(66)) + (p.baseFace.get(103) - newFace.get(103)))/2;
+		//Gets the center of the baseface eye-line to re-center the baseFace to a theoretical (0,0)
+		double baseCenterX = ((p.baseFace.get(30) + p.baseFace.get(35))/2);
+		double baseCenterY = ((p.baseFace.get(98) + p.baseFace.get(103))/2);
+		
+		for(int x = 0; x < p.baseFace.size(); x++) //adjusting all baseface points to new origin
+		{
+			if(x < 68)
+			{
+				shiftedBase.add(p.baseFace.get(x)- baseCenterX);
+			}
+			else
+			{
+				shiftedBase.add(p.baseFace.get(x)- baseCenterY);
+			}
+		}
+		
+		//Gets the center of the new face eye-line to re-center the new face to a theoretical (0,0)
+		double faceCenterX = ((newFace.get(30) + newFace.get(35))/2);
+		double faceCenterY = ((newFace.get(98) + newFace.get(103))/2);
+		
+		for(int x = 0; x < newFace.size(); x++) //adjusting all newface points to new origin
+		{
+			if(x < 68)
+			{
+				newFace.set(x,newFace.get(x) - faceCenterX);
+			}
+			else
+			{
+				newFace.set(x,newFace.get(x) - faceCenterY);
+			}
+		}
+		
+		//Calculates the distance scaling 
+		double scaleX = (newFace.get(30))/(shiftedBase.get(30));
+		//double scaleY = (faceCenterY+newFace.get(98))/(baseCenterY+p.baseFace.get(98));
+		
+		for(int x = 0; x < newFace.size(); x++)
+		{
+				newFace.set(x,newFace.get(x)*scaleX);
+		}
 		
 		/*Loops through the ArrayList of points, formatted as all x values then y values (0-67 x, 68 - 135 y) and compares the differences
 		 * between the two points in question. The baseface coordinates are centered to the newface by calculating the differences in 
 		 * the location of pupils as done above. The loop appends the differences into an ArrayList called diffFromBase and returns it.
 		 * */
-		for(int x = 15; x < p.baseFace.size(); x++)
+		
+		for(int x = 0; x < p.baseFace.size(); x++)
 		{
-			if(x <= 68)
-			{
-				diffFromBase.add(p.baseFace.get(x)+centerX - newFace.get(x));
-			}
-			else
-			{
-				diffFromBase.add(p.baseFace.get(x)+centerY - newFace.get(x));
-			}
+			diffFromBase.add(newFace.get(x) - shiftedBase.get(x));
 		}
+		System.out.println("Scale(x): " + scaleX);
+		System.out.println(diffFromBase);
 		
 		return diffFromBase;
 	}
 
-	public double FaceVsFace(ArrayList<Double> faceOne, ArrayList<Double> faceTwo)
+	public static double FaceVsFace(ArrayList<Double> faceOne, ArrayList<Double> faceTwo)
 	{
 		double points = 0;
-		ArrayList<Double> comparedPoints = new ArrayList<Double>();;
 			
 		/*Calculates the centering distance needed to transpose the pupils of face two onto face one to accurate facial feature change 
 		 * detection. */
-		double centerX = ((faceOne.get(30) - faceTwo.get(30)) + (faceOne.get(35) - faceTwo.get(35)))/2;
-		double centerY = ((faceOne.get(66) - faceTwo.get(66)) + (faceOne.get(103) - faceTwo.get(103)))/2;
 			
 		/*
 		 * This loop adds the differences of differences for both faces and appends them to a list
@@ -75,132 +106,19 @@ public class ComparisonLogic
 		
 		/*The following are the X values of landmark points being compared. If the are in the general direction of the moved point, the user will
 		 * get points for it :)*/
-		for(int x = 14; x <= 19; x++)
+		
+		for(int x = 0; x < faceOne.size(); x++)
 		{
 			if(faceOne.get(x) > 0 && faceTwo.get(x) > 0)
 			{
-				points += 1/68;
+				++points;
 			}
 			else if(faceOne.get(x) < 0 && faceTwo.get(x) < 0)
 			{
-				points+= 1/68;
+				++points;
 			}
 		}
 		
-		for(int x = 20; x <= 25; x++)
-		{
-			if(faceOne.get(x) > 0 && faceTwo.get(x) > 0)
-			{
-				points += 1/68;
-			}
-			else if(faceOne.get(x) < 0 && faceTwo.get(x) < 0)
-			{
-				points+= 1/68;
-			}
-		}
-		
-		for(int x = 26; x <= 29; x++)
-		{
-			if(faceOne.get(x) > 0 && faceTwo.get(x) > 0)
-			{
-				points += 1/68;
-			}
-			else if(faceOne.get(x) < 0 && faceTwo.get(x) < 0)
-			{
-				points+= 1/68;
-			}
-		}
-		
-		for(int x = 31; x <= 34; x++)
-		{
-			if(faceOne.get(x) > 0 && faceTwo.get(x) > 0)
-			{
-				points += 1/68;
-			}
-			else if(faceOne.get(x) < 0 && faceTwo.get(x) < 0)
-			{
-				points+= 1/68;
-			}
-		}
-		
-		for(int x = 48; x <= 66; x++)
-		{
-			if(faceOne.get(x) > 0 && faceTwo.get(x) > 0)
-			{
-				points += 1/68;
-			}
-			else if(faceOne.get(x) < 0 && faceTwo.get(x) < 0)
-			{
-				points+= 1/68;
-			}
-		}
-		
-		//@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-		/*The following are the y values of landmark points being compared. If the are in the general direction of the moved point, the user will
-		 * get points for it :)*/
-		
-		int yshift = 67;
-		
-		for(int x = 14; x +yshift <= 19+yshift; x++)
-		{
-			if(faceOne.get(x) > 0 && faceTwo.get(x) > 0)
-			{
-				points += 1/68;
-			}
-			else if(faceOne.get(x) < 0 && faceTwo.get(x) < 0)
-			{
-				points+= 1/68;
-			}
-		}
-		
-		for(int x = 20+yshift; x <= 25+yshift; x++)
-		{
-			if(faceOne.get(x) > 0 && faceTwo.get(x) > 0)
-			{
-				points += 1/68;
-			}
-			else if(faceOne.get(x) < 0 && faceTwo.get(x) < 0)
-			{
-				points+= 1/68;
-			}
-		}
-		
-		for(int x = 26+yshift; x <= 29+yshift; x++)
-		{
-			if(faceOne.get(x) > 0 && faceTwo.get(x) > 0)
-			{
-				points += 1/68;
-			}
-			else if(faceOne.get(x) < 0 && faceTwo.get(x) < 0)
-			{
-				points+= 1/68;
-			}
-		}
-		
-		for(int x = 31+yshift; x <= 34+yshift; x++)
-		{
-			if(faceOne.get(x) > 0 && faceTwo.get(x) > 0)
-			{
-				points += 1/68;
-			}
-			else if(faceOne.get(x) < 0 && faceTwo.get(x) < 0)
-			{
-				points+= 1/68;
-			}
-		}
-		
-		for(int x = 48+yshift; x <= 66+yshift; x++)
-		{
-			if(faceOne.get(x) > 0 && faceTwo.get(x) > 0)
-			{
-				points += 1/68;
-			}
-			else if(faceOne.get(x) < 0 && faceTwo.get(x) < 0)
-			{
-				points+= 1/68;
-			}
-		}
-		
-		return points;
+		return (points/135)*100;
 	}
 }

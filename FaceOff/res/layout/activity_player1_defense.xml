@@ -6,7 +6,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Player1Defense" >
+    tools:context=".Player1Defense" 
+    android:background="@drawable/background">
 
     <TextView
         android:id="@+id/textView1"
@@ -19,23 +20,41 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
-        android:id="@+id/Next_Round_button"
+        android:id="@+id/compare2_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="136dp"
-        android:text="Next Round"
+        android:text="Compare Faces"
         android:onClick="activity_player1_offense" />
 
-    <Button
-        android:id="@+id/Quit_button"
+    <ImageView
+        android:id="@+id/jpgview_p1_defense"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Next_Round_button"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:text="Quit"
-        android:onClick="activity_main" />
+        android:layout_marginBottom="84dp"
+        android:src="@android:drawable/ic_menu_gallery" />
+
+     <ImageView
+         android:id="@+id/jpgview"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/jpgview_p1_defense"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="68dp"
+         android:src="@android:drawable/ic_menu_gallery" />
+
+     <Button
+         android:id="@+id/Next_Round_button"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/textView1"
+         android:layout_centerHorizontal="true"
+         android:layout_marginTop="44dp"
+         android:onClick="activity_player1_offense"
+         android:text="Next Round" />
 
 </RelativeLayout>

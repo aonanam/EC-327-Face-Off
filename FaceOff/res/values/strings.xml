@@ -16,15 +16,7 @@
     <string name="title_activity_player2_offense">Player2Offense</string>
     <string name="title_activity_player1_defense">Player1Defense</string>
     <string name="btnTxt">CreateProfile</string>
-    
-
-    <string-array name="profiles_array">
-        <item>Select Profile</item>
-        <item>Dr. Astronaut, Phd</item>
-        <item>Shane "Shane" McCormack</item>
-        <item>Dougie Densmore</item>
-        <item>Ernst</item>
-    </string-array>
-
+    <string name="title_activity_face_compare">FaceCompare</string>
+    <string name="title_activity_face_compare2">FaceCompare2</string>
 
 </resources>

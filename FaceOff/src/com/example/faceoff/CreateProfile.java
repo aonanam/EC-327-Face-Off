@@ -2,13 +2,17 @@ package com.example.faceoff;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 /* Need to implement a dropdown menu instead of a single button.
  * As of now, the only button on this page is tutorial, I don't think it actually
@@ -19,47 +23,75 @@ import android.widget.EditText;
  * In the future we should have a "Is this ok? Y/N option but for now it is fine.
  * */
 
-public class CreateProfile extends Activity {
-	Button baseface_button;
+public class CreateProfile extends Activity 
+{
+	ImageButton baseface_button;
 	EditText name_entry;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) 
+	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_create_profile);
 		
+		Typeface tf = Typeface.createFromAsset(getAssets(),
+               "fonts/CaviarDreams.ttf");
+        TextView tv = (TextView)findViewById(R.id.create_profile);
+        tv.setTypeface(tf);
+		
 		name_entry = (EditText)findViewById(R.id.name_entry);
-		final String name = name_entry.getText().toString();	//Name stored in name_entry
 		
 		//Locate buttons in activity_create_profile.xml
-		baseface_button = (Button) findViewById(R.id.baseface_button);
+		baseface_button = (ImageButton)findViewById(R.id.baseface_button);
 		
 		//Capture button clicks
-		baseface_button.setOnClickListener(new OnClickListener() {
-			public void onClick(View arg0) {
+		final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		baseface_button.setOnClickListener(new OnClickListener() 
+		{
+			public void onClick(View arg0) 
+			{
 				
-				ProfileCreationLogic.CreateProfile(name);
-				
-		//Start BaseFaceTutorial class
-				Intent intent1 = new Intent(CreateProfile.this, BaseFace.class);
-				startActivity(intent1);
+				//AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+		 
+					// set title
+					alertDialogBuilder.setTitle("Base Face Warning");
+		 
+					// set dialog message
+					alertDialogBuilder
+						.setMessage("If you have a Samsung phone, hold it in landscape now")
+						.setCancelable(false)
+						.setPositiveButton("Continue to camera",new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog,int id) {
+								//Start BaseFace class
+								Intent intent1 = new Intent(CreateProfile.this, BaseFace.class);
+								startActivity(intent1);
+							}
+						  })
+						.setNegativeButton("Fuck Samsung",new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog,int id) {
+								// if this button is clicked, just close
+								// the dialog box and do nothing
+								dialog.cancel();
+							}
+						});
+		 
+						// create alert dialog
+						AlertDialog alertDialog = alertDialogBuilder.create();
+		 
+						// show it
+						alertDialog.show();
+				String name_text = name_entry.getText().toString();	//Name stored in name_text
+				MainActivity.profileArray.add(name_text);	//Name added to profileArray ArrayList
+				ProfileCreationLogic.CreateProfile(name_text); //Creates a profile with the name entered
 			}
 		});
 	}
 
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
+	public boolean onCreateOptionsMenu(Menu menu) 
+	{
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.create_profile, menu);
 		return true;
 	}
-	
-/*
- * The DoThings() function is where the user-desired name and the bitmap of the picture should go.
- * Once the name and BitMap of the image is received, invoke ProfileCreationLogic.CreateProfile(name,picture)
- * to create a profile
- *
- * 
- * */
-
 }

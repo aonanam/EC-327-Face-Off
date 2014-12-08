@@ -6,7 +6,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".Player2Offense" >
+    tools:context=".Player2Offense" 
+    android:background="@drawable/background">
 
     <TextView
         android:id="@+id/textView1"
@@ -26,6 +27,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="136dp"
         android:text="Player 1 Defense"
-        android:onClick="activity_player_1_defense" />
+        android:onClick="activity_player1_defense" />
+
+    <ImageView
+        android:id="@+id/jpgview_p2_offense"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="59dp"
+        android:src="@android:drawable/ic_menu_gallery" />
 
 </RelativeLayout>

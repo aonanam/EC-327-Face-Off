@@ -1,28 +1,50 @@
 package com.example.faceoff;
 
-import android.os.Bundle;
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
-	Button tut_button;
-	Button single_phone_button;
-	Button Profile_button;
+	ImageButton tut_button;
+	ImageButton single_phone_button;
+	ImageButton Profile_button;
+	//ArrayList (like list from STL in c++) holds names of all profiles
+	public static ArrayList<String> profileArray = new ArrayList<String>();
+	public static ArrayList<profile> activePlayers = new ArrayList<profile>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//Get the view from activity_main.xml
-		setContentView(R.layout.activity_main);
-	
+
+		 //Get the view from activity_main.xml
+  		setContentView(R.layout.activity_main);
+  		
+  		ImageView image = (ImageView) findViewById(R.id.logo);
+  		
+  		//Changes font for face_off_name
+		Typeface tf = Typeface.createFromAsset(getAssets(),
+               "fonts/CaviarDreams.ttf");
+        TextView tv = (TextView) findViewById(R.id.face_off_name);
+        tv.setTypeface(tf);
+        
+		//Adds "Choose Profile" as first string in profileArray when app first runs
+		if (profileArray.size() == 0)
+		{
+			profileArray.add("Choose Profile");
+		}
 		//Locate buttons in activity_main.xml
-		tut_button = (Button) findViewById(R.id.tut_button);
-		single_phone_button = (Button) findViewById(R.id.single_phone_button);
-		Profile_button = (Button) findViewById(R.id.Profile_button);
+		tut_button = (ImageButton) findViewById(R.id.tut_button);
+		single_phone_button = (ImageButton) findViewById(R.id.single_phone_button);
+		Profile_button = (ImageButton) findViewById(R.id.Profile_button);
 	
 		//Capture button clicks
 		tut_button.setOnClickListener(new OnClickListener() {
@@ -36,10 +58,10 @@ public class MainActivity extends Activity {
 	
 		single_phone_button.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
-			
-				//Start SinglePhone class
-				Intent intent2 = new Intent(MainActivity.this, SinglePhone.class);
-				startActivity(intent2);
+				
+					//Start SinglePhone class
+					Intent intent2 = new Intent(MainActivity.this, SinglePhone.class);
+					startActivity(intent2);
 			}
 		});
 	

@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.faceoff.FaceCompare2" >
+
+    <Button
+        android:id="@+id/Quit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/imageView1"
+        android:text="Quit"
+        android:onClick="activity_player2_offense" />
+
+    <Button
+        android:id="@+id/Next_Round_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/Quit_button"
+        android:layout_toLeftOf="@+id/imageView2"
+        android:text="Next Round" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_alignBottom="@+id/Next_Round_button"
+        android:layout_alignLeft="@+id/imageView1"
+        android:layout_marginBottom="33dp"
+        android:src="@android:drawable/ic_menu_gallery" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:src="@android:drawable/ic_menu_gallery" />
+
+</RelativeLayout>
