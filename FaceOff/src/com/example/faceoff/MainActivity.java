@@ -103,9 +103,6 @@ public class MainActivity extends Activity {
 					Intent intent2 = new Intent(MainActivity.this, SinglePhone.class);
 					startActivity(intent2);
 				}
-					//Start SinglePhone class
-					Intent intent2 = new Intent(MainActivity.this, SinglePhone.class);
-					startActivity(intent2);
 			}
 		});
 	
