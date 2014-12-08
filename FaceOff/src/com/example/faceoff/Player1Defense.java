@@ -101,11 +101,8 @@ public class Player1Defense extends Activity {
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
 		jpgview.setImageBitmap(bm);
 		
-<<<<<<< HEAD
-		System.out.println(MainActivity.activePlayers.get(1).baseFace);
-=======
-		 //System.out.println(MainActivity.activePlayers.get(1).baseFace); @@@@@@@@@@@@@@@@@@@@@@@@
->>>>>>> origin/Dev
+		//System.out.println(MainActivity.activePlayers.get(1).baseFace); @@@@@@@@@@@@@@@@@@@@@@@@
+
 		  
 		 /* double difference = ComparisonLogic.FaceVsFace(MainActivity.activePlayers.get(0).baseFace,MainActivity.activePlayers.get(1).baseFace);
 		  
