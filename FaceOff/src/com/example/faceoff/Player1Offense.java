@@ -1,9 +1,6 @@
 package com.example.faceoff;
 
 import java.io.File;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;

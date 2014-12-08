@@ -1,7 +1,6 @@
 package com.example.faceoff;
 
 import java.io.File;
-
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -18,7 +17,6 @@ import android.widget.ImageView;
 
 public class Player2Defense extends Activity {
 	Button compare_button;
-	ImageView imageView;
 	
 	private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
 	private Uri fileUri;
@@ -64,12 +62,12 @@ public class Player2Defense extends Activity {
 	    }
 	    return mediaFile;
 	}
-	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		//setContentView(R.layout.activity_player2_defense);
+		
 		//create Intent to take a picture and return control to the calling application
 	    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 	    
@@ -82,35 +80,25 @@ public class Player2Defense extends Activity {
 	}
 	
 	@Override
-	public void onResume() {
-		super.onResume();
+	public void onResume(){		//Instead of setting up the layout in the onCreate() part above, setting it up here in onResume() allows for the picture just taken to be shown on this screen
+	    super.onResume();
 	    setContentView(R.layout.activity_player2_defense);
-		
-<<<<<<< HEAD
-		//Displays image of previously taken picture.
-		String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Defense.jpg";
-		ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p2_defense);
-		BitmapFactory.Options options = new BitmapFactory.Options();
-		options.inSampleSize = 2;
-		Bitmap bm = BitmapFactory.decodeFile(path, options);
-		jpgview.setImageBitmap(bm);
-		
-=======
-		//Displays image of previously taken picture. Need to change test.jpg to whatever we call the picture, and increase the size
-		String path = MainActivity.activePlayers.get(0).path;//Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/test.jpg";
-		ImageView jpgview = (ImageView)findViewById(R.id.jpgview);
-		BitmapFactory.Options options = new BitmapFactory.Options();
-		  options.inSampleSize = 2;
-		  Bitmap bm = BitmapFactory.decodeFile(path, options);
-		  jpgview.setImageBitmap(bm);
+	    
+	  //Displays image of previously taken picture.
+	  		String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Defense.jpg";
+	  		ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p2_defense);
+	  		BitmapFactory.Options options = new BitmapFactory.Options();
+	  		options.inSampleSize = 2;
+	  		Bitmap bm = BitmapFactory.decodeFile(path, options);
+	  		jpgview.setImageBitmap(bm);
 		  
-		  double difference = ComparisonLogic.FaceVsFace(MainActivity.activePlayers.get(0).baseFace,MainActivity.activePlayers.get(1).baseFace);
+		  //double difference = ComparisonLogic.FaceVsFace(MainActivity.activePlayers.get(0).baseFace,MainActivity.activePlayers.get(1).baseFace);
 		  
-		  System.out.println(difference);
+		  //System.out.println(difference);
 		  
 		  System.out.println("Players2Defense trololol");
 		  
->>>>>>> origin/Dev
+
 		//Locate buttons in activity_player2_defense.xml
 		compare_button = (Button) findViewById(R.id.compare_button);
 						
