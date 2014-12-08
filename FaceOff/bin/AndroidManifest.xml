@@ -8,10 +8,23 @@
         android:minSdkVersion="16"
         android:targetSdkVersion="21" />
 
+<<<<<<< HEAD
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+=======
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/Dev
+
+>>>>>>> 7c7ff2f134e2ca49ef574b43785ad52966592570
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
