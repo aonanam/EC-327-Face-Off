@@ -18,11 +18,16 @@ public class profile
 		 * */ 
 		ArrayList<Double> baseFace;
 		
+		ArrayList<Double> newFace;
+		
 		//The element of the current profile. assuming many will be stored
 		int profileNum;
 		
-		//The string path to the picture
+		//The string path to the baseFace
 		String path;
+		
+		//The string path to the newly taken picture
+		String newPath;
 		
 		//Constructor for a profile
 		public profile(String name, ArrayList<Double> arrayMap, int index)
@@ -69,5 +74,12 @@ public class profile
 		{
 			this.path = path;
 		}
-		
+		public void setNewFace(ArrayList<Double> arrayMap)
+		{
+			this.newFace = arrayMap;
+		}
+		public void setNewPath(String path)
+		{
+			this.newPath = path;
+		}
 }

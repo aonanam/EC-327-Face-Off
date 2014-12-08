@@ -68,7 +68,8 @@ public class Player2Defense extends Activity {
 	
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) 
+	{
 		super.onCreate(savedInstanceState);
 
 		//create Intent to take a picture and return control to the calling application
@@ -80,6 +81,18 @@ public class Player2Defense extends Activity {
 	    
 	    //start the image capture Intent
 	    startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+	}
+	
+	protected void onActivityResult(int requestCode, int resultCode, Intent data)
+	{
+		if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK)
+		{
+			/*MainActivity.activePlayers.get(1).setNewFace(PictureInterpretation.Decode(fileUri));
+			MainActivity.activePlayers.get(1).setNewPath(fileUri.getPath());*/
+			
+			PictureInterpretation.Decode(fileUri,MainActivity.activePlayers.get(1),"face");
+			MainActivity.activePlayers.get(1).setNewPath(fileUri.getPath());
+		}
 	}
 	
 	@Override
@@ -94,6 +107,7 @@ public class Player2Defense extends Activity {
 		options.inSampleSize = 2;
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
 		jpgview.setImageBitmap(bm);
+<<<<<<< HEAD
 		
 		/*
 		//Displays image of previously taken picture. Need to change test.jpg to whatever we call the picture, and increase the size
@@ -104,6 +118,9 @@ public class Player2Defense extends Activity {
 		  Bitmap bm = BitmapFactory.decodeFile(path, options);
 		  jpgview.setImageBitmap(bm);
 		 */ 
+=======
+		  
+>>>>>>> origin/Dev
 		  System.out.println(MainActivity.activePlayers.get(0).baseFace);
 		  
 		  //ArrayList<Double> difference = ComparisonLogic.VsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(1).baseFace);

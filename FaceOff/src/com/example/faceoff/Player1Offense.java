@@ -81,6 +81,16 @@ public class Player1Offense extends Activity {
 	    //start the image capture Intent
 	    startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
 	}
+	protected void onActivityResult(int requestCode, int resultCode, Intent data)
+	{
+		if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK)
+		{
+			PictureInterpretation.Decode(fileUri,MainActivity.activePlayers.get(0),"face");
+			//ProfileCreationLogic.Profiles.get(ProfileCreationLogic.Profiles.size()-1).setPath(fileUri.getPath());
+			//MainActivity.activePlayers.get(0).setNewFace(PictureInterpretation.Decode(fileUri));
+			MainActivity.activePlayers.get(0).setNewPath(fileUri.getPath());
+		}
+	}
 	
 	@Override
 	public void onResume(){		//Instead of setting up the layout in the onCreate() part above, setting it up here in onResume() allows for the picture just taken to be shown on this screen

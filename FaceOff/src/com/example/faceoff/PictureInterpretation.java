@@ -17,14 +17,16 @@ import org.json.*;
 
 public class PictureInterpretation 
 {
-	public static ArrayList<Double> Decode(final Uri picture)
+	public static ArrayList<Double> Decode(final Uri picture,final profile profile,final String code)
 	{    
 		final ArrayList<Double> interpretedVals = new ArrayList<Double>();
 		
 		class CallMashapeAsync extends AsyncTask<String, Integer, HttpResponse<JsonNode>> 
 		{	
+			public ServerResponse delegate = null;
+			
 	    	protected HttpResponse<JsonNode> doInBackground(String... msg) 
-	    	{
+	    	{	
 	    		HttpResponse<JsonNode> request = null;
 	    		
 	    		if(picture != null)
@@ -57,9 +59,11 @@ public class PictureInterpretation
 	        	System.out.println(answer);
 	        	System.out.println(response.getHeaders());
 	        	
-	        	try 
-	        	{
+				try
+				{
 					int length = Array.getJSONObject(0).getJSONArray("faces").getJSONObject(0).getJSONArray("landmarks").length();
+					
+					System.out.println("JSON Length: " + length);
 					
 					for(int x = 0; x < length; x++)
 					{
@@ -69,15 +73,30 @@ public class PictureInterpretation
 					{
 						interpretedVals.add(Array.getJSONObject(0).getJSONArray("faces").getJSONObject(0).getJSONArray("landmarks").getJSONObject(x).getDouble("y"));
 					}
-	        	} 
-	        	catch (JSONException e) 
-	        	{
+					
+					if(code == "base")
+					{
+						profile.addBaseFace(interpretedVals);
+						System.out.println(profile.baseFace);
+					}
+					else if(code == "face")
+					{
+						profile.setNewFace(interpretedVals);
+						System.out.println(profile.newFace);
+					}
+				}
+				catch(Exception e)
+				{
 					e.printStackTrace();
 				}
+				
+				System.out.println("InterpretedVals Length: " + interpretedVals.size());
 	    	}
 		}
 		
 		new CallMashapeAsync().execute();
+		
+		System.out.println("InterpretedVals Return Length: " + interpretedVals.size());
 		
 		return interpretedVals;
 	}
