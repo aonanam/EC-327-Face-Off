@@ -1,5 +1,7 @@
 package com.example.faceoff;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -24,6 +26,13 @@ public class FaceCompare2 extends Activity {
 		setContentView(R.layout.activity_face_compare2);
 		
 		//Displays the two pictures taken on offense vs defense side by side
+		
+		ArrayList<Double> faceOne = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(0).newFace);
+		ArrayList<Double> faceTwo = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(1),MainActivity.activePlayers.get(1).newFace);
+		
+		double score = ComparisonLogic.FaceVsFace(faceOne,faceTwo);
+		
+		System.out.println("score: " + score);
 		
 				//Displays image taken by player 1 on offense
 				String path1 = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Offense.jpg";

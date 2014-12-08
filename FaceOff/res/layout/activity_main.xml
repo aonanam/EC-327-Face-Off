@@ -23,8 +23,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/single_phone_button"
+        android:layout_centerHorizontal="true"
         android:layout_below="@+id/logo"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="50dp"
         android:background="@android:color/transparent"
         android:onClick="activity_tutorial"
         android:src="@drawable/tutorial_button" />
@@ -35,10 +36,11 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/Profile_button"
         android:layout_below="@+id/tut_button"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
         android:background="@android:color/transparent"
         android:onClick="activity_single_phone"
-        android:src="@drawable/single_player_game_button" />
+        android:src="@drawable/start_game_button" />
 
     <ImageButton
         android:id="@+id/Profile_button"
@@ -50,5 +52,16 @@
         android:background="@android:color/transparent"
         android:onClick="activity_create_profile"
         android:src="@drawable/create_profile_button" />
+
+    <TextView
+        android:id="@+id/face_off_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="60dp"
+        android:text="Face Off"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="50dp" 
+        android:textColor="#ffffff"/>
 
 </RelativeLayout>

@@ -1,6 +1,9 @@
 package com.example.faceoff;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -33,10 +36,10 @@ public class Player2Defense extends Activity {
 		// To be safe, you should check that the SDCard is mounted
 	    // using Environment.getExternalStorageState() before doing this.
 		
-		System.out.println(Environment.getExternalStorageState());
+		//System.out.println(Environment.getExternalStorageState());
 		
 		File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "FaceOff");
-		System.out.println(mediaStorageDir.getPath());
+		//System.out.println(mediaStorageDir.getPath());
 		// This location works best if you want the created images to be shared
 	    // between applications and persist after your app has been uninstalled.
 
@@ -50,6 +53,7 @@ public class Player2Defense extends Activity {
 	        }
 	    }
 	    // Create a media file name, names it Player1Offense.jpg
+	    
 	    File mediaFile;
 	    
 	    if (type == MEDIA_TYPE_IMAGE)
@@ -64,7 +68,8 @@ public class Player2Defense extends Activity {
 	}
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) 
+	{
 		super.onCreate(savedInstanceState);
 		//setContentView(R.layout.activity_player2_defense);
 		
@@ -79,24 +84,31 @@ public class Player2Defense extends Activity {
 	    startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
 	}
 	
+	protected void onActivityResult(int requestCode, int resultCode, Intent data)
+	{
+		if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK)
+		{	
+			PictureInterpretation.Decode(fileUri,MainActivity.activePlayers.get(1),"face");
+			MainActivity.activePlayers.get(1).setNewPath(fileUri.getPath());
+		}
+	}
+	
 	@Override
 	public void onResume(){		//Instead of setting up the layout in the onCreate() part above, setting it up here in onResume() allows for the picture just taken to be shown on this screen
 	    super.onResume();
 	    setContentView(R.layout.activity_player2_defense);
-	    
-	  //Displays image of previously taken picture.
-	  		String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Defense.jpg";
-	  		ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p2_defense);
-	  		BitmapFactory.Options options = new BitmapFactory.Options();
-	  		options.inSampleSize = 2;
-	  		Bitmap bm = BitmapFactory.decodeFile(path, options);
-	  		jpgview.setImageBitmap(bm);
 		  
-		  //double difference = ComparisonLogic.FaceVsFace(MainActivity.activePlayers.get(0).baseFace,MainActivity.activePlayers.get(1).baseFace);
-		  
-		  //System.out.println(difference);
-		  
-		  System.out.println("Players2Defense trololol");
+		 //double difference = ComparisonLogic.FaceVsFace(MainActivity.activePlayers.get(0).baseFace,MainActivity.activePlayers.get(1).baseFace);
+		
+		//Displays image of previously taken picture.
+		String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Defense.jpg";
+		ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p2_defense);
+		BitmapFactory.Options options = new BitmapFactory.Options();
+		options.inSampleSize = 2;
+		Bitmap bm = BitmapFactory.decodeFile(path, options);
+		jpgview.setImageBitmap(bm);
+
+		  //System.out.println(MainActivity.activePlayers.get(0).baseFace); @@@@@@@@@@@@@@@@@@@@@@@
 		  
 
 		//Locate buttons in activity_player2_defense.xml
@@ -109,7 +121,7 @@ public class Player2Defense extends Activity {
 				Intent intent1 = new Intent(Player2Defense.this, FaceCompare.class);
 				startActivity(intent1);
 			}
-		});				
+		});		
 	}
 
 	@Override

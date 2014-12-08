@@ -6,12 +6,14 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 	ImageButton tut_button;
@@ -31,11 +33,11 @@ public class MainActivity extends Activity {
   		
   		ImageView image = (ImageView) findViewById(R.id.logo);
   		
-  		//Changes font for all text views on this screen
-		//Typeface tf = Typeface.createFromAsset(getAssets(),
-        //       "fonts/CaviarDreams.ttf");
-        // TextView tv = (TextView) findViewById(R.id.textView1);
-        //tv.setTypeface(tf);
+  		//Changes font for face_off_name
+		Typeface tf = Typeface.createFromAsset(getAssets(),
+               "fonts/CaviarDreams.ttf");
+        TextView tv = (TextView) findViewById(R.id.face_off_name);
+        tv.setTypeface(tf);
         
 		//Adds "Choose Profile" as first string in profileArray when app first runs
 		if (profileArray.size() == 0)
@@ -101,6 +103,9 @@ public class MainActivity extends Activity {
 					Intent intent2 = new Intent(MainActivity.this, SinglePhone.class);
 					startActivity(intent2);
 				}
+					//Start SinglePhone class
+					Intent intent2 = new Intent(MainActivity.this, SinglePhone.class);
+					startActivity(intent2);
 			}
 		});
 	

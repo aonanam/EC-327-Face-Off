@@ -8,26 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.faceoff.FaceCompare2" >
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="79dp"
-        android:layout_marginRight="78dp"
-        android:src="@android:drawable/ic_menu_gallery" />
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="41dp"
-        android:layout_marginTop="64dp"
-        android:src="@android:drawable/ic_menu_gallery" />
-
     <Button
         android:id="@+id/Quit_button"
         android:layout_width="wrap_content"
@@ -44,5 +24,23 @@
         android:layout_above="@+id/Quit_button"
         android:layout_toLeftOf="@+id/imageView2"
         android:text="Next Round" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_alignBottom="@+id/Next_Round_button"
+        android:layout_alignLeft="@+id/imageView1"
+        android:layout_marginBottom="33dp"
+        android:src="@android:drawable/ic_menu_gallery" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:src="@android:drawable/ic_menu_gallery" />
 
 </RelativeLayout>

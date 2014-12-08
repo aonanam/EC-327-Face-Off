@@ -33,10 +33,10 @@ public class Player1Offense extends Activity {
 		// To be safe, you should check that the SDCard is mounted
 	    // using Environment.getExternalStorageState() before doing this.
 		
-		System.out.println(Environment.getExternalStorageState());
+		//System.out.println(Environment.getExternalStorageState());
 		
 		File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "FaceOff");
-		System.out.println(mediaStorageDir.getPath());
+		//System.out.println(mediaStorageDir.getPath());
 		// This location works best if you want the created images to be shared
 	    // between applications and persist after your app has been uninstalled.
 
@@ -50,7 +50,8 @@ public class Player1Offense extends Activity {
 	        }
 	    }
 	    // Create a media file name, names it Player1Offense.jpg
-	    File mediaFile;
+	    
+	     File mediaFile;
 	    
 	    if (type == MEDIA_TYPE_IMAGE)
 	    {
@@ -78,6 +79,16 @@ public class Player1Offense extends Activity {
 	    //start the image capture Intent
 	    startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
 	}
+	protected void onActivityResult(int requestCode, int resultCode, Intent data)
+	{
+		if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK)
+		{
+			PictureInterpretation.Decode(fileUri,MainActivity.activePlayers.get(0),"face");
+			//ProfileCreationLogic.Profiles.get(ProfileCreationLogic.Profiles.size()-1).setPath(fileUri.getPath());
+			//MainActivity.activePlayers.get(0).setNewFace(PictureInterpretation.Decode(fileUri));
+			MainActivity.activePlayers.get(0).setNewPath(fileUri.getPath());
+		}
+	}
 	
 	@Override
 	public void onResume(){		//Instead of setting up the layout in the onCreate() part above, setting it up here in onResume() allows for the picture just taken to be shown on this screen
@@ -103,8 +114,6 @@ public class Player1Offense extends Activity {
 	  				startActivity(intent1);
 	  			}
 	  		});		
-	    
-
 	}
 
 	@Override

@@ -33,10 +33,10 @@ public class Player1Defense extends Activity {
 		// To be safe, you should check that the SDCard is mounted
 	    // using Environment.getExternalStorageState() before doing this.
 		
-		System.out.println(Environment.getExternalStorageState());
+		//System.out.println(Environment.getExternalStorageState());
 		
 		File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "FaceOff");
-		System.out.println(mediaStorageDir.getPath());
+		//System.out.println(mediaStorageDir.getPath());
 		// This location works best if you want the created images to be shared
 	    // between applications and persist after your app has been uninstalled.
 
@@ -67,7 +67,6 @@ public class Player1Defense extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_player1_defense);
-		
 
 		//create Intent to take a picture and return control to the calling application
 	    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
@@ -79,6 +78,16 @@ public class Player1Defense extends Activity {
 	    //start the image capture Intent
 	    startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
 	}
+	
+	protected void onActivityResult(int requestCode, int resultCode, Intent data)
+	{
+		if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK)
+		{
+			PictureInterpretation.Decode(fileUri,MainActivity.activePlayers.get(0),"face");
+			MainActivity.activePlayers.get(0).setNewPath(fileUri.getPath());
+		}
+	}
+	
 	@Override
 	public void onResume() {
 		super.onResume();
@@ -92,6 +101,7 @@ public class Player1Defense extends Activity {
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
 		jpgview.setImageBitmap(bm);
 		
+
 		/*
 		String path = MainActivity.activePlayers.get(1).path;//Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/test.jpg";
 		ImageView jpgview = (ImageView)findViewById(R.id.jpgview);
@@ -103,11 +113,15 @@ public class Player1Defense extends Activity {
 		
 		  
 		  //double difference = ComparisonLogic.FaceVsFace(MainActivity.activePlayers.get(0).baseFace,MainActivity.activePlayers.get(1).baseFace);
+
+		 //System.out.println(MainActivity.activePlayers.get(1).baseFace); @@@@@@@@@@@@@@@@@@@@@@@@
+		  
+		 /* double difference = ComparisonLogic.FaceVsFace(MainActivity.activePlayers.get(0).baseFace,MainActivity.activePlayers.get(1).baseFace);
+
 		  
 		  //System.out.println(difference);
 		  
-		  System.out.println("Players1Defense trololol");
-		  
+		  System.out.println("Players1Defense trololol");*/
 
 		//Locate buttons in activity_player1_defense.xml
 		compare2_button = (Button) findViewById(R.id.compare2_button);
