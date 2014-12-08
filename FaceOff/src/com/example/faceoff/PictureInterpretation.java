@@ -3,6 +3,8 @@ package com.example.faceoff;
 import java.io.File;
 import java.util.ArrayList;
 
+import android.app.ListActivity;
+import android.app.ProgressDialog;
 import android.net.Uri;
 import android.os.AsyncTask;
 
@@ -20,7 +22,7 @@ public class PictureInterpretation
 		final ArrayList<Double> interpretedVals = new ArrayList<Double>();
 		
 		class CallMashapeAsync extends AsyncTask<String, Integer, HttpResponse<JsonNode>> 
-		{				
+		{	
 	    	protected HttpResponse<JsonNode> doInBackground(String... msg) 
 	    	{
 	    		HttpResponse<JsonNode> request = null;
