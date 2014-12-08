@@ -108,6 +108,13 @@ public class Player2Defense extends Activity {
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
 		jpgview.setImageBitmap(bm);
 
+<<<<<<< HEAD
+=======
+		  //System.out.println(MainActivity.activePlayers.get(0).baseFace); @@@@@@@@@@@@@@@@@@@@@@@
+
+		  
+
+>>>>>>> origin/Dev
 		//Locate buttons in activity_player2_defense.xml
 		compare_button = (Button) findViewById(R.id.compare_button);
 						

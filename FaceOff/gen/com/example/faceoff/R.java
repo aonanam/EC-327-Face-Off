@@ -40,20 +40,25 @@ public final class R {
         public static final int create_profile_button_pressed=0x7f020009;
         public static final int create_profile_button_unpressed=0x7f02000a;
         public static final int face_off_logo=0x7f02000b;
-        public static final int ic_launcher=0x7f02000c;
-        public static final int profile_creation_background=0x7f02000d;
-        public static final int prototype_logo=0x7f02000e;
-        public static final int start_game_button=0x7f02000f;
-        public static final int start_game_button_pressed=0x7f020010;
-        public static final int start_game_button_unpressed=0x7f020011;
-        public static final int tutorial_button=0x7f020012;
-        public static final int tutorial_button_pressed=0x7f020013;
-        public static final int tutorial_button_unpressed=0x7f020014;
-        public static final int tutorial_screen=0x7f020015;
+        public static final int face_off_start_button=0x7f02000c;
+        public static final int face_off_start_button_pressed=0x7f02000d;
+        public static final int face_off_start_button_unpressed=0x7f02000e;
+        public static final int ic_launcher=0x7f02000f;
+        public static final int profile_creation_background=0x7f020010;
+        public static final int profile_selection_background2=0x7f020011;
+        public static final int prototype_logo=0x7f020012;
+        public static final int start_game_button=0x7f020013;
+        public static final int start_game_button_pressed=0x7f020014;
+        public static final int start_game_button_unpressed=0x7f020015;
+        public static final int tutorial_button=0x7f020016;
+        public static final int tutorial_button_pressed=0x7f020017;
+        public static final int tutorial_button_unpressed=0x7f020018;
+        public static final int tutorial_screen=0x7f020019;
     }
     public static final class id {
         public static final int Next_Round_button=0x7f08000c;
         public static final int P1_Defense_button=0x7f08001b;
+<<<<<<< HEAD
         public static final int P1_Offense_button=0x7f08001e;
         public static final int P2_Defense_button=0x7f080015;
         public static final int P2_Offense_button=0x7f080008;
@@ -61,6 +66,14 @@ public final class R {
         public static final int Profile_button=0x7f080010;
         public static final int Quit_button=0x7f08000b;
         public static final int action_settings=0x7f08001f;
+=======
+        public static final int P1_Offense_button=0x7f080020;
+        public static final int P2_Defense_button=0x7f080015;
+        public static final int P2_Offense_button=0x7f080008;
+        public static final int Profile_button=0x7f080010;
+        public static final int Quit_button=0x7f08000b;
+        public static final int action_settings=0x7f080021;
+>>>>>>> origin/Dev
         public static final int another_profile_button=0x7f080002;
         public static final int base_face_help_button=0x7f080007;
         public static final int baseface_button=0x7f080006;
@@ -79,9 +92,12 @@ public final class R {
         public static final int logo=0x7f08000d;
         public static final int main_menu_button=0x7f080003;
         public static final int name_entry=0x7f080005;
+        public static final int p1=0x7f08001d;
+        public static final int p2=0x7f08001f;
         public static final int profiles_spinner_p1=0x7f080018;
         public static final int single_phone_button=0x7f08000f;
         public static final int start_button=0x7f080017;
+        public static final int start_face_off=0x7f08001e;
         public static final int textView1=0x7f080000;
         public static final int tut_button=0x7f08000e;
     }
