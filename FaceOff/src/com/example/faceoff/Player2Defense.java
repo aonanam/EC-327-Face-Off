@@ -107,21 +107,8 @@ public class Player2Defense extends Activity {
 		options.inSampleSize = 2;
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
 		jpgview.setImageBitmap(bm);
-<<<<<<< HEAD
-		
-		/*
-		//Displays image of previously taken picture. Need to change test.jpg to whatever we call the picture, and increase the size
-		String path = MainActivity.activePlayers.get(0).path;//Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/test.jpg";
-		ImageView jpgview = (ImageView)findViewById(R.id.jpgview);
-		BitmapFactory.Options options = new BitmapFactory.Options();
-		  options.inSampleSize = 2;
-		  Bitmap bm = BitmapFactory.decodeFile(path, options);
-		  jpgview.setImageBitmap(bm);
-		 */ 
-=======
-		  
->>>>>>> origin/Dev
-		  System.out.println(MainActivity.activePlayers.get(0).baseFace);
+
+		  //System.out.println(MainActivity.activePlayers.get(0).baseFace); @@@@@@@@@@@@@@@@@@@@@@@
 		  
 		  //ArrayList<Double> difference = ComparisonLogic.VsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(1).baseFace);
 		  
@@ -130,7 +117,7 @@ public class Player2Defense extends Activity {
 		 // System.out.println("Players2Defense trololol");
 		  
 		//Locate buttons in activity_player2_defense.xml
-		/*compare_button = (Button) findViewById(R.id.compare_button);
+		compare_button = (Button) findViewById(R.id.compare_button);
 						
 		//Capture button clicks
 		compare_button.setOnClickListener(new OnClickListener() {
@@ -139,7 +126,7 @@ public class Player2Defense extends Activity {
 				Intent intent1 = new Intent(Player2Defense.this, FaceCompare.class);
 				startActivity(intent1);
 			}
-		});	*/			
+		});		
 	}
 
 	@Override
