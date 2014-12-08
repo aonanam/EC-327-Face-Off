@@ -2,7 +2,9 @@ package com.example.faceoff;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.view.Menu;
+import android.widget.TextView;
 
 public class Tutorial extends Activity {
 
