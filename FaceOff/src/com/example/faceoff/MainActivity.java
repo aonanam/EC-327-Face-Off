@@ -58,10 +58,10 @@ public class MainActivity extends Activity {
 	
 		single_phone_button.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
-			
-				//Start SinglePhone class
-				Intent intent2 = new Intent(MainActivity.this, SinglePhone.class);
-				startActivity(intent2);
+				
+					//Start SinglePhone class
+					Intent intent2 = new Intent(MainActivity.this, SinglePhone.class);
+					startActivity(intent2);
 			}
 		});
 	

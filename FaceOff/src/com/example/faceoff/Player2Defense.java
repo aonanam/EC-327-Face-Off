@@ -1,7 +1,9 @@
 package com.example.faceoff;
 
 import java.io.File;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -36,10 +38,10 @@ public class Player2Defense extends Activity {
 		// To be safe, you should check that the SDCard is mounted
 	    // using Environment.getExternalStorageState() before doing this.
 		
-		System.out.println(Environment.getExternalStorageState());
+		//System.out.println(Environment.getExternalStorageState());
 		
 		File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "FaceOff");
-		System.out.println(mediaStorageDir.getPath());
+		//System.out.println(mediaStorageDir.getPath());
 		// This location works best if you want the created images to be shared
 	    // between applications and persist after your app has been uninstalled.
 
@@ -53,6 +55,7 @@ public class Player2Defense extends Activity {
 	        }
 	    }
 	    // Create a media file name, names it Player1Offense.jpg
+	    
 	    File mediaFile;
 	    
 	    if (type == MEDIA_TYPE_IMAGE)
@@ -86,10 +89,7 @@ public class Player2Defense extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data)
 	{
 		if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK)
-		{
-			/*MainActivity.activePlayers.get(1).setNewFace(PictureInterpretation.Decode(fileUri));
-			MainActivity.activePlayers.get(1).setNewPath(fileUri.getPath());*/
-			
+		{	
 			PictureInterpretation.Decode(fileUri,MainActivity.activePlayers.get(1),"face");
 			MainActivity.activePlayers.get(1).setNewPath(fileUri.getPath());
 		}
@@ -108,7 +108,11 @@ public class Player2Defense extends Activity {
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
 		jpgview.setImageBitmap(bm);
 
+<<<<<<< HEAD
 		System.out.println(MainActivity.activePlayers.get(0).baseFace);
+=======
+		  //System.out.println(MainActivity.activePlayers.get(0).baseFace); @@@@@@@@@@@@@@@@@@@@@@@
+>>>>>>> origin/Dev
 		  
 		  //ArrayList<Double> difference = ComparisonLogic.VsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(1).baseFace);
 		  
@@ -117,7 +121,7 @@ public class Player2Defense extends Activity {
 		 // System.out.println("Players2Defense trololol");
 		  
 		//Locate buttons in activity_player2_defense.xml
-		/*compare_button = (Button) findViewById(R.id.compare_button);
+		compare_button = (Button) findViewById(R.id.compare_button);
 						
 		//Capture button clicks
 		compare_button.setOnClickListener(new OnClickListener() {
@@ -126,7 +130,7 @@ public class Player2Defense extends Activity {
 				Intent intent1 = new Intent(Player2Defense.this, FaceCompare.class);
 				startActivity(intent1);
 			}
-		});	*/			
+		});		
 	}
 
 	@Override
