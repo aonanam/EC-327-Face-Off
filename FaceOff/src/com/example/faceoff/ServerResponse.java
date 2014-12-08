@@ -16,5 +16,5 @@ import com.mashape.unirest.http.*;
 
 public interface ServerResponse 
 {
-	void finishedProcess(ArrayList<Double> mappedFace);
+	void processFinish(ArrayList<Double> mappedFace);
 }

@@ -68,7 +68,8 @@ public class Player2Defense extends Activity {
 	
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) 
+	{
 		super.onCreate(savedInstanceState);
 
 		//create Intent to take a picture and return control to the calling application
@@ -82,12 +83,23 @@ public class Player2Defense extends Activity {
 	    startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
 	}
 	
+	protected void onActivityResult(int requestCode, int resultCode, Intent data)
+	{
+		if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK)
+		{
+			/*MainActivity.activePlayers.get(1).setNewFace(PictureInterpretation.Decode(fileUri));
+			MainActivity.activePlayers.get(1).setNewPath(fileUri.getPath());*/
+			
+			PictureInterpretation.Decode(fileUri,MainActivity.activePlayers.get(1),"face");
+			MainActivity.activePlayers.get(1).setNewPath(fileUri.getPath());
+		}
+	}
+	
 	@Override
 	public void onResume() {
 		super.onResume();
 	    setContentView(R.layout.activity_player2_defense);
 		
-<<<<<<< HEAD
 		//Displays image of previously taken picture.
 		String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Defense.jpg";
 		ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p2_defense);
@@ -95,15 +107,6 @@ public class Player2Defense extends Activity {
 		options.inSampleSize = 2;
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
 		jpgview.setImageBitmap(bm);
-		
-=======
-		//Displays image of previously taken picture. Need to change test.jpg to whatever we call the picture, and increase the size
-		String path = MainActivity.activePlayers.get(0).path;//Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/test.jpg";
-		ImageView jpgview = (ImageView)findViewById(R.id.jpgview);
-		BitmapFactory.Options options = new BitmapFactory.Options();
-		  options.inSampleSize = 2;
-		  Bitmap bm = BitmapFactory.decodeFile(path, options);
-		  jpgview.setImageBitmap(bm);
 		  
 		  System.out.println(MainActivity.activePlayers.get(0).baseFace);
 		  
@@ -113,7 +116,6 @@ public class Player2Defense extends Activity {
 		  
 		 // System.out.println("Players2Defense trololol");
 		  
->>>>>>> origin/Dev
 		//Locate buttons in activity_player2_defense.xml
 		compare_button = (Button) findViewById(R.id.compare_button);
 						

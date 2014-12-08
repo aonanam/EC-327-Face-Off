@@ -22,7 +22,7 @@ public class ComparisonLogic
 	 * As of now, the only centering algorithms use the pupils as reference. If we want to streamline the code in the future,
 	 * we have access to many points on the nose as well as the outline of the face (ear to ear and along the jaw).
 	 * */
-	public static ArrayList<Double>  VsBaseFace(profile p, ArrayList<Double> newFace)
+	public static ArrayList<Double>  vsBaseFace(profile p, ArrayList<Double> newFace)
 	{
 		//31 - Right Pupil, 36 Left Pupil, DON'T FORGET THAT INDICIES START AT 0, NOT 1
 		
@@ -36,7 +36,7 @@ public class ComparisonLogic
 		 * between the two points in question. The baseface coordinates are centered to the newface by calculating the differences in 
 		 * the location of pupils as done above. The loop appends the differences into an ArrayList called diffFromBase and returns it.
 		 * */
-		/*for(int x = 15; x < p.baseFace.size(); x++)
+		for(int x = 0; x < p.baseFace.size(); x++)
 		{
 			if(x <= 68)
 			{
@@ -46,7 +46,9 @@ public class ComparisonLogic
 			{
 				diffFromBase.add(p.baseFace.get(x)+centerY - newFace.get(x));
 			}
-		}*/
+		}
+		
+		System.out.println("Size of diffFromBase: " + diffFromBase.size());
 		
 		return diffFromBase;
 	}
