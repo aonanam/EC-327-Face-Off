@@ -5,11 +5,14 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 /* Need to implement a dropdown menu instead of a single button.
  * As of now, the only button on this page is tutorial, I don't think it actually
@@ -22,7 +25,7 @@ import android.widget.EditText;
 
 public class CreateProfile extends Activity 
 {
-	Button baseface_button;
+	ImageButton baseface_button;
 	EditText name_entry;
 
 	@Override
@@ -31,10 +34,15 @@ public class CreateProfile extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_create_profile);
 		
+		Typeface tf = Typeface.createFromAsset(getAssets(),
+               "fonts/CaviarDreams.ttf");
+        TextView tv = (TextView)findViewById(R.id.create_profile);
+        tv.setTypeface(tf);
+		
 		name_entry = (EditText)findViewById(R.id.name_entry);
 		
 		//Locate buttons in activity_create_profile.xml
-		baseface_button = (Button) findViewById(R.id.baseface_button);
+		baseface_button = (ImageButton)findViewById(R.id.baseface_button);
 		
 		//Capture button clicks
 		final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);

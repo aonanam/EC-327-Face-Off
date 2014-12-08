@@ -20,7 +20,6 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
-<<<<<<< HEAD
         android:id="@+id/compare2_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,9 +31,6 @@
 
     <ImageView
         android:id="@+id/jpgview_p1_defense"
-=======
-        android:id="@+id/Quit_button"
->>>>>>> origin/Dev
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:layout_alignParentBottom="true"
@@ -46,7 +42,7 @@
          android:id="@+id/jpgview"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
-         android:layout_below="@+id/Quit_button"
+         android:layout_below="@+id/jpgview_p1_defense"
          android:layout_centerHorizontal="true"
          android:layout_marginTop="68dp"
          android:src="@android:drawable/ic_menu_gallery" />
