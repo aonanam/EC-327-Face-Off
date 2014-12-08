@@ -42,6 +42,10 @@
          android:id="@+id/jpgview"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content"
+<<<<<<< HEAD
+         android:layout_below="@+id/jpgview_p1_defense"
+=======
+>>>>>>> origin/Dev
          android:layout_centerHorizontal="true"
          android:layout_marginTop="68dp"
          android:src="@android:drawable/ic_menu_gallery" />

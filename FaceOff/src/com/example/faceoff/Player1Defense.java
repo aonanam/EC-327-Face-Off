@@ -101,6 +101,17 @@ public class Player1Defense extends Activity {
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
 		jpgview.setImageBitmap(bm);
 		
+<<<<<<< HEAD
+		/*
+		String path = MainActivity.activePlayers.get(1).path;//Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/test.jpg";
+		ImageView jpgview = (ImageView)findViewById(R.id.jpgview);
+		BitmapFactory.Options options = new BitmapFactory.Options();
+		  options.inSampleSize = 2;
+		  Bitmap bm = BitmapFactory.decodeFile(path, options);
+		  jpgview.setImageBitmap(bm);
+		*/
+=======
+>>>>>>> origin/Dev
 		  System.out.println(MainActivity.activePlayers.get(1).baseFace);
 		  
 		 /* double difference = ComparisonLogic.FaceVsFace(MainActivity.activePlayers.get(0).baseFace,MainActivity.activePlayers.get(1).baseFace);
