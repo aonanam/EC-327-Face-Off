@@ -126,21 +126,8 @@ public class Player2Defense extends Activity {
 		//ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p2_defense);
 		BitmapFactory.Options options = new BitmapFactory.Options();
 		options.inSampleSize = 2;
-		Bitmap bm = BitmapFactory.decodeFile(path, options);
-<<<<<<< HEAD
-		jpgview.setImageBitmap(bm);
+		Bitmap bm = BitmapFactory.decodeFile(path, options);*/
 
-		  //System.out.println(MainActivity.activePlayers.get(0).baseFace); @@@@@@@@@@@@@@@@@@@@@@@
-
-		  
-		//Locate buttons in activity_player2_defense.xml
-		compare_button = (Button) findViewById(R.id.compare_button);
-=======
-		//jpgview.setImageBitmap(bm);*/
-	    
-	    //Intent intent = new Intent(Player2Defense.this,FaceCompare.class);
-	   // startActivity(intent);
->>>>>>> origin/Dev
 						
 	}
 	

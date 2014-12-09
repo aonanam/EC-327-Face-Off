@@ -53,14 +53,8 @@
         android:id="@+id/profiles_spinner_p2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
         android:layout_above="@+id/p2"
         android:layout_alignLeft="@+id/profiles_spinner_p1"
         android:layout_marginBottom="26dp" />
-=======
-        android:layout_alignLeft="@+id/profiles_spinner_p1"
-        android:layout_below="@+id/start_face_off" 
-    	android:layout_marginTop="69dp" />
->>>>>>> origin/Dev
 
 </RelativeLayout>
