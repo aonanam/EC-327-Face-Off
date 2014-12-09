@@ -23,6 +23,12 @@ public class PictureInterpretation
 		
 		class CallMashapeAsync extends AsyncTask<String, Integer, HttpResponse<JsonNode>> 
 		{	
+			protected void onPreExecute()
+			{
+				super.onPreExecute();
+				//ProgressDialog progress = ProgressDialog.show(FaceCompare.class,"Powered by FaceMark API", "Analyzing...");
+			};
+			
 	    	protected HttpResponse<JsonNode> doInBackground(String... msg) 
 	    	{	
 	    		HttpResponse<JsonNode> request = null;
@@ -51,8 +57,6 @@ public class PictureInterpretation
 	    	protected void onPostExecute(HttpResponse<JsonNode> response) 
 	    	{
 	    		JSONArray Array = response.getBody().getArray();
-	    		/*String answer = Array.toString();
-	        	System.out.println(answer);*/
 	        	System.out.println(response.getHeaders());
 	        	
 				try
@@ -87,6 +91,7 @@ public class PictureInterpretation
 				}
 				
 				System.out.println("InterpretedVals Length: " + interpretedVals.size());
+				// progress.dismiss();
 	    	}
 		}
 		

@@ -69,17 +69,27 @@ public class SinglePhone extends Activity {
 			
 		});
 		
+<<<<<<< HEAD
 		
+=======
+>>>>>>> origin/Dev
 		//Drop down menu of profiles. Uses profileArray for the names
 				Spinner profiles_spinner2 = (Spinner) findViewById(R.id.profiles_spinner_p2);
 				// Create an ArrayAdapter using the string array and a default spinner layout
 				ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, MainActivity.profileArray);
 				// Specify the layout to use when the list of choices appears
+<<<<<<< HEAD
 				adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 				// Apply the adapter to the spinner
 				profiles_spinner.setAdapter(adapter2);
 				
 				
+=======
+				adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+				// Apply the adapter to the spinner
+				profiles_spinner2.setAdapter(adapter2);
+		
+>>>>>>> origin/Dev
 				profiles_spinner2.setOnItemSelectedListener(new OnItemSelectedListener(){
 
 					@Override
@@ -96,7 +106,10 @@ public class SinglePhone extends Activity {
 						}
 						
 					}
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/Dev
 					@Override
 					public void onNothingSelected(AdapterView<?> arg0) {
 						// TODO Auto-generated method stub
@@ -104,7 +117,11 @@ public class SinglePhone extends Activity {
 					}
 					
 				});
+<<<<<<< HEAD
 		
+=======
+				
+>>>>>>> origin/Dev
 		//Locate buttons in activity_single_phone.xml
 		start_face_off_button = (ImageButton) findViewById(R.id.start_face_off);
 		

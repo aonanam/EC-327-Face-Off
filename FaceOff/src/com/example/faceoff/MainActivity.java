@@ -27,7 +27,6 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
 		 //Get the view from activity_main.xml
   		setContentView(R.layout.activity_main);
   		
@@ -64,7 +63,6 @@ public class MainActivity extends Activity {
 	
 		single_phone_button.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
-				
 				if (profileArray.size() < 3)
 				{	 
 					if (profileArray.size() == 1)
@@ -102,8 +100,13 @@ public class MainActivity extends Activity {
 					//Start SinglePhone class
 					Intent intent2 = new Intent(MainActivity.this, SinglePhone.class);
 					startActivity(intent2);
-				}
+<<<<<<< HEAD
+				//}
+=======
+>>>>>>> origin/Dev
+
 			}
+		}
 		});
 	
 		Profile_button.setOnClickListener(new OnClickListener() {
@@ -117,7 +120,6 @@ public class MainActivity extends Activity {
 	
 	}
 	
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

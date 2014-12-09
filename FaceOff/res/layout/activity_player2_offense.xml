@@ -10,32 +10,41 @@
     android:background="@drawable/background">
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/player_2_offense"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="88dp"
         android:text="Player 2 Offense"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <Button
-        android:id="@+id/P1_Defense_button"
+        android:textSize="50dp" />
+    
+    <TextView
+        android:id="@+id/instructions_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="136dp"
-        android:text="Player 1 Defense"
-        android:onClick="activity_player1_defense" />
-
-    <ImageView
-        android:id="@+id/jpgview_p2_offense"
+        android:layout_below="@+id/player_1_offense"
+        android:text="Player 2, submit a face that you think Player 1 won't be able to match"
+        android:textSize="30dp" />
+    
+    <TextView
+        android:id="@+id/instructions_2"
         android:layout_width="wrap_content"
-        android:layout_height="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/instructions_1"
+        android:text="*Note: Taking a picture with your face centered and straight will award you more points"
+        android:textSize="30dp" />
+
+    <ImageButton
+        android:id="@+id/submit_offense_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="59dp"
-        android:src="@android:drawable/ic_menu_gallery" />
+        android:layout_marginBottom="98dp"
+        android:background="@android:color/transparent"
+        android:onClick="cameraPress"
+        android:src="@drawable/submit_offense_button" />
 
 </RelativeLayout>
