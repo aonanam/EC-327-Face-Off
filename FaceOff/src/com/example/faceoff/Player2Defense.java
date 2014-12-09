@@ -112,6 +112,7 @@ public class Player2Defense extends Activity {
 		{	
 			PictureInterpretation.Decode(fileUri,MainActivity.activePlayers.get(1),"face");
 			MainActivity.activePlayers.get(1).setNewPath(fileUri.getPath());
+			
 			Intent intent = new Intent(Player2Defense.this,FaceCompare.class);
 			startActivity(intent);
 		}
@@ -122,6 +123,7 @@ public class Player2Defense extends Activity {
 	{		
 	    super.onResume();
 	    setContentView(R.layout.activity_player2_defense);
+<<<<<<< HEAD
 		
 		//Displays image of previously taken picture.
 		/*String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Defense.jpg";
@@ -144,6 +146,8 @@ public class Player2Defense extends Activity {
         //Changes font for instructions_2
         TextView tv3 = (TextView) findViewById(R.id.instructions_2);
         tv3.setTypeface(tf);				
+=======
+>>>>>>> origin/Dev
 	}
 	
 

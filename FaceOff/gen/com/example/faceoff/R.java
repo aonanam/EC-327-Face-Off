@@ -128,6 +128,7 @@ public final class R {
         public static final int activity_single_phone=0x7f03000a;
         public static final int activity_start_face_off=0x7f03000b;
         public static final int activity_tutorial=0x7f03000c;
+        public static final int activity_victory=0x7f03000d;
     }
     public static final class menu {
         public static final int base_face=0x7f070000;

@@ -118,6 +118,7 @@ public class Player1Defense extends Activity {
 		options.inSampleSize = 2;
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
 		jpgview.setImageBitmap(bm);
+<<<<<<< HEAD
 		
 		//Changes font for player_1_offense
   		Typeface tf = Typeface.createFromAsset(getAssets(),
@@ -134,6 +135,8 @@ public class Player1Defense extends Activity {
         TextView tv3 = (TextView) findViewById(R.id.instructions_2);
         tv3.setTypeface(tf);		
 
+=======
+>>>>>>> origin/Dev
 	}
 
 	@Override
