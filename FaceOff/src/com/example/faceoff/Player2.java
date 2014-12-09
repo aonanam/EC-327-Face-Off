@@ -1,4 +1,4 @@
-package com.example.faceoff;
+/*package com.example.faceoff;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -77,4 +77,4 @@ public class Player2 extends Activity {
 		return true;
 	}
 
-}
+}*/

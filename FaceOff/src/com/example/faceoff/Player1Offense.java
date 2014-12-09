@@ -33,14 +33,8 @@ public class Player1Offense extends Activity {
 	}
 	/** Create a File for saving an image */
 	private static File getOutputMediaFile(int type)
-	{
-		// To be safe, you should check that the SDCard is mounted
-	    // using Environment.getExternalStorageState() before doing this.
-		
-		//System.out.println(Environment.getExternalStorageState());
-		
+	{	
 		File mediaStorageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "FaceOff");
-		//System.out.println(mediaStorageDir.getPath());
 		// This location works best if you want the created images to be shared
 	    // between applications and persist after your app has been uninstalled.
 
@@ -55,7 +49,7 @@ public class Player1Offense extends Activity {
 	    }
 	    // Create a media file name, names it Player1Offense.jpg
 	    
-	     File mediaFile;
+	    File mediaFile;
 	    
 	    if (type == MEDIA_TYPE_IMAGE)
 	    {
@@ -86,59 +80,53 @@ public class Player1Offense extends Activity {
         //Changes font for instructions_2
         TextView tv3 = (TextView) findViewById(R.id.instructions_2);
         tv3.setTypeface(tf);
+        
+        submit_offense_button = (ImageButton) findViewById(R.id.submit_offense_button);
 		
-		//create Intent to take a picture and return control to the calling application
-	    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-	    
-	    fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE); // create a file to save the image
-	    
-	    intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
-	    
-	    //start the image capture Intent
-	    startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+  		//Capture button clicks
+  		submit_offense_button.setOnClickListener(new OnClickListener() 
+  		{
+  			@Override
+  			public void onClick(View v) 
+  			{
+  				cameraPress(v);
+  			}
+  		});	
 	}
+	
+	public void cameraPress(View v)
+	{
+		//create Intent to take a picture and return control to the calling application
+		    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+		    fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE); // create a file to save the image
+		    intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
+		    //start the image capture Intent
+		    startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+	}
+	
 	protected void onActivityResult(int requestCode, int resultCode, Intent data)
 	{
 		if (requestCode == CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE && resultCode == RESULT_OK)
 		{
 			PictureInterpretation.Decode(fileUri,MainActivity.activePlayers.get(0),"face");
-			//ProfileCreationLogic.Profiles.get(ProfileCreationLogic.Profiles.size()-1).setPath(fileUri.getPath());
-			//MainActivity.activePlayers.get(0).setNewFace(PictureInterpretation.Decode(fileUri));
-			MainActivity.activePlayers.get(0).setNewPath(fileUri.getPath());
+			MainActivity.activePlayers.get(0).setNewPath(fileUri.getPath());	
+			
+			Intent intent = new Intent(Player1Offense.this,Player2Defense.class);
+			startActivity(intent);
 		}
 	}
 	
 	@Override
-	public void onResume(){		//Instead of setting up the layout in the onCreate() part above, setting it up here in onResume() allows for the picture just taken to be shown on this screen
+	public void onResume()
+	{		//Instead of setting up the layout in the onCreate() part above, setting it up here in onResume() allows for the picture just taken to be shown on this screen
 	    super.onResume();
 	    setContentView(R.layout.activity_player1_offense);
-	  /*  
-	  //Displays image of previously taken picture.
-	  		String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player1Offense.jpg";
-	  		ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p1_offense);
-	  		BitmapFactory.Options options = new BitmapFactory.Options();
-	  		options.inSampleSize = 2;
-	  		Bitmap bm = BitmapFactory.decodeFile(path, options);
-	  		jpgview.setImageBitmap(bm);
-	  */  
-	  //Locate buttons in activity_player1_offense.xml
-	  		submit_offense_button = (ImageButton) findViewById(R.id.submit_offense_button);
-	  						
-	  		//Capture button clicks
-	  		submit_offense_button.setOnClickListener(new OnClickListener() {
-	  			public void onClick(View arg0) {
-	  				//Start Player2Defense class
-	  				Intent intent1 = new Intent(Player1Offense.this, Player2.class);
-	  				startActivity(intent1);
-	  			}
-	  		});		
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.player1_offense, menu);
+		getMenuInflater().inflate(R.menu.player2_offense, menu);
 		return true;
 	}
-
 }

@@ -18,11 +18,6 @@ import android.widget.ImageView;
 
 public class FaceCompare extends Activity {
 	ImageButton continue_button;
-
-	/*ArrayList<Double> faceOne = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(0).newFace);
-	ArrayList<Double> faceTwo = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(1),MainActivity.activePlayers.get(1).newFace);
-	
-	double score = ComparisonLogic.FaceVsFace(faceOne,faceTwo);*/
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

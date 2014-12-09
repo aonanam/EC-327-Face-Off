@@ -16,10 +16,12 @@ import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 public class Player2Defense extends Activity {
 	Button compare_button;
+	ImageButton submit_defense_button;
 	
 	private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
 	private Uri fileUri;
@@ -71,17 +73,35 @@ public class Player2Defense extends Activity {
 	protected void onCreate(Bundle savedInstanceState) 
 	{
 		super.onCreate(savedInstanceState);
-		//setContentView(R.layout.activity_player2_defense);
+		setContentView(R.layout.activity_player2_defense);
 		
+		 String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player1Offense.jpg";
+		 ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p1_offense);
+		 BitmapFactory.Options options = new BitmapFactory.Options();
+		 options.inSampleSize = 2;
+		 Bitmap bm = BitmapFactory.decodeFile(path, options);
+		 jpgview.setImageBitmap(bm);
+		
+		submit_defense_button = (ImageButton) findViewById(R.id.submit_defense_button);
+		
+		submit_defense_button.setOnClickListener(new OnClickListener() 
+  		{
+  			public void onClick(View v) 
+  			{
+  				cameraPress(v);
+  			}
+  		});	
+	}
+	
+	public void cameraPress(View v)
+	{
 		//create Intent to take a picture and return control to the calling application
-	    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-	    
-	    fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE); // create a file to save the image
-	    
-	    intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
-	    
-	    //start the image capture Intent
-	    startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+		fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE); // create a file to save the image
+		intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
+		    
+		//start the image capture Intent
+		startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
 	}
 	
 	protected void onActivityResult(int requestCode, int resultCode, Intent data)
@@ -90,38 +110,31 @@ public class Player2Defense extends Activity {
 		{	
 			PictureInterpretation.Decode(fileUri,MainActivity.activePlayers.get(1),"face");
 			MainActivity.activePlayers.get(1).setNewPath(fileUri.getPath());
+			Intent intent = new Intent(Player2Defense.this,FaceCompare.class);
+			startActivity(intent);
 		}
 	}
 	
 	@Override
-	public void onResume(){		//Instead of setting up the layout in the onCreate() part above, setting it up here in onResume() allows for the picture just taken to be shown on this screen
+	public void onResume()
+	{		
 	    super.onResume();
 	    setContentView(R.layout.activity_player2_defense);
-		  
-		 //double difference = ComparisonLogic.FaceVsFace(MainActivity.activePlayers.get(0).baseFace,MainActivity.activePlayers.get(1).baseFace);
 		
 		//Displays image of previously taken picture.
-		String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Defense.jpg";
+		/*String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Defense.jpg";
 		//ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p2_defense);
 		BitmapFactory.Options options = new BitmapFactory.Options();
 		options.inSampleSize = 2;
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
-		//jpgview.setImageBitmap(bm);
-
-		//System.out.println(MainActivity.activePlayers.get(0).baseFace); @@@@@@@@@@@@@@@@@@@@@@@
-
-		//Locate buttons in activity_player2_defense.xml
-		//compare_button = (Button) findViewById(R.id.compare_button);
+		//jpgview.setImageBitmap(bm);*/
+	    
+	    //Intent intent = new Intent(Player2Defense.this,FaceCompare.class);
+	   // startActivity(intent);
 						
-		//Capture button clicks
-		/*compare_button.setOnClickListener(new OnClickListener() {
-			public void onClick(View arg0) {
-				//Start Player2Offense class
-				Intent intent1 = new Intent(Player2Defense.this, FaceCompare.class);
-				startActivity(intent1);
-			}
-		});	*/	
 	}
+	
+
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

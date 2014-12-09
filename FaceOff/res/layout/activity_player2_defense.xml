@@ -44,10 +44,11 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="98dp"
         android:background="@android:color/transparent"
+        android:onClick="cameraPress"
         android:src="@drawable/submit_defense_button" />
 
     <ImageView
-        android:id="@+id/jpgview_p1_defense"
+        android:id="@+id/jpgview_p1_offense"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:layout_alignParentBottom="true"
