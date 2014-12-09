@@ -78,6 +78,14 @@
             android:name=".FaceCompare2"
             android:label="@string/title_activity_face_compare2" >
         </activity>
+         <activity
+            android:name=".Victory"
+            android:label="@string/title_activity_victory" >
+        </activity>
+         <activity
+            android:name=".Victory2"
+            android:label="@string/title_activity_victory2" >
+        </activity>
     </application>
 
 </manifest>

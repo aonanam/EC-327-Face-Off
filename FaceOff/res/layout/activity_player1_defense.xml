@@ -19,16 +19,6 @@
         android:textSize="40dp"
         android:textColor="#ffffff" />
 
-    <TextView
-        android:id="@+id/instructions_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/player_1_defense"
-        android:layout_below="@+id/instructions_1"
-        android:layout_marginTop="14dp"
-        android:text="*Note: Taking a picture with your face centered and straight will award you more points"
-        android:textSize="15dp" />
-
     <ImageButton
         android:id="@+id/submit_defense_button"
         android:layout_width="wrap_content"
@@ -40,23 +30,33 @@
         android:onClick="cameraPress"
         android:src="@drawable/submit_defense_button" />
 
-    <ImageView
-        android:id="@+id/jpgview_p2_offense"
+    <TextView
+        android:id="@+id/instructions_2"
         android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:layout_below="@+id/player_1_defense"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp"
-        android:src="@android:drawable/ic_menu_gallery" />
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/instructions_1"
+        android:layout_below="@+id/instructions_1"
+        android:layout_marginTop="25dp"
+        android:text="*Note: Taking a picture with your face centered and straight will award you more points"
+        android:textSize="15dp" />
 
     <TextView
         android:id="@+id/instructions_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/instructions_2"
         android:layout_below="@+id/jpgview_p2_offense"
-        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
         android:text="Player 1, it&apos;s your turn to try to match Player 2&apos;s offense face !"
         android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/jpgview_p2_offense"
+        android:layout_width="wrap_content"
+        android:layout_height="160dp"
+        android:layout_below="@+id/player_1_defense"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="102dp"
+        android:src="@android:drawable/ic_menu_gallery" />
 
 </RelativeLayout>

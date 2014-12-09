@@ -7,11 +7,8 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-<<<<<<< HEAD
 import android.graphics.Typeface;
-=======
 import android.os.AsyncTask;
->>>>>>> origin/Dev
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.Menu;
@@ -21,11 +18,9 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-<<<<<<< HEAD
 import android.widget.TextView;
-=======
 import android.widget.Toast;
->>>>>>> origin/Dev
+
 
 public class FaceCompare extends Activity {
 	ImageButton continue_button;
@@ -35,7 +30,6 @@ public class FaceCompare extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_face_compare);
 		
-<<<<<<< HEAD
 		//Changes font for results
 		Typeface tf = Typeface.createFromAsset(getAssets(),
                "fonts/CaviarDreams.ttf");
@@ -45,15 +39,7 @@ public class FaceCompare extends Activity {
         //Changes font for score
         TextView tv2 = (TextView) findViewById(R.id.score);
         tv2.setTypeface(tf);
-		        
 		
-		//ArrayList<Double> faceOne = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(0).newFace);
-		//ArrayList<Double> faceTwo = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(1),MainActivity.activePlayers.get(1).newFace);
-		
-		//double score = ComparisonLogic.FaceVsFace(faceOne,faceTwo);
-		
-=======
->>>>>>> origin/Dev
 		//Displays the two pictures taken on offense vs defense side by side
 		
 		//Displays image taken by player 1 on offense
@@ -73,9 +59,6 @@ public class FaceCompare extends Activity {
 		jpgview2.setImageBitmap(bm2);
 		
 		new processData().execute();
-		//ArrayList<Double> faceOne = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(0).newFace);
-		//ArrayList<Double> faceTwo = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(1),MainActivity.activePlayers.get(1).newFace);
-		//double score = ComparisonLogic.FaceVsFace(faceOne,faceTwo);
 		
 		//Locate buttons in activity_face_compare.xml
 		continue_button = (ImageButton) findViewById(R.id.continue_button);
@@ -139,7 +122,11 @@ private class processData extends AsyncTask <String, Integer, Double>
 	
 	protected void onPostExecute(Double score)
 	{
-		System.out.println("Score");
+		Typeface tf = Typeface.createFromAsset(getAssets(),
+	               "fonts/CaviarDreams.ttf");
+		 TextView tv2 = (TextView) findViewById(R.id.score);
+	        tv2.setTypeface(tf);
+		tv2.setText("Score: 1523");
 		progress.dismiss();
 	}
 }

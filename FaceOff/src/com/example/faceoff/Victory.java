@@ -25,7 +25,7 @@ public class Victory extends Activity
   		setContentView(R.layout.activity_victory);
   		
   		//Locate buttons in victory.xml
-		main_menu_button = (ImageButton) findViewById(R.id.start_face_off);
+		main_menu_button = (ImageButton) findViewById(R.id.main_menu);
 		
 		//Capture button clicks
 		main_menu_button.setOnClickListener(new OnClickListener() {
