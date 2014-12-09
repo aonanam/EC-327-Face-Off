@@ -102,22 +102,6 @@ public class Player1Defense extends Activity {
 		options.inSampleSize = 2;
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
 		jpgview.setImageBitmap(bm);
-<<<<<<< HEAD
-=======
-		
-		//System.out.println(MainActivity.activePlayers.get(1).baseFace); @@@@@@@@@@@@@@@@@@@@@@@@		
-		  
-		//double difference = ComparisonLogic.FaceVsFace(MainActivity.activePlayers.get(0).baseFace,MainActivity.activePlayers.get(1).baseFace);
-
-		System.out.println(MainActivity.activePlayers.get(1).baseFace);
-
-		 //System.out.println(MainActivity.activePlayers.get(1).baseFace); @@@@@@@@@@@@@@@@@@@@@@@@
-
-		  
-		double difference = ComparisonLogic.FaceVsFace(MainActivity.activePlayers.get(0).baseFace,MainActivity.activePlayers.get(1).baseFace);
-
-		System.out.println(MainActivity.activePlayers.get(1).baseFace);
->>>>>>> origin/Dev
 
 		//Locate buttons in activity_player1_defense.xml
 		submit_defense_button = (ImageButton) findViewById(R.id.submit_defense_button);
