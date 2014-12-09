@@ -37,6 +37,7 @@
         android:layout_alignRight="@+id/continue_button"
         android:layout_alignTop="@+id/imageView1"
         android:src="@android:drawable/ic_menu_gallery" />
+<<<<<<< HEAD
 
     <ImageButton
         android:id="@+id/continue_button"
@@ -48,6 +49,8 @@
         android:background="@android:color/transparent"
         android:onClick="activity_player2_offense"
         android:src="@drawable/continue_button" />
+=======
+>>>>>>> origin/Dev
 
     <ImageView
         android:id="@+id/imageView1"

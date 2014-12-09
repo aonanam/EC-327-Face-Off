@@ -126,11 +126,8 @@ public class Player2Defense extends Activity {
 		//ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p2_defense);
 		BitmapFactory.Options options = new BitmapFactory.Options();
 		options.inSampleSize = 2;
-		Bitmap bm = BitmapFactory.decodeFile(path, options);
-		//jpgview.setImageBitmap(bm);*/
-	    
-	    //Intent intent = new Intent(Player2Defense.this,FaceCompare.class);
-	   // startActivity(intent);
+		Bitmap bm = BitmapFactory.decodeFile(path, options);*/
+
 						
 	}
 	
