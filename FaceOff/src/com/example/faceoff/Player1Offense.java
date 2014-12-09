@@ -128,7 +128,7 @@ public class Player1Offense extends Activity {
 	  		submit_offense_button.setOnClickListener(new OnClickListener() {
 	  			public void onClick(View arg0) {
 	  				//Start Player2Defense class
-	  				Intent intent1 = new Intent(Player1Offense.this, Player2Defense.class);
+	  				Intent intent1 = new Intent(Player1Offense.this, Player2.class);
 	  				startActivity(intent1);
 	  			}
 	  		});		
