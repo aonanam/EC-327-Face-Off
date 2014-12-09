@@ -16,7 +16,9 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:text="Player 1 Offense"
-        android:textSize="50dp" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="50dp"
+        android:textColor="#ffffff" />
     
     <TextView
         android:id="@+id/instructions_1"

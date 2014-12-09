@@ -1,7 +1,5 @@
 package com.example.faceoff;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -13,12 +11,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 public class FaceCompare2 extends Activity {
 
-	Button Quit_button;
-	Button Next_Round_button;
+	ImageButton Quit_button;
+	ImageButton another_round_button;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +51,8 @@ public class FaceCompare2 extends Activity {
 				
 				
 				//Locate buttons in activity_face_compare.xml
-				Quit_button = (Button) findViewById(R.id.Quit_button);
-				Next_Round_button = (Button) findViewById(R.id.Next_Round_button);
+				Quit_button = (ImageButton) findViewById(R.id.Quit_button);
+				another_round_button = (ImageButton) findViewById(R.id.another_round_button);
 										
 				//Capture button clicks
 				Quit_button.setOnClickListener(new OnClickListener() {
@@ -63,7 +62,7 @@ public class FaceCompare2 extends Activity {
 						startActivity(intent1);
 					}
 				});		
-				Next_Round_button.setOnClickListener(new OnClickListener() {
+				another_round_button.setOnClickListener(new OnClickListener() {
 					public void onClick(View arg0) {
 						//Start Player1Offense class
 						Intent intent1 = new Intent(FaceCompare2.this, Player1Offense.class);

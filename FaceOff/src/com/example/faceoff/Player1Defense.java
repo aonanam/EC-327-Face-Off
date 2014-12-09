@@ -111,26 +111,11 @@ public class Player1Defense extends Activity {
 		
 		//Displays image of previously taken picture.
 		String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player1Defense.jpg";
-		ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p1_defense);
+		ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p2_offense);
 		BitmapFactory.Options options = new BitmapFactory.Options();
 		options.inSampleSize = 2;
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
 		jpgview.setImageBitmap(bm);
-<<<<<<< HEAD
-
-		//Locate buttons in activity_player1_defense.xml
-		submit_defense_button = (ImageButton) findViewById(R.id.submit_defense_button);
-						
-		//Capture button clicks
-		submit_defense_button.setOnClickListener(new OnClickListener() {
-			public void onClick(View arg0) {
-				//Start Player1Offense class
-				Intent intent1 = new Intent(Player1Defense.this, FaceCompare2.class);
-				startActivity(intent1);
-			}
-		});	
-=======
->>>>>>> origin/Dev
 	}
 
 	@Override

@@ -70,6 +70,7 @@ public class Player1Offense extends Activity {
 		//Changes font for player_1_offense
 		Typeface tf = Typeface.createFromAsset(getAssets(),
                "fonts/CaviarDreams.ttf");
+		
         TextView tv = (TextView) findViewById(R.id.player_1_offense);
         tv.setTypeface(tf);
         

@@ -20,66 +20,42 @@
         android:textColor="#ffffff"
         android:textSize="50dp" />
 
-    <ImageButton
-        android:id="@+id/continue_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:background="@android:color/transparent"
-        android:onClick="activity_player2_offense"
-        android:src="@drawable/continue_button" />
-
     <TextView
         android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_below="@+id/results"
         android:text="&quot;Insert score here&quot;"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="50dp" />
-<<<<<<< HEAD
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
+        android:layout_height="100dp"
         android:layout_alignRight="@+id/continue_button"
         android:layout_alignTop="@+id/imageView1"
         android:src="@android:drawable/ic_menu_gallery" />
-=======
-    
-    <LinearLayout
-        android:id="@+id/horiz_layout"
+
+    <ImageButton
+        android:id="@+id/continue_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp" >
-
-	    <ImageView
-	        android:id="@+id/imageView2"
-	        android:layout_width="wrap_content"
-	        android:layout_height="200dp"
-	        android:layout_marginBottom="31dp"
-	        android:src="@android:drawable/ic_menu_gallery" />
-	
-	    <ImageView
-	        android:id="@+id/imageView1"
-	        android:layout_width="wrap_content"
-	        android:layout_height="200dp"
-	        android:src="@android:drawable/ic_menu_gallery" />
-    
-    </LinearLayout>
->>>>>>> origin/Dev
+        android:layout_alignLeft="@+id/results"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="88dp"
+        android:background="@android:color/transparent"
+        android:onClick="activity_player2_offense"
+        android:src="@drawable/continue_button" />
 
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
+        android:layout_height="100dp"
         android:layout_above="@+id/continue_button"
-        android:layout_alignLeft="@+id/results"
-        android:layout_marginBottom="46dp"
-        android:layout_marginLeft="21dp"
+        android:layout_alignLeft="@+id/continue_button"
+        android:layout_marginBottom="23dp"
         android:src="@android:drawable/ic_menu_gallery" />
 
 </RelativeLayout>

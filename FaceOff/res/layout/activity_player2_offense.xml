@@ -7,7 +7,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Player2Offense" 
-    android:background="@drawable/background">
+    android:background="@drawable/player_1_offense_background">
 
     <TextView
         android:id="@+id/player_2_offense"
@@ -16,14 +16,15 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:text="Player 2 Offense"
-        android:textSize="50dp" />
+        android:textSize="50dp"
+        android:textColor="#ffffff" />
     
     <TextView
         android:id="@+id/instructions_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/player_1_offense"
+        android:layout_below="@+id/player_2_offense"
         android:text="Player 2, submit a face that you think Player 1 won't be able to match"
         android:textSize="30dp" />
     

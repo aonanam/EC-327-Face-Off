@@ -7,7 +7,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Player1Defense" 
-    android:background="@drawable/background">
+    android:background="@drawable/player_1_offense_background">
 
     <TextView
         android:id="@+id/player_1_defense"
@@ -16,7 +16,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:text="Player 1 Defense"
-        android:textSize="50dp" />
+        android:textSize="50dp"
+        android:textColor="#ffffff" />
     
     <TextView
         android:id="@+id/instructions_1"
@@ -48,31 +49,12 @@
         android:src="@drawable/submit_defense_button" />
 
     <ImageView
-        android:id="@+id/jpgview_p1_defense"
+        android:id="@+id/jpgview_p2_offense"
         android:layout_width="wrap_content"
         android:layout_height="150dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="84dp"
         android:src="@android:drawable/ic_menu_gallery" />
-
-     <ImageView
-        android:id="@+id/jpgview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/jpgview_p1_defense"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="68dp"
-        android:src="@android:drawable/ic_menu_gallery" />
-
-     <Button
-        android:id="@+id/Next_Round_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="44dp"
-        android:onClick="activity_player1_offense"
-        android:text="Next Round" />
 
 </RelativeLayout>
