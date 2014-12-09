@@ -2,22 +2,24 @@ package com.example.faceoff;
 
 import java.io.File;
 
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 public class Player1Defense extends Activity {
-	Button compare2_button;
+	ImageButton submit_defense_button;
+	
 	private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
 	private Uri fileUri;
 	public static final int MEDIA_TYPE_IMAGE = 1;
@@ -100,12 +102,28 @@ public class Player1Defense extends Activity {
 		options.inSampleSize = 2;
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
 		jpgview.setImageBitmap(bm);
+<<<<<<< HEAD
+=======
+		
+		//System.out.println(MainActivity.activePlayers.get(1).baseFace); @@@@@@@@@@@@@@@@@@@@@@@@		
+		  
+		//double difference = ComparisonLogic.FaceVsFace(MainActivity.activePlayers.get(0).baseFace,MainActivity.activePlayers.get(1).baseFace);
+
+		System.out.println(MainActivity.activePlayers.get(1).baseFace);
+
+		 //System.out.println(MainActivity.activePlayers.get(1).baseFace); @@@@@@@@@@@@@@@@@@@@@@@@
+
+		  
+		double difference = ComparisonLogic.FaceVsFace(MainActivity.activePlayers.get(0).baseFace,MainActivity.activePlayers.get(1).baseFace);
+
+		System.out.println(MainActivity.activePlayers.get(1).baseFace);
+>>>>>>> origin/Dev
 
 		//Locate buttons in activity_player1_defense.xml
-		compare2_button = (Button) findViewById(R.id.compare2_button);
+		submit_defense_button = (ImageButton) findViewById(R.id.submit_defense_button);
 						
 		//Capture button clicks
-		compare2_button.setOnClickListener(new OnClickListener() {
+		submit_defense_button.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
 				//Start Player1Offense class
 				Intent intent1 = new Intent(Player1Defense.this, FaceCompare2.class);

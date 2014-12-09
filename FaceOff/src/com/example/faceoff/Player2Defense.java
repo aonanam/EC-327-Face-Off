@@ -102,27 +102,25 @@ public class Player2Defense extends Activity {
 		
 		//Displays image of previously taken picture.
 		String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Defense.jpg";
-		ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p2_defense);
+		//ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p2_defense);
 		BitmapFactory.Options options = new BitmapFactory.Options();
 		options.inSampleSize = 2;
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
-		jpgview.setImageBitmap(bm);
+		//jpgview.setImageBitmap(bm);
 
-		  //System.out.println(MainActivity.activePlayers.get(0).baseFace); @@@@@@@@@@@@@@@@@@@@@@@
-
-		  
+		//System.out.println(MainActivity.activePlayers.get(0).baseFace); @@@@@@@@@@@@@@@@@@@@@@@
 
 		//Locate buttons in activity_player2_defense.xml
-		compare_button = (Button) findViewById(R.id.compare_button);
+		//compare_button = (Button) findViewById(R.id.compare_button);
 						
 		//Capture button clicks
-		compare_button.setOnClickListener(new OnClickListener() {
+		/*compare_button.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
 				//Start Player2Offense class
 				Intent intent1 = new Intent(Player2Defense.this, FaceCompare.class);
 				startActivity(intent1);
 			}
-		});		
+		});	*/	
 	}
 
 	@Override

@@ -1,22 +1,26 @@
 package com.example.faceoff;
 
 import java.io.File;
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class Player1Offense extends Activity {
-	Button P2_Defense_button;
+	ImageButton submit_offense_button;
 	
 	private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
 	private Uri fileUri;
@@ -69,6 +73,20 @@ public class Player1Offense extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_player1_offense);
 		
+		//Changes font for player_1_offense
+		Typeface tf = Typeface.createFromAsset(getAssets(),
+               "fonts/CaviarDreams.ttf");
+        TextView tv = (TextView) findViewById(R.id.player_1_offense);
+        tv.setTypeface(tf);
+        
+        //Changes font for instructions_1
+        TextView tv2 = (TextView) findViewById(R.id.instructions_1);
+        tv2.setTypeface(tf);
+          
+        //Changes font for instructions_2
+        TextView tv3 = (TextView) findViewById(R.id.instructions_2);
+        tv3.setTypeface(tf);
+		
 		//create Intent to take a picture and return control to the calling application
 	    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 	    
@@ -94,7 +112,7 @@ public class Player1Offense extends Activity {
 	public void onResume(){		//Instead of setting up the layout in the onCreate() part above, setting it up here in onResume() allows for the picture just taken to be shown on this screen
 	    super.onResume();
 	    setContentView(R.layout.activity_player1_offense);
-	    
+	  /*  
 	  //Displays image of previously taken picture.
 	  		String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player1Offense.jpg";
 	  		ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p1_offense);
@@ -102,12 +120,12 @@ public class Player1Offense extends Activity {
 	  		options.inSampleSize = 2;
 	  		Bitmap bm = BitmapFactory.decodeFile(path, options);
 	  		jpgview.setImageBitmap(bm);
-	    
+	  */  
 	  //Locate buttons in activity_player1_offense.xml
-	  		P2_Defense_button = (Button) findViewById(R.id.P2_Defense_button);
+	  		submit_offense_button = (ImageButton) findViewById(R.id.submit_offense_button);
 	  						
 	  		//Capture button clicks
-	  		P2_Defense_button.setOnClickListener(new OnClickListener() {
+	  		submit_offense_button.setOnClickListener(new OnClickListener() {
 	  			public void onClick(View arg0) {
 	  				//Start Player2Defense class
 	  				Intent intent1 = new Intent(Player1Offense.this, Player2.class);

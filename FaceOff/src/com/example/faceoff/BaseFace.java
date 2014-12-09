@@ -127,6 +127,8 @@ public class BaseFace extends Activity
 		{
 			PictureInterpretation.Decode(fileUri,ProfileCreationLogic.Profiles.get(ProfileCreationLogic.Profiles.size()-1),"base");
 			ProfileCreationLogic.Profiles.get(ProfileCreationLogic.Profiles.size()-1).setPath(fileUri.getPath());
+			Intent intent1 = new Intent(BaseFace.this, MainActivity.class);
+			startActivity(intent1);
 		}
 	}
 	

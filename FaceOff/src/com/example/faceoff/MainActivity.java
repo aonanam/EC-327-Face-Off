@@ -64,7 +64,7 @@ public class MainActivity extends Activity {
 	
 		single_phone_button.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
-				
+			/*	
 				if (profileArray.size() < 3)
 				{	 
 					if (profileArray.size() == 1)
@@ -99,10 +99,15 @@ public class MainActivity extends Activity {
 				}
 				else
 				{
+				*/
 					//Start SinglePhone class
 					Intent intent2 = new Intent(MainActivity.this, SinglePhone.class);
 					startActivity(intent2);
+<<<<<<< HEAD
 				}
+=======
+				//}
+>>>>>>> origin/Dev
 			}
 		});
 	
