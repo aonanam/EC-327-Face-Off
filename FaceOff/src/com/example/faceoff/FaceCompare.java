@@ -20,10 +20,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/Dev
 
 public class FaceCompare extends Activity {
 	ImageButton continue_button;
@@ -32,11 +28,6 @@ public class FaceCompare extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_face_compare);
-<<<<<<< HEAD
-		
-=======
-
->>>>>>> origin/Dev
 		//Changes font for results
 		Typeface tf = Typeface.createFromAsset(getAssets(),
                "fonts/CaviarDreams.ttf");
@@ -47,11 +38,6 @@ public class FaceCompare extends Activity {
         TextView tv2 = (TextView) findViewById(R.id.score);
         tv2.setTypeface(tf);
 		
-<<<<<<< HEAD
-=======
-		//double score = ComparisonLogic.FaceVsFace(faceOne,faceTwo);
-
->>>>>>> origin/Dev
 		//Displays the two pictures taken on offense vs defense side by side
 		
 		//Displays image taken by player 1 on offense
