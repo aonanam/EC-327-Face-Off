@@ -4,20 +4,19 @@ import java.io.File;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Player1Offense extends Activity {
 	ImageButton submit_offense_button;
@@ -61,15 +60,28 @@ public class Player1Offense extends Activity {
 	    }
 	    return mediaFile;
 	}
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_player1_offense);
 		
+		  submit_offense_button = (ImageButton) findViewById(R.id.submit_offense_button);
+			
+	  		//Capture button clicks
+	  		submit_offense_button.setOnClickListener(new OnClickListener() 
+	  		{
+	  			@Override
+	  			public void onClick(View v) 
+	  			{
+	  				cameraPress(v);
+	  			}
+	  		});	
+		
 		//Changes font for player_1_offense
 		Typeface tf = Typeface.createFromAsset(getAssets(),
                "fonts/CaviarDreams.ttf");
+		
         TextView tv = (TextView) findViewById(R.id.player_1_offense);
         tv.setTypeface(tf);
         
@@ -80,18 +92,6 @@ public class Player1Offense extends Activity {
         //Changes font for instructions_2
         TextView tv3 = (TextView) findViewById(R.id.instructions_2);
         tv3.setTypeface(tf);
-        
-        submit_offense_button = (ImageButton) findViewById(R.id.submit_offense_button);
-		
-  		//Capture button clicks
-  		submit_offense_button.setOnClickListener(new OnClickListener() 
-  		{
-  			@Override
-  			public void onClick(View v) 
-  			{
-  				cameraPress(v);
-  			}
-  		});	
 	}
 	
 	public void cameraPress(View v)
@@ -116,11 +116,27 @@ public class Player1Offense extends Activity {
 		}
 	}
 	
-	@Override
+	//@Override
 	public void onResume()
 	{		//Instead of setting up the layout in the onCreate() part above, setting it up here in onResume() allows for the picture just taken to be shown on this screen
 	    super.onResume();
 	    setContentView(R.layout.activity_player1_offense);
+	    
+	    //Changes font for player_1_offense
+		Typeface tf = Typeface.createFromAsset(getAssets(),
+	           "fonts/CaviarDreams.ttf");
+		
+	    TextView tv = (TextView) findViewById(R.id.player_1_offense);
+	    tv.setTypeface(tf);
+	      
+	    //Changes font for instructions_1
+        TextView tv2 = (TextView) findViewById(R.id.instructions_1);
+        tv2.setTypeface(tf);
+        //tv2.setText(MainActivity.profileArray.get(0) + ", submit a face that you think " +MainActivity.profileArray.get(1) +" won't be able to match");
+          
+        //Changes font for instructions_2
+        TextView tv3 = (TextView) findViewById(R.id.instructions_2);
+        tv3.setTypeface(tf);
 	}
 
 	@Override

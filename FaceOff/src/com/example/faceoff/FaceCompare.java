@@ -3,9 +3,12 @@ package com.example.faceoff;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.Menu;
@@ -15,6 +18,8 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class FaceCompare extends Activity {
 	ImageButton continue_button;
@@ -23,11 +28,23 @@ public class FaceCompare extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_face_compare);
+<<<<<<< HEAD
 		
 		//ArrayList<Double> faceOne = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(0).newFace);
 		//ArrayList<Double> faceTwo = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(1),MainActivity.activePlayers.get(1).newFace);
 		
 		//double score = ComparisonLogic.FaceVsFace(faceOne,faceTwo);
+=======
+		//Changes font for results
+		Typeface tf = Typeface.createFromAsset(getAssets(),
+               "fonts/CaviarDreams.ttf");
+        TextView tv = (TextView) findViewById(R.id.results);
+        tv.setTypeface(tf);
+        
+        //Changes font for score
+        TextView tv2 = (TextView) findViewById(R.id.score);
+        tv2.setTypeface(tf);
+>>>>>>> origin/Dev
 		
 		//Displays the two pictures taken on offense vs defense side by side
 		
@@ -47,7 +64,7 @@ public class FaceCompare extends Activity {
 		Bitmap bm2 = BitmapFactory.decodeFile(path2, options2);
 		jpgview2.setImageBitmap(bm2);
 		
-		//System.out.println("Score: " + score);
+		new processData().execute();
 		
 		//Locate buttons in activity_face_compare.xml
 		continue_button = (ImageButton) findViewById(R.id.continue_button);
@@ -80,4 +97,43 @@ public class FaceCompare extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
+private class processData extends AsyncTask <String, Integer, Double>
+{
+	ArrayList<Double> faceOne;
+	ArrayList<Double> faceTwo;
+	
+	ProgressDialog progress;
+	
+	protected void onPreExecute()
+	{
+		super.onPreExecute();
+		System.out.println("Starting ASYNC");
+		progress = ProgressDialog.show(FaceCompare.this,"Powered by FaceMark API", "Analyzing...");
+	}
+	
+	
+	protected Double doInBackground(String... params)
+	{
+		System.out.println("Yes");
+		/*while(MainActivity.activePlayers.get(0).newFace.size() == 0 || MainActivity.activePlayers.get(1).newFace.size() == 0)
+		{
+			System.out.println("Waiting....");
+		}*/
+		System.out.println("Finished!");
+		faceOne = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(0).newFace);
+		faceTwo = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(1),MainActivity.activePlayers.get(1).newFace);
+		return ComparisonLogic.FaceVsFace(faceOne,faceTwo);
+	}
+	
+	protected void onPostExecute(Double score)
+	{
+		Typeface tf = Typeface.createFromAsset(getAssets(),
+	               "fonts/CaviarDreams.ttf");
+		 TextView tv2 = (TextView) findViewById(R.id.score);
+	        tv2.setTypeface(tf);
+		tv2.setText("Score: 1523");
+		progress.dismiss();
+	}
+}
 }

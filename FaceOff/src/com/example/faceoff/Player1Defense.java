@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -16,6 +17,7 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class Player1Defense extends Activity {
 	ImageButton submit_defense_button;
@@ -110,25 +112,27 @@ public class Player1Defense extends Activity {
 	    setContentView(R.layout.activity_player1_defense);
 		
 		//Displays image of previously taken picture.
-		String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player1Defense.jpg";
-		ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p1_defense);
+		String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Offense.jpg";
+		ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p2_offense);
 		BitmapFactory.Options options = new BitmapFactory.Options();
 		options.inSampleSize = 2;
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
 		jpgview.setImageBitmap(bm);
-
-
-		//Locate buttons in activity_player1_defense.xml
-		submit_defense_button = (ImageButton) findViewById(R.id.submit_defense_button);
-						
-		//Capture button clicks
-		submit_defense_button.setOnClickListener(new OnClickListener() {
-			public void onClick(View arg0) {
-				//Start Player1Offense class
-				Intent intent1 = new Intent(Player1Defense.this, FaceCompare2.class);
-				startActivity(intent1);
-			}
-		});	
+		
+		//Changes font for player_1_defense
+  		Typeface tf = Typeface.createFromAsset(getAssets(),
+  	           "fonts/CaviarDreams.ttf");
+  		
+  	    TextView tv = (TextView) findViewById(R.id.player_1_defense);
+  	    tv.setTypeface(tf);
+  	      
+  	    //Changes font for instructions_1
+        TextView tv2 = (TextView) findViewById(R.id.instructions_1);
+        tv2.setTypeface(tf);
+          
+        //Changes font for instructions_2
+        TextView tv3 = (TextView) findViewById(R.id.instructions_2);
+        tv3.setTypeface(tf);		
 	}
 
 	@Override

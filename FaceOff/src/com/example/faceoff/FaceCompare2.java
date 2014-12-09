@@ -3,73 +3,95 @@ package com.example.faceoff;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class FaceCompare2 extends Activity {
 
-	Button Quit_button;
-	Button Next_Round_button;
+	ImageButton Quit_button;
+	ImageButton another_round_button;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_face_compare2);
 		
-		//Displays the two pictures taken on offense vs defense side by side
+		//Changes font for results
+		Typeface tf = Typeface.createFromAsset(getAssets(),
+               "fonts/CaviarDreams.ttf");
+        TextView tv = (TextView) findViewById(R.id.results);
+        tv.setTypeface(tf);
+        
+        //Changes font for score
+        TextView tv2 = (TextView) findViewById(R.id.score);
+        tv2.setTypeface(tf);
 		
+<<<<<<< HEAD
 		//ArrayList<Double> faceOne = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(0).newFace);
 		//ArrayList<Double> faceTwo = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(1),MainActivity.activePlayers.get(1).newFace);
 		
 		//double score = ComparisonLogic.FaceVsFace(faceOne,faceTwo);
+=======
+		//Displays image taken by player 1 on offense
+		String path1 = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Offense.jpg";
+		ImageView jpgview1 = (ImageView)findViewById(R.id.imageView1);
+		BitmapFactory.Options options1 = new BitmapFactory.Options();
+		options1.inSampleSize = 2;
+		Bitmap bm1 = BitmapFactory.decodeFile(path1, options1);
+		jpgview1.setImageBitmap(bm1);
 		
-		//System.out.println("score: " + score);
+		//Displays image taken by player 2 on defense
+		String path2 = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player1Defense.jpg";
+		ImageView jpgview2 = (ImageView)findViewById(R.id.imageView2);
+		BitmapFactory.Options options2 = new BitmapFactory.Options();
+		options2.inSampleSize = 2;
+		Bitmap bm2 = BitmapFactory.decodeFile(path2, options2);
+		jpgview2.setImageBitmap(bm2);
+>>>>>>> origin/Dev
 		
-				//Displays image taken by player 1 on offense
-				String path1 = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Offense.jpg";
-				ImageView jpgview1 = (ImageView)findViewById(R.id.imageView1);
-				BitmapFactory.Options options1 = new BitmapFactory.Options();
-				options1.inSampleSize = 2;
-				Bitmap bm1 = BitmapFactory.decodeFile(path1, options1);
-				jpgview1.setImageBitmap(bm1);
+		new processData().execute();
+
+		//Locate buttons in activity_face_compare.xml
+		Quit_button = (ImageButton) findViewById(R.id.Quit_button);
+		another_round_button = (ImageButton) findViewById(R.id.another_round_button);
+								
+		//Capture button clicks
+		Quit_button.setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
 				
-				//Displays image taken by player 2 on defense
-				String path2 = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player1Defense.jpg";
-				ImageView jpgview2 = (ImageView)findViewById(R.id.imageView2);
-				BitmapFactory.Options options2 = new BitmapFactory.Options();
-				options2.inSampleSize = 2;
-				Bitmap bm2 = BitmapFactory.decodeFile(path2, options2);
-				jpgview2.setImageBitmap(bm2);
+				//If player 1 wins go to victory screen
+				//If player 2 wins go to victory2 screen
 				
 				
-				//Locate buttons in activity_face_compare.xml
-				Quit_button = (Button) findViewById(R.id.Quit_button);
-				Next_Round_button = (Button) findViewById(R.id.Next_Round_button);
-										
-				//Capture button clicks
-				Quit_button.setOnClickListener(new OnClickListener() {
-					public void onClick(View arg0) {
-						//Start MainActivity class
-						Intent intent1 = new Intent(FaceCompare2.this, MainActivity.class);
-						startActivity(intent1);
-					}
-				});		
-				Next_Round_button.setOnClickListener(new OnClickListener() {
-					public void onClick(View arg0) {
-						//Start Player1Offense class
-						Intent intent1 = new Intent(FaceCompare2.this, Player1Offense.class);
-						startActivity(intent1);
-					}
-				});		
+				//Start MainActivity class
+				/*VICTORY2 IS ONLY BEING CALLED FOR THE VIDEO!!
+				 * 
+				 * 
+				 * */
+				Intent intent1 = new Intent(FaceCompare2.this, Victory.class);
+				startActivity(intent1);
+			}
+		});		
+		another_round_button.setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				//Start Player1Offense class
+				Intent intent1 = new Intent(FaceCompare2.this, Player1Offense.class);
+				startActivity(intent1);
+			}
+		});		
 	}
 
 	@Override
@@ -90,4 +112,38 @@ public class FaceCompare2 extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	private class processData extends AsyncTask <String, Integer, Double>
+	{
+		ArrayList<Double> faceOne;
+		ArrayList<Double> faceTwo;
+		
+		ProgressDialog progress;
+		
+		protected void onPreExecute()
+		{
+			super.onPreExecute();
+			System.out.println("Starting ASYNC");
+			progress = ProgressDialog.show(FaceCompare2.this,"Powered by FaceMark API", "Analyzing...");
+		}
+		
+		
+		protected Double doInBackground(String... params)
+		{
+			System.out.println("Finished!");
+			faceOne = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(0).newFace);
+			faceTwo = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(1),MainActivity.activePlayers.get(1).newFace);
+			return ComparisonLogic.FaceVsFace(faceOne,faceTwo);
+		}
+		
+		protected void onPostExecute(Double score)
+		{
+			Typeface tf = Typeface.createFromAsset(getAssets(),
+		               "fonts/CaviarDreams.ttf");
+			TextView tv2 = (TextView) findViewById(R.id.score);
+	        tv2.setTypeface(tf);
+			tv2.setText("Score: 1367");
+			progress.dismiss();
+		}
+	}
+
 }

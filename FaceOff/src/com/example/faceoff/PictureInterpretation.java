@@ -2,12 +2,14 @@ package com.example.faceoff;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.widget.Toast;
 
 import com.mashape.unirest.http.*;
 import com.mashape.unirest.http.exceptions.UnirestException;
@@ -18,19 +20,13 @@ import org.json.*;
 
 public class PictureInterpretation 
 {
-	public static ArrayList<Double> Decode(final Uri picture,final profile profile,final String code)//,final Context thing)
+	static ProgressDialog progress;
+	public static ArrayList<Double> Decode(final Uri picture,final profile profile,final String code)
 	{    
 		final ArrayList<Double> interpretedVals = new ArrayList<Double>();
 		
 		class CallMashapeAsync extends AsyncTask<String, Integer, HttpResponse<JsonNode>> 
 		{	
-
-			/*protected void onPreExecute()
-			{
-				super.onPreExecute();
-				ProgressDialog progress = ProgressDialog.show(thing,"Powered by FaceMark API", "Analyzing...");
-			}*/
-			
 	    	protected HttpResponse<JsonNode> doInBackground(String... msg) 
 	    	{	
 	    		HttpResponse<JsonNode> request = null;
@@ -94,12 +90,11 @@ public class PictureInterpretation
 				
 				//progress.dismiss();
 				System.out.println("InterpretedVals Length: " + interpretedVals.size());
-				// progress.dismiss();
 	    	}
 		}
 		
 		new CallMashapeAsync().execute();
-		
+	
 		return interpretedVals;
 	}
 }

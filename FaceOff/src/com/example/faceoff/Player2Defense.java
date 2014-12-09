@@ -12,12 +12,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class Player2Defense extends Activity {
 	Button compare_button;
@@ -99,8 +101,7 @@ public class Player2Defense extends Activity {
 		Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 		fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE); // create a file to save the image
 		intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
-		    
-		//start the image capture Intent
+
 		startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
 	}
 	
@@ -110,6 +111,7 @@ public class Player2Defense extends Activity {
 		{	
 			PictureInterpretation.Decode(fileUri,MainActivity.activePlayers.get(1),"face");
 			MainActivity.activePlayers.get(1).setNewPath(fileUri.getPath());
+			
 			Intent intent = new Intent(Player2Defense.this,FaceCompare.class);
 			startActivity(intent);
 		}
@@ -122,13 +124,27 @@ public class Player2Defense extends Activity {
 	    setContentView(R.layout.activity_player2_defense);
 		
 		//Displays image of previously taken picture.
-		/*String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Defense.jpg";
-		//ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p2_defense);
-		BitmapFactory.Options options = new BitmapFactory.Options();
-		options.inSampleSize = 2;
-		Bitmap bm = BitmapFactory.decodeFile(path, options);*/
+	     String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player1Offense.jpg";
+		 ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p1_offense);
+		 BitmapFactory.Options options = new BitmapFactory.Options();
+		 options.inSampleSize = 2;
+		 Bitmap bm = BitmapFactory.decodeFile(path, options);
+		 jpgview.setImageBitmap(bm);
 
-						
+	    //Changes font for player_2_defense
+  		Typeface tf = Typeface.createFromAsset(getAssets(),
+  	           "fonts/CaviarDreams.ttf");
+  		
+  	    TextView tv = (TextView) findViewById(R.id.player_2_defense);
+  	    tv.setTypeface(tf);
+  	      
+  	    //Changes font for instructions_1
+        TextView tv2 = (TextView) findViewById(R.id.instructions_1);
+        tv2.setTypeface(tf);
+          
+        //Changes font for instructions_2
+        TextView tv3 = (TextView) findViewById(R.id.instructions_2);
+        tv3.setTypeface(tf);				
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
