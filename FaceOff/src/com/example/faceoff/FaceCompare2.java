@@ -29,6 +29,18 @@ public class FaceCompare2 extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_face_compare2);
 		
+<<<<<<< HEAD
+=======
+		//Displays the two pictures taken on offense vs defense side by side
+		
+		//ArrayList<Double> faceOne = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(0).newFace);
+		//ArrayList<Double> faceTwo = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(1),MainActivity.activePlayers.get(1).newFace);
+		
+		//double score = ComparisonLogic.FaceVsFace(faceOne,faceTwo);
+		
+		//System.out.println("score: " + score);
+		
+>>>>>>> origin/Dev
 		//Changes font for results
 		Typeface tf = Typeface.createFromAsset(getAssets(),
                "fonts/CaviarDreams.ttf");
@@ -55,8 +67,11 @@ public class FaceCompare2 extends Activity {
 		Bitmap bm2 = BitmapFactory.decodeFile(path2, options2);
 		jpgview2.setImageBitmap(bm2);
 		
+<<<<<<< HEAD
 		new processData().execute();
 		
+=======
+>>>>>>> origin/Dev
 		//Locate buttons in activity_face_compare.xml
 		Quit_button = (ImageButton) findViewById(R.id.Quit_button);
 		another_round_button = (ImageButton) findViewById(R.id.another_round_button);
@@ -64,6 +79,11 @@ public class FaceCompare2 extends Activity {
 		//Capture button clicks
 		Quit_button.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
+				
+				//If player 1 wins go to victory screen
+				//If player 2 wins go to victory2 screen
+				
+				
 				//Start MainActivity class
 				/*VICTORY2 IS ONLY BEING CALLED FOR THE VIDEO!!
 				 * 
