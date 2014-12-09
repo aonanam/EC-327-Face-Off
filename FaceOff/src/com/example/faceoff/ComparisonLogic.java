@@ -30,8 +30,11 @@ public class ComparisonLogic
 		ArrayList<Double> shiftedBase = new ArrayList<Double>();
 		
 		//Gets the center of the baseface eye-line to re-center the baseFace to a theoretical (0,0)
-		double baseCenterX = ((p.baseFace.get(30) + p.baseFace.get(35))/2);
-		double baseCenterY = ((p.baseFace.get(98) + p.baseFace.get(103))/2);
+		//double baseCenterX = ((p.baseFace.get(31) + p.baseFace.get(36))/2);
+		//double baseCenterY = ((p.baseFace.get(99) + p.baseFace.get(104))/2);
+		
+		double baseCenterX = (p.baseFace.get(67));
+		double baseCenterY = (p.baseFace.get(135));
 		
 		for(int x = 0; x < p.baseFace.size(); x++) //adjusting all baseface points to new origin
 		{
@@ -46,8 +49,11 @@ public class ComparisonLogic
 		}
 		
 		//Gets the center of the new face eye-line to re-center the new face to a theoretical (0,0)
-		double faceCenterX = ((newFace.get(30) + newFace.get(35))/2);
-		double faceCenterY = ((newFace.get(98) + newFace.get(103))/2);
+		//double faceCenterX = ((newFace.get(31) + newFace.get(36))/2);
+		//double faceCenterY = ((newFace.get(99) + newFace.get(104))/2);
+		
+		double faceCenterX = (newFace.get(67));
+		double faceCenterY = (newFace.get(135));
 		
 		for(int x = 0; x < newFace.size(); x++) //adjusting all newface points to new origin
 		{
@@ -62,12 +68,19 @@ public class ComparisonLogic
 		}
 		
 		//Calculates the distance scaling 
-		double scaleX = (newFace.get(30))/(shiftedBase.get(30));
-		//double scaleY = (faceCenterY+newFace.get(98))/(baseCenterY+p.baseFace.get(98));
+		double scaleX = (newFace.get(31))/(shiftedBase.get(31));
+		//double scaleY = (newFace.get(99))/(shiftedBase.get(99));
 		
 		for(int x = 0; x < newFace.size(); x++)
 		{
+			if( x < 68)
+			{
 				newFace.set(x,newFace.get(x)*scaleX);
+			}
+			else
+			{
+				newFace.set(x,newFace.get(x)*scaleX);
+			}
 		}
 		
 		/*Loops through the ArrayList of points, formatted as all x values then y values (0-67 x, 68 - 135 y) and compares the differences
@@ -80,6 +93,9 @@ public class ComparisonLogic
 			diffFromBase.add(newFace.get(x) - shiftedBase.get(x));
 		}
 		System.out.println("Scale(x): " + scaleX);
+		//System.out.println("Scale(y): " + scaleY);
+		System.out.println(shiftedBase);
+		System.out.println(newFace);
 		System.out.println(diffFromBase);
 		
 		return diffFromBase;

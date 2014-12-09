@@ -2,22 +2,22 @@ package com.example.faceoff;
 
 import java.io.File;
 
-import android.net.Uri;
-import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 public class Player2Offense extends Activity {
-	Button P1_Defense_button;
+	ImageButton submit_offense_button;
 	ImageView imageView;
 	
 	private static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 100;
@@ -69,14 +69,27 @@ public class Player2Offense extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		setContentView(R.layout.activity_player2_offense);
+	    
+	  //Locate buttons in activity_player2_defense.xml
+	  submit_offense_button = (ImageButton) findViewById(R.id.submit_offense_button);
+	  						
+	  		//Capture button clicks
+	  submit_offense_button.setOnClickListener(new OnClickListener() 
+	  	{
+	  		public void onClick(View v) 
+	  		{
+	  			cameraPress(v);
+	  		}
+	  	});				
+	}
+	
+	public void cameraPress(View v)
+	{
 		//create Intent to take a picture and return control to the calling application
 	    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-	    
 	    fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE); // create a file to save the image
-	    
 	    intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
-	    
 	    //start the image capture Intent
 	    startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
 	}
@@ -87,6 +100,9 @@ public class Player2Offense extends Activity {
 		{
 			PictureInterpretation.Decode(fileUri,MainActivity.activePlayers.get(0),"face");
 			MainActivity.activePlayers.get(0).setNewPath(fileUri.getPath());
+			//Start Player2Offense class
+			Intent intent1 = new Intent(Player2Offense.this, Player1Defense.class);
+			startActivity(intent1);
 		}
 	}
 	
@@ -97,23 +113,11 @@ public class Player2Offense extends Activity {
 		
 		//Displays image of previously taken picture.
 		String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Offense.jpg";
-		ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p2_offense);
+		//ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p2_offense);
 		BitmapFactory.Options options = new BitmapFactory.Options();
 		options.inSampleSize = 2;
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
-		jpgview.setImageBitmap(bm);
-		
-		//Locate buttons in activity_player2_defense.xml
-		P1_Defense_button = (Button) findViewById(R.id.P1_Defense_button);
-						
-		//Capture button clicks
-		P1_Defense_button.setOnClickListener(new OnClickListener() {
-			public void onClick(View arg0) {
-				//Start Player2Offense class
-				Intent intent1 = new Intent(Player2Offense.this, Player1Defense.class);
-				startActivity(intent1);
-			}
-		});				
+		//jpgview.setImageBitmap(bm);
 	}
 
 	@Override

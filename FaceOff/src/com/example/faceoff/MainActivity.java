@@ -3,6 +3,8 @@ package com.example.faceoff;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -20,11 +22,11 @@ public class MainActivity extends Activity {
 	//ArrayList (like list from STL in c++) holds names of all profiles
 	public static ArrayList<String> profileArray = new ArrayList<String>();
 	public static ArrayList<profile> activePlayers = new ArrayList<profile>();
+	String num_profiles_left;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
 		 //Get the view from activity_main.xml
   		setContentView(R.layout.activity_main);
   		
@@ -45,6 +47,9 @@ public class MainActivity extends Activity {
 		tut_button = (ImageButton) findViewById(R.id.tut_button);
 		single_phone_button = (ImageButton) findViewById(R.id.single_phone_button);
 		Profile_button = (ImageButton) findViewById(R.id.Profile_button);
+		
+		//Dialog box tells user they need to make profiles before continuing to game
+		final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
 	
 		//Capture button clicks
 		tut_button.setOnClickListener(new OnClickListener() {
@@ -58,11 +63,45 @@ public class MainActivity extends Activity {
 	
 		single_phone_button.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
-				
+				if (profileArray.size() < 3)
+				{	 
+					if (profileArray.size() == 1)
+					{
+						num_profiles_left = "two";
+					}
+					else if (profileArray.size() == 2)
+					{
+						num_profiles_left = "one";
+					}
+					// set title
+					alertDialogBuilder.setTitle("Missing Profiles");
+		 
+					
+					// set dialog message
+					alertDialogBuilder
+						.setMessage("Looks like you haven't created enough profiles yet. You need " + num_profiles_left + " more to continue.")
+						.setCancelable(false)
+						.setNegativeButton("Return",new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog,int id) {
+								// if this button is clicked, just close
+								// the dialog box and do nothing
+								dialog.cancel();
+							}
+						});
+		 
+						// create alert dialog
+						AlertDialog alertDialog = alertDialogBuilder.create();
+		 
+						// show it
+						alertDialog.show();
+				}
+				else
+				{
 					//Start SinglePhone class
 					Intent intent2 = new Intent(MainActivity.this, SinglePhone.class);
 					startActivity(intent2);
 			}
+		}
 		});
 	
 		Profile_button.setOnClickListener(new OnClickListener() {
@@ -76,7 +115,6 @@ public class MainActivity extends Activity {
 	
 	}
 	
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

@@ -6,33 +6,55 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.faceoff.FaceCompare" >
+    tools:context="com.example.faceoff.FaceCompare" 
+    android:background="@drawable/profile_creation_background">
 
-    <Button
-        android:id="@+id/P2_Offense_button"
+    <TextView
+        android:id="@+id/results"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Results"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffff"
+        android:textSize="50dp" />
+
+    <ImageButton
+        android:id="@+id/continue_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/imageView1"
-        android:text="Player 2 Offense"
-        android:onClick="activity_player2_offense" />
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/transparent"
+        android:onClick="activity_player2_offense"
+        android:src="@drawable/continue_button" />
+
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="&quot;Insert score here&quot;"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="50dp" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:layout_above="@+id/P2_Offense_button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="21dp"
+        android:layout_alignRight="@+id/continue_button"
+        android:layout_alignTop="@+id/imageView1"
         android:src="@android:drawable/ic_menu_gallery" />
 
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="200dp"
-        android:layout_alignLeft="@+id/imageView2"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp"
+        android:layout_above="@+id/continue_button"
+        android:layout_alignLeft="@+id/results"
+        android:layout_marginBottom="46dp"
+        android:layout_marginLeft="21dp"
         android:src="@android:drawable/ic_menu_gallery" />
 
 </RelativeLayout>

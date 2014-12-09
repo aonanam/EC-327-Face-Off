@@ -7,34 +7,44 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Player1Offense" 
-    android:background="@drawable/background">
+    android:background="@drawable/player_1_offense_background">
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/player_1_offense"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="68dp"
         android:text="Player 1 Offense"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <Button
-        android:id="@+id/P2_Defense_button"
+        android:textSize="50dp" />
+    
+    <TextView
+        android:id="@+id/instructions_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textView1"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="32dp"
-        android:onClick="activity_player2_defense"
-        android:text="Player 2 Defense" />
-
-    <ImageView
-        android:id="@+id/jpgview_p1_offense"
-        android:layout_width="wrap_content"
-        android:layout_height="300dp"
-        android:layout_below="@+id/P2_Defense_button"
         android:layout_centerHorizontal="true"
-        android:src="@android:drawable/ic_menu_gallery" />
+        android:layout_below="@+id/player_1_offense"
+        android:text="Player 1, submit a face that you think Player 2 won't be able to match"
+        android:textSize="30dp" />
+    
+    <TextView
+        android:id="@+id/instructions_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/instructions_1"
+        android:text="*Note: Taking a picture with your face centered and straight will award you more points"
+        android:textSize="30dp" />
+
+    <ImageButton
+        android:id="@+id/submit_offense_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="98dp"
+        android:background="@android:color/transparent"
+        android:onClick="cameraPress"
+        android:src="@drawable/submit_offense_button" />
 
 </RelativeLayout>

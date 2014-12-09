@@ -32,7 +32,7 @@ public class FaceCompare2 extends Activity {
 		
 		double score = ComparisonLogic.FaceVsFace(faceOne,faceTwo);
 		
-		System.out.println("score: " + score);
+		//System.out.println("score: " + score);
 		
 				//Displays image taken by player 1 on offense
 				String path1 = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Offense.jpg";
