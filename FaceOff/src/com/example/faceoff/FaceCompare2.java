@@ -3,9 +3,11 @@ package com.example.faceoff;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.Menu;
@@ -51,7 +53,7 @@ public class FaceCompare2 extends Activity {
 				Bitmap bm2 = BitmapFactory.decodeFile(path2, options2);
 				jpgview2.setImageBitmap(bm2);
 				
-				
+				new processData().execute();
 				//Locate buttons in activity_face_compare.xml
 				Quit_button = (ImageButton) findViewById(R.id.Quit_button);
 				another_round_button = (ImageButton) findViewById(R.id.another_round_button);
@@ -91,4 +93,34 @@ public class FaceCompare2 extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	private class processData extends AsyncTask <String, Integer, Double>
+	{
+		ArrayList<Double> faceOne;
+		ArrayList<Double> faceTwo;
+		
+		ProgressDialog progress;
+		
+		protected void onPreExecute()
+		{
+			super.onPreExecute();
+			System.out.println("Starting ASYNC");
+			progress = ProgressDialog.show(FaceCompare2.this,"Powered by FaceMark API", "Analyzing...");
+		}
+		
+		
+		protected Double doInBackground(String... params)
+		{
+			System.out.println("Finished!");
+			faceOne = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(0).newFace);
+			faceTwo = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(1),MainActivity.activePlayers.get(1).newFace);
+			return ComparisonLogic.FaceVsFace(faceOne,faceTwo);
+		}
+		
+		protected void onPostExecute(Double score)
+		{
+			System.out.println("Score");
+			progress.dismiss();
+		}
+	}
+
 }

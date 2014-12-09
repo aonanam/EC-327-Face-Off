@@ -101,7 +101,7 @@ public class ComparisonLogic
 		return diffFromBase;
 	}
 
-	public static double FaceVsFace(ArrayList<Double> faceOne, ArrayList<Double> faceTwo)
+	public static Double FaceVsFace(ArrayList<Double> faceOne, ArrayList<Double> faceTwo)
 	{
 		double points = 0;
 			
