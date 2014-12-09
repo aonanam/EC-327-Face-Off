@@ -100,15 +100,11 @@ public class SinglePhone extends Activity {
 								MainActivity.activePlayers.add(ProfileCreationLogic.Profiles.get(i));
 							}
 						}
-						
 					}
-
 					@Override
 					public void onNothingSelected(AdapterView<?> arg0) {
 						// TODO Auto-generated method stub
-						
 					}
-					
 				});
 
 		//Locate buttons in activity_single_phone.xml
@@ -124,8 +120,6 @@ public class SinglePhone extends Activity {
 			}
 		});
 	}
-	
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
