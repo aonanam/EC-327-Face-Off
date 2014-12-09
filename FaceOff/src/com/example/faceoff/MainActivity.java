@@ -102,13 +102,6 @@ public class MainActivity extends Activity {
 					//Start SinglePhone class
 					Intent intent2 = new Intent(MainActivity.this, SinglePhone.class);
 					startActivity(intent2);
-<<<<<<< HEAD
-
-
-				//}
-
-=======
->>>>>>> origin/Dev
 			}
 			}
 			});

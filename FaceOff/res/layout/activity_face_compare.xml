@@ -48,10 +48,6 @@
         android:background="@android:color/transparent"
         android:onClick="activity_player2_offense"
         android:src="@drawable/continue_button" />
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/Dev
 
     <ImageView
         android:id="@+id/imageView1"
