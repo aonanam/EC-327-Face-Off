@@ -13,10 +13,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 public class FaceCompare extends Activity {
-	Button P2_Offense_button;
+	ImageButton continue_button;
 
 	/*ArrayList<Double> faceOne = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(0).newFace);
 	ArrayList<Double> faceTwo = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(1),MainActivity.activePlayers.get(1).newFace);
@@ -54,16 +55,16 @@ public class FaceCompare extends Activity {
 		System.out.println("Score: " + score);
 		
 		//Locate buttons in activity_face_compare.xml
-				P2_Offense_button = (Button) findViewById(R.id.P2_Offense_button);
+		continue_button = (ImageButton) findViewById(R.id.continue_button);
 								
-				//Capture button clicks
-				P2_Offense_button.setOnClickListener(new OnClickListener() {
-					public void onClick(View arg0) {
-						//Start Player2Offense class
-						Intent intent1 = new Intent(FaceCompare.this, Player2Offense.class);
-						startActivity(intent1);
-					}
-				});			
+		//Capture button clicks
+		continue_button.setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				//Start Player2Offense class
+				Intent intent1 = new Intent(FaceCompare.this, Player2Offense.class);
+				startActivity(intent1);
+			}
+		});			
 		
 	}
 
