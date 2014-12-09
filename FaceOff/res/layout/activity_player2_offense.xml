@@ -44,7 +44,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="98dp"
         android:background="@android:color/transparent"
-        android:onClick="activity_player1_defense"
+        android:onClick="cameraPress"
         android:src="@drawable/submit_offense_button" />
 
 </RelativeLayout>

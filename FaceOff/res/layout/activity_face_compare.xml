@@ -34,7 +34,6 @@
         android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/horiz_layout"
         android:layout_centerHorizontal="true"
         android:text="&quot;Insert score here&quot;"
         android:textAppearance="?android:attr/textAppearanceLarge"
@@ -44,7 +43,6 @@
         android:id="@+id/horiz_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/score"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp" >
 
@@ -52,7 +50,6 @@
 	        android:id="@+id/imageView2"
 	        android:layout_width="wrap_content"
 	        android:layout_height="200dp"
-	        android:layout_above="@+id/P2_Offense_button"
 	        android:layout_marginBottom="31dp"
 	        android:src="@android:drawable/ic_menu_gallery" />
 	
@@ -60,7 +57,6 @@
 	        android:id="@+id/imageView1"
 	        android:layout_width="wrap_content"
 	        android:layout_height="200dp"
-	        android:layout_below="@+id/horiz_layout"
 	        android:src="@android:drawable/ic_menu_gallery" />
     
     </LinearLayout>

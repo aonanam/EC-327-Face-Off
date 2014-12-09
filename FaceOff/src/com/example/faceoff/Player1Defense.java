@@ -69,14 +69,26 @@ public class Player1Defense extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_player1_defense);
-
+	    
+		//Locate buttons in activity_player1_defense.xml
+		submit_defense_button = (ImageButton) findViewById(R.id.submit_defense_button);
+						
+		//Capture button clicks
+		submit_defense_button.setOnClickListener(new OnClickListener() 
+		{
+			public void onClick(View v) 
+			{
+				cameraPress(v);
+			}
+		});	
+	}
+	
+	public void cameraPress(View v)
+	{
 		//create Intent to take a picture and return control to the calling application
 	    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-	    
 	    fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE); // create a file to save the image
-	    
 	    intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
-	    
 	    //start the image capture Intent
 	    startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
 	}
@@ -87,6 +99,8 @@ public class Player1Defense extends Activity {
 		{
 			PictureInterpretation.Decode(fileUri,MainActivity.activePlayers.get(0),"face");
 			MainActivity.activePlayers.get(0).setNewPath(fileUri.getPath());
+			Intent intent = new Intent(Player1Defense.this,FaceCompare2.class);
+			startActivity(intent);
 		}
 	}
 	
@@ -102,18 +116,6 @@ public class Player1Defense extends Activity {
 		options.inSampleSize = 2;
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
 		jpgview.setImageBitmap(bm);
-
-		//Locate buttons in activity_player1_defense.xml
-		submit_defense_button = (ImageButton) findViewById(R.id.submit_defense_button);
-						
-		//Capture button clicks
-		submit_defense_button.setOnClickListener(new OnClickListener() {
-			public void onClick(View arg0) {
-				//Start Player1Offense class
-				Intent intent1 = new Intent(Player1Defense.this, FaceCompare2.class);
-				startActivity(intent1);
-			}
-		});	
 	}
 
 	@Override
