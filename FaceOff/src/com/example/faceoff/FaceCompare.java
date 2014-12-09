@@ -18,21 +18,16 @@ import android.widget.ImageView;
 
 public class FaceCompare extends Activity {
 	ImageButton continue_button;
-
-	/*ArrayList<Double> faceOne = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(0).newFace);
-	ArrayList<Double> faceTwo = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(1),MainActivity.activePlayers.get(1).newFace);
-	
-	double score = ComparisonLogic.FaceVsFace(faceOne,faceTwo);*/
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_face_compare);
 		
-		ArrayList<Double> faceOne = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(0).newFace);
-		ArrayList<Double> faceTwo = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(1),MainActivity.activePlayers.get(1).newFace);
+		//ArrayList<Double> faceOne = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(0).newFace);
+		//ArrayList<Double> faceTwo = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(1),MainActivity.activePlayers.get(1).newFace);
 		
-		double score = ComparisonLogic.FaceVsFace(faceOne,faceTwo);
+		//double score = ComparisonLogic.FaceVsFace(faceOne,faceTwo);
 		
 		//Displays the two pictures taken on offense vs defense side by side
 		
@@ -52,7 +47,7 @@ public class FaceCompare extends Activity {
 		Bitmap bm2 = BitmapFactory.decodeFile(path2, options2);
 		jpgview2.setImageBitmap(bm2);
 		
-		System.out.println("Score: " + score);
+		//System.out.println("Score: " + score);
 		
 		//Locate buttons in activity_face_compare.xml
 		continue_button = (ImageButton) findViewById(R.id.continue_button);

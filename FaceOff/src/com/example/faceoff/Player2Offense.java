@@ -69,14 +69,27 @@ public class Player2Offense extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-
+		setContentView(R.layout.activity_player2_offense);
+	    
+	  //Locate buttons in activity_player2_defense.xml
+	  submit_offense_button = (ImageButton) findViewById(R.id.submit_offense_button);
+	  						
+	  		//Capture button clicks
+	  submit_offense_button.setOnClickListener(new OnClickListener() 
+	  	{
+	  		public void onClick(View v) 
+	  		{
+	  			cameraPress(v);
+	  		}
+	  	});				
+	}
+	
+	public void cameraPress(View v)
+	{
 		//create Intent to take a picture and return control to the calling application
 	    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-	    
 	    fileUri = getOutputMediaFileUri(MEDIA_TYPE_IMAGE); // create a file to save the image
-	    
 	    intent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri); // set the image file name
-	    
 	    //start the image capture Intent
 	    startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
 	}
@@ -87,6 +100,9 @@ public class Player2Offense extends Activity {
 		{
 			PictureInterpretation.Decode(fileUri,MainActivity.activePlayers.get(0),"face");
 			MainActivity.activePlayers.get(0).setNewPath(fileUri.getPath());
+			//Start Player2Offense class
+			Intent intent1 = new Intent(Player2Offense.this, Player1Defense.class);
+			startActivity(intent1);
 		}
 	}
 	
@@ -102,18 +118,6 @@ public class Player2Offense extends Activity {
 		options.inSampleSize = 2;
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
 		//jpgview.setImageBitmap(bm);
-		
-		//Locate buttons in activity_player2_defense.xml
-		submit_offense_button = (ImageButton) findViewById(R.id.submit_offense_button);
-						
-		//Capture button clicks
-		submit_offense_button.setOnClickListener(new OnClickListener() {
-			public void onClick(View arg0) {
-				//Start Player2Offense class
-				Intent intent1 = new Intent(Player2Offense.this, Player1Defense.class);
-				startActivity(intent1);
-			}
-		});				
 	}
 
 	@Override

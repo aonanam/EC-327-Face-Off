@@ -23,12 +23,11 @@ public class PictureInterpretation
 		
 		class CallMashapeAsync extends AsyncTask<String, Integer, HttpResponse<JsonNode>> 
 		{	
-			//ProgressDialog progress;
-			/*protected void onPreExecute()
+			protected void onPreExecute()
 			{
 				super.onPreExecute();
-				progress = ProgressDialog.show(null,"Powered by FaceMark API", "Analyzing...");
-			};*/
+				//ProgressDialog progress = ProgressDialog.show(FaceCompare.class,"Powered by FaceMark API", "Analyzing...");
+			};
 			
 	    	protected HttpResponse<JsonNode> doInBackground(String... msg) 
 	    	{	

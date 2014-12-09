@@ -79,7 +79,6 @@ public class SinglePhone extends Activity {
 				// Apply the adapter to the spinner
 				profiles_spinner2.setAdapter(adapter2);
 		
-				
 				profiles_spinner2.setOnItemSelectedListener(new OnItemSelectedListener(){
 
 					@Override
@@ -96,7 +95,6 @@ public class SinglePhone extends Activity {
 						}
 						
 					}
-
 					@Override
 					public void onNothingSelected(AdapterView<?> arg0) {
 						// TODO Auto-generated method stub
