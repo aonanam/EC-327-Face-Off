@@ -58,12 +58,12 @@ public final class R {
     public static final class id {
         public static final int Next_Round_button=0x7f08000c;
         public static final int P1_Defense_button=0x7f08001b;
-        public static final int P1_Offense_button=0x7f080020;
+        public static final int P1_Offense_button=0x7f080021;
         public static final int P2_Defense_button=0x7f080015;
         public static final int P2_Offense_button=0x7f080008;
         public static final int Profile_button=0x7f080010;
         public static final int Quit_button=0x7f08000b;
-        public static final int action_settings=0x7f080021;
+        public static final int action_settings=0x7f080022;
         public static final int another_profile_button=0x7f080002;
         public static final int base_face_help_button=0x7f080007;
         public static final int baseface_button=0x7f080006;
@@ -85,6 +85,7 @@ public final class R {
         public static final int p1=0x7f08001d;
         public static final int p2=0x7f08001f;
         public static final int profiles_spinner_p1=0x7f080018;
+        public static final int profiles_spinner_p2=0x7f080020;
         public static final int single_phone_button=0x7f08000f;
         public static final int start_button=0x7f080017;
         public static final int start_face_off=0x7f08001e;
