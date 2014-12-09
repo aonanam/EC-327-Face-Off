@@ -110,6 +110,7 @@ public class Player2Defense extends Activity {
 		{	
 			PictureInterpretation.Decode(fileUri,MainActivity.activePlayers.get(1),"face");
 			MainActivity.activePlayers.get(1).setNewPath(fileUri.getPath());
+			
 			Intent intent = new Intent(Player2Defense.this,FaceCompare.class);
 			startActivity(intent);
 		}
@@ -120,15 +121,6 @@ public class Player2Defense extends Activity {
 	{		
 	    super.onResume();
 	    setContentView(R.layout.activity_player2_defense);
-		
-		//Displays image of previously taken picture.
-		/*String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Defense.jpg";
-		//ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p2_defense);
-		BitmapFactory.Options options = new BitmapFactory.Options();
-		options.inSampleSize = 2;
-		Bitmap bm = BitmapFactory.decodeFile(path, options);*/
-
-						
 	}
 	
 

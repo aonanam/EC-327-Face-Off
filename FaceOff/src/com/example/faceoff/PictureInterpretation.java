@@ -94,7 +94,6 @@ public class PictureInterpretation
 				
 				//progress.dismiss();
 				System.out.println("InterpretedVals Length: " + interpretedVals.size());
-				// progress.dismiss();
 	    	}
 		}
 		

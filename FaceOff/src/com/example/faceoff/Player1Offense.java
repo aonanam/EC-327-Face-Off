@@ -67,6 +67,18 @@ public class Player1Offense extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_player1_offense);
 		
+		  submit_offense_button = (ImageButton) findViewById(R.id.submit_offense_button);
+			
+	  		//Capture button clicks
+	  		submit_offense_button.setOnClickListener(new OnClickListener() 
+	  		{
+	  			@Override
+	  			public void onClick(View v) 
+	  			{
+	  				cameraPress(v);
+	  			}
+	  		});	
+		
 		//Changes font for player_1_offense
 		Typeface tf = Typeface.createFromAsset(getAssets(),
                "fonts/CaviarDreams.ttf");
@@ -81,18 +93,6 @@ public class Player1Offense extends Activity {
         //Changes font for instructions_2
         TextView tv3 = (TextView) findViewById(R.id.instructions_2);
         tv3.setTypeface(tf);
-        
-        submit_offense_button = (ImageButton) findViewById(R.id.submit_offense_button);
-		
-  		//Capture button clicks
-  		submit_offense_button.setOnClickListener(new OnClickListener() 
-  		{
-  			@Override
-  			public void onClick(View v) 
-  			{
-  				cameraPress(v);
-  			}
-  		});	
 	}
 	
 	public void cameraPress(View v)
