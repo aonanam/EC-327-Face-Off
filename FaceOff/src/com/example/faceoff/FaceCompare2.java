@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.Menu;
@@ -14,6 +15,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class FaceCompare2 extends Activity {
 
@@ -34,42 +36,52 @@ public class FaceCompare2 extends Activity {
 		
 		//System.out.println("score: " + score);
 		
-				//Displays image taken by player 1 on offense
-				String path1 = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Offense.jpg";
-				ImageView jpgview1 = (ImageView)findViewById(R.id.imageView1);
-				BitmapFactory.Options options1 = new BitmapFactory.Options();
-				options1.inSampleSize = 2;
-				Bitmap bm1 = BitmapFactory.decodeFile(path1, options1);
-				jpgview1.setImageBitmap(bm1);
-				
-				//Displays image taken by player 2 on defense
-				String path2 = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player1Defense.jpg";
-				ImageView jpgview2 = (ImageView)findViewById(R.id.imageView2);
-				BitmapFactory.Options options2 = new BitmapFactory.Options();
-				options2.inSampleSize = 2;
-				Bitmap bm2 = BitmapFactory.decodeFile(path2, options2);
-				jpgview2.setImageBitmap(bm2);
-				
-				
-				//Locate buttons in activity_face_compare.xml
-				Quit_button = (ImageButton) findViewById(R.id.Quit_button);
-				another_round_button = (ImageButton) findViewById(R.id.another_round_button);
-										
-				//Capture button clicks
-				Quit_button.setOnClickListener(new OnClickListener() {
-					public void onClick(View arg0) {
-						//Start MainActivity class
-						Intent intent1 = new Intent(FaceCompare2.this, MainActivity.class);
-						startActivity(intent1);
-					}
-				});		
-				another_round_button.setOnClickListener(new OnClickListener() {
-					public void onClick(View arg0) {
-						//Start Player1Offense class
-						Intent intent1 = new Intent(FaceCompare2.this, Player1Offense.class);
-						startActivity(intent1);
-					}
-				});		
+		//Changes font for results
+		Typeface tf = Typeface.createFromAsset(getAssets(),
+               "fonts/CaviarDreams.ttf");
+        TextView tv = (TextView) findViewById(R.id.results);
+        tv.setTypeface(tf);
+        
+        //Changes font for face_off_name
+        TextView tv2 = (TextView) findViewById(R.id.score);
+        tv2.setTypeface(tf);
+		
+		//Displays image taken by player 1 on offense
+		String path1 = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Offense.jpg";
+		ImageView jpgview1 = (ImageView)findViewById(R.id.imageView1);
+		BitmapFactory.Options options1 = new BitmapFactory.Options();
+		options1.inSampleSize = 2;
+		Bitmap bm1 = BitmapFactory.decodeFile(path1, options1);
+		jpgview1.setImageBitmap(bm1);
+		
+		//Displays image taken by player 2 on defense
+		String path2 = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player1Defense.jpg";
+		ImageView jpgview2 = (ImageView)findViewById(R.id.imageView2);
+		BitmapFactory.Options options2 = new BitmapFactory.Options();
+		options2.inSampleSize = 2;
+		Bitmap bm2 = BitmapFactory.decodeFile(path2, options2);
+		jpgview2.setImageBitmap(bm2);
+		
+		
+		//Locate buttons in activity_face_compare.xml
+		Quit_button = (ImageButton) findViewById(R.id.Quit_button);
+		another_round_button = (ImageButton) findViewById(R.id.another_round_button);
+								
+		//Capture button clicks
+		Quit_button.setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				//Start MainActivity class
+				Intent intent1 = new Intent(FaceCompare2.this, Victory.class);
+				startActivity(intent1);
+			}
+		});		
+		another_round_button.setOnClickListener(new OnClickListener() {
+			public void onClick(View arg0) {
+				//Start Player1Offense class
+				Intent intent1 = new Intent(FaceCompare2.this, Player1Offense.class);
+				startActivity(intent1);
+			}
+		});		
 	}
 
 	@Override

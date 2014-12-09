@@ -123,7 +123,6 @@ public class Player2Defense extends Activity {
 	{		
 	    super.onResume();
 	    setContentView(R.layout.activity_player2_defense);
-<<<<<<< HEAD
 		
 		//Displays image of previously taken picture.
 		/*String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Defense.jpg";
@@ -132,7 +131,7 @@ public class Player2Defense extends Activity {
 		options.inSampleSize = 2;
 		Bitmap bm = BitmapFactory.decodeFile(path, options);*/
 
-	    //Changes font for player_1_offense
+	    //Changes font for player_2_defense
   		Typeface tf = Typeface.createFromAsset(getAssets(),
   	           "fonts/CaviarDreams.ttf");
   		
@@ -146,8 +145,6 @@ public class Player2Defense extends Activity {
         //Changes font for instructions_2
         TextView tv3 = (TextView) findViewById(R.id.instructions_2);
         tv3.setTypeface(tf);				
-=======
->>>>>>> origin/Dev
 	}
 	
 

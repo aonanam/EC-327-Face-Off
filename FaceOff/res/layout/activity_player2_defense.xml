@@ -7,7 +7,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Player2Defense"
-    android:background="@drawable/player_defense_background" >
+    android:background="@drawable/player_2_defense_background" >
 
     <TextView
         android:id="@+id/player_2_defense"
@@ -16,36 +16,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:text="Player 2 Defense"
-        android:textSize="50dp"
-        android:textColor="#ffffff" />
-    
-    <TextView
-        android:id="@+id/instructions_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/jpgview_p1_offense"
-        android:text="Player 2, it's your turn to try to match Player 1's offense face !"
-        android:textSize="20dp" />
-    
-    <TextView
-        android:id="@+id/instructions_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/instructions_1"
-        android:text="*Note: Taking a picture with your face centered and straight will award you more points"
-        android:textSize="20dp" />
-
-    <ImageButton
-        android:id="@+id/submit_defense_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/instructions_2"
-        android:layout_centerHorizontal="true"
-        android:background="@android:color/transparent"
-        android:onClick="cameraPress"
-        android:src="@drawable/submit_defense_button" />
+        android:textSize="40dp"
+        android:textColor="#ff8330" />
 
     <ImageView
         android:id="@+id/jpgview_p1_offense"
@@ -54,5 +26,37 @@
         android:layout_below="@+id/player_2_defense"
         android:layout_centerHorizontal="true"
         android:src="@android:drawable/ic_menu_gallery" />
+
+    <TextView
+        android:id="@+id/instructions_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/submit_defense_button"
+        android:layout_alignLeft="@+id/instructions_1"
+        android:layout_marginBottom="18dp"
+        android:text="*Note: Taking a picture with your face centered and straight will award you more points"
+        android:textSize="20dp" 
+        android:textColor="#ffffff"/>
+
+    <ImageButton
+        android:id="@+id/submit_defense_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/transparent"
+        android:onClick="cameraPress"
+        android:src="@drawable/submit_defense_button" />
+
+    <TextView
+        android:id="@+id/instructions_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/instructions_2"
+        android:layout_alignLeft="@+id/player_2_defense"
+        android:layout_marginBottom="21dp"
+        android:text="Player 2, it&apos;s your turn to try to match Player 1&apos;s offense face !"
+        android:textSize="20dp"
+        android:textColor="#ffffff" />
 
 </RelativeLayout>

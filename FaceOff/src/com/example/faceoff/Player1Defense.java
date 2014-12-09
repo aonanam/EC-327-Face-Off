@@ -118,13 +118,12 @@ public class Player1Defense extends Activity {
 		options.inSampleSize = 2;
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
 		jpgview.setImageBitmap(bm);
-<<<<<<< HEAD
 		
-		//Changes font for player_1_offense
+		//Changes font for player_1_defense
   		Typeface tf = Typeface.createFromAsset(getAssets(),
   	           "fonts/CaviarDreams.ttf");
   		
-  	    TextView tv = (TextView) findViewById(R.id.player_2_defense);
+  	    TextView tv = (TextView) findViewById(R.id.player_1_defense);
   	    tv.setTypeface(tf);
   	      
   	    //Changes font for instructions_1
@@ -134,9 +133,6 @@ public class Player1Defense extends Activity {
         //Changes font for instructions_2
         TextView tv3 = (TextView) findViewById(R.id.instructions_2);
         tv3.setTypeface(tf);		
-
-=======
->>>>>>> origin/Dev
 	}
 
 	@Override
