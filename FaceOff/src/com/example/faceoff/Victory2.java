@@ -15,7 +15,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class Victory extends Activity
+public class Victory2 extends Activity
 {
 	ImageButton main_menu_button;
 	
@@ -32,7 +32,7 @@ public class Victory extends Activity
 			public void onClick(View arg0) {
 				
 				//Start player 1 offense class
-				Intent intent1 = new Intent(Victory.this, MainActivity.class);
+				Intent intent1 = new Intent(Victory2.this, MainActivity.class);
 				startActivity(intent1);
 			}
 		});

@@ -130,7 +130,7 @@ public class Player2Defense extends Activity {
 		options.inSampleSize = 2;
 		Bitmap bm = BitmapFactory.decodeFile(path, options);*/
 
-	    //Changes font for player_1_offense
+	    //Changes font for player_2_defense
   		Typeface tf = Typeface.createFromAsset(getAssets(),
   	           "fonts/CaviarDreams.ttf");
   		

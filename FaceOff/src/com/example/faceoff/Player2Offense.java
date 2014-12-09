@@ -121,7 +121,7 @@ public class Player2Offense extends Activity {
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
 		//jpgview.setImageBitmap(bm);
 		
-		//Changes font for player_1_offense
+		//Changes font for player_2_offense
 		Typeface tf = Typeface.createFromAsset(getAssets(),
 	           "fonts/CaviarDreams.ttf");
 		

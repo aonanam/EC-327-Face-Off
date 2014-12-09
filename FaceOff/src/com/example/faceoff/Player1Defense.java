@@ -119,11 +119,11 @@ public class Player1Defense extends Activity {
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
 		jpgview.setImageBitmap(bm);
 		
-		//Changes font for player_1_offense
+		//Changes font for player_1_defense
   		Typeface tf = Typeface.createFromAsset(getAssets(),
   	           "fonts/CaviarDreams.ttf");
   		
-  	    TextView tv = (TextView) findViewById(R.id.player_2_defense);
+  	    TextView tv = (TextView) findViewById(R.id.player_1_defense);
   	    tv.setTypeface(tf);
   	      
   	    //Changes font for instructions_1

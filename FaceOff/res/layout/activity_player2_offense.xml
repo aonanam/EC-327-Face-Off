@@ -7,7 +7,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Player2Offense" 
-    android:background="@drawable/player_1_offense_background">
+    android:background="@drawable/player_2_offense_background">
 
     <TextView
         android:id="@+id/player_2_offense"
@@ -16,8 +16,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:text="Player 2 Offense"
-        android:textSize="50dp"
-        android:textColor="#ffffff" />
+        android:textSize="40dp"
+        android:textColor="#ff8330" />
 
     <ImageButton
         android:id="@+id/submit_offense_button"
@@ -38,7 +38,8 @@
         android:layout_alignTop="@+id/player_2_offense"
         android:layout_marginTop="79dp"
         android:text="Player 2, submit a face that you think Player 1 won&apos;t be able to match"
-        android:textSize="30dp" />
+        android:textSize="30dp"
+        android:textColor="#ffffff" />
 
     <TextView
         android:id="@+id/instructions_2"
@@ -48,6 +49,7 @@
         android:layout_below="@+id/instructions_1"
         android:layout_marginTop="39dp"
         android:text="*Note: Taking a picture with your face centered and straight will award you more points"
-        android:textSize="25dp" />
+        android:textSize="25dp" 
+        android:textColor="#ffffff"/>
 
 </RelativeLayout>
