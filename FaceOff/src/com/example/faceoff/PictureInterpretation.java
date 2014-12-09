@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.net.Uri;
 import android.os.AsyncTask;
 
@@ -17,18 +18,18 @@ import org.json.*;
 
 public class PictureInterpretation 
 {
-	public static ArrayList<Double> Decode(final Uri picture,final profile profile,final String code)
+	public static ArrayList<Double> Decode(final Uri picture,final profile profile,final String code)//,final Context thing)
 	{    
 		final ArrayList<Double> interpretedVals = new ArrayList<Double>();
 		
 		class CallMashapeAsync extends AsyncTask<String, Integer, HttpResponse<JsonNode>> 
 		{	
-			/*private ProgressDialog dialog;
-			protected void onPreExecute()
+
+			/*protected void onPreExecute()
 			{
 				super.onPreExecute();
-				dialog = new ProgressDialog(FaceCompare);
-			};*/
+				ProgressDialog progress = ProgressDialog.show(thing,"Powered by FaceMark API", "Analyzing...");
+			}*/
 			
 	    	protected HttpResponse<JsonNode> doInBackground(String... msg) 
 	    	{	
@@ -91,6 +92,7 @@ public class PictureInterpretation
 					e.printStackTrace();
 				}
 				
+				//progress.dismiss();
 				System.out.println("InterpretedVals Length: " + interpretedVals.size());
 				// progress.dismiss();
 	    	}

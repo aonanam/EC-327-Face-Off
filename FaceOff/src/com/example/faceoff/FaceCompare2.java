@@ -27,10 +27,10 @@ public class FaceCompare2 extends Activity {
 		
 		//Displays the two pictures taken on offense vs defense side by side
 		
-		//ArrayList<Double> faceOne = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(0).newFace);
-		//ArrayList<Double> faceTwo = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(1),MainActivity.activePlayers.get(1).newFace);
+		ArrayList<Double> faceOne = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(0).newFace);
+		ArrayList<Double> faceTwo = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(1),MainActivity.activePlayers.get(1).newFace);
 		
-		//double score = ComparisonLogic.FaceVsFace(faceOne,faceTwo);
+		double score = ComparisonLogic.FaceVsFace(faceOne,faceTwo);
 		
 		//System.out.println("score: " + score);
 		
