@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class Player2Offense extends Activity {
 	ImageButton submit_offense_button;
@@ -118,6 +120,21 @@ public class Player2Offense extends Activity {
 		options.inSampleSize = 2;
 		Bitmap bm = BitmapFactory.decodeFile(path, options);
 		//jpgview.setImageBitmap(bm);
+		
+		//Changes font for player_1_offense
+		Typeface tf = Typeface.createFromAsset(getAssets(),
+	           "fonts/CaviarDreams.ttf");
+		
+	    TextView tv = (TextView) findViewById(R.id.player_2_offense);
+	    tv.setTypeface(tf);
+	      
+	    //Changes font for instructions_1
+        TextView tv2 = (TextView) findViewById(R.id.instructions_1);
+        tv2.setTypeface(tf);
+        
+        //Changes font for instructions_2
+        TextView tv3 = (TextView) findViewById(R.id.instructions_2);
+        tv3.setTypeface(tf);
 	}
 
 	@Override

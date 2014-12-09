@@ -12,12 +12,14 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class Player2Defense extends Activity {
 	Button compare_button;
@@ -120,6 +122,31 @@ public class Player2Defense extends Activity {
 	{		
 	    super.onResume();
 	    setContentView(R.layout.activity_player2_defense);
+<<<<<<< HEAD
+		
+		//Displays image of previously taken picture.
+		/*String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Defense.jpg";
+		//ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p2_defense);
+		BitmapFactory.Options options = new BitmapFactory.Options();
+		options.inSampleSize = 2;
+		Bitmap bm = BitmapFactory.decodeFile(path, options);*/
+
+	    //Changes font for player_1_offense
+  		Typeface tf = Typeface.createFromAsset(getAssets(),
+  	           "fonts/CaviarDreams.ttf");
+  		
+  	    TextView tv = (TextView) findViewById(R.id.player_2_defense);
+  	    tv.setTypeface(tf);
+  	      
+  	    //Changes font for instructions_1
+        TextView tv2 = (TextView) findViewById(R.id.instructions_1);
+        tv2.setTypeface(tf);
+          
+        //Changes font for instructions_2
+        TextView tv3 = (TextView) findViewById(R.id.instructions_2);
+        tv3.setTypeface(tf);				
+=======
+>>>>>>> origin/Dev
 	}
 	
 

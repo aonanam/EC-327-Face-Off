@@ -18,24 +18,6 @@
         android:text="Player 2 Offense"
         android:textSize="50dp"
         android:textColor="#ffffff" />
-    
-    <TextView
-        android:id="@+id/instructions_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/player_2_offense"
-        android:text="Player 2, submit a face that you think Player 1 won't be able to match"
-        android:textSize="30dp" />
-    
-    <TextView
-        android:id="@+id/instructions_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/instructions_1"
-        android:text="*Note: Taking a picture with your face centered and straight will award you more points"
-        android:textSize="30dp" />
 
     <ImageButton
         android:id="@+id/submit_offense_button"
@@ -47,5 +29,25 @@
         android:background="@android:color/transparent"
         android:onClick="cameraPress"
         android:src="@drawable/submit_offense_button" />
+
+    <TextView
+        android:id="@+id/instructions_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/player_2_offense"
+        android:layout_alignTop="@+id/player_2_offense"
+        android:layout_marginTop="79dp"
+        android:text="Player 2, submit a face that you think Player 1 won&apos;t be able to match"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/instructions_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/instructions_1"
+        android:layout_below="@+id/instructions_1"
+        android:layout_marginTop="39dp"
+        android:text="*Note: Taking a picture with your face centered and straight will award you more points"
+        android:textSize="25dp" />
 
 </RelativeLayout>

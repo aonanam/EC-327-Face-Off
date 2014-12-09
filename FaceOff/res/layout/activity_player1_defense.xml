@@ -7,7 +7,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Player1Defense" 
-    android:background="@drawable/player_1_offense_background">
+    android:background="@drawable/player_defense_background">
 
     <TextView
         android:id="@+id/player_1_defense"
@@ -20,22 +20,30 @@
         android:textColor="#ffffff" />
     
     <TextView
-        android:id="@+id/instructions_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/player_1_defense"
-        android:text="Player 1, it's your turn to try to match Player 2's offense face !"
-        android:textSize="30dp" />
-    
-    <TextView
         android:id="@+id/instructions_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/instructions_1"
         android:text="*Note: Taking a picture with your face centered and straight will award you more points"
-        android:textSize="30dp" />
+        android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/jpgview_p2_offense"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp"
+        android:layout_below="@+id/player_1_defense"
+        android:layout_centerHorizontal="true"
+        android:src="@android:drawable/ic_menu_gallery" />
+
+    <TextView
+        android:id="@+id/instructions_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/instructions_2"
+        android:layout_below="@+id/jpgview_p2_offense"
+        android:text="Player 1, it&apos;s your turn to try to match Player 2&apos;s offense face !"
+        android:textSize="20dp" />
 
     <ImageButton
         android:id="@+id/submit_defense_button"
@@ -43,18 +51,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="98dp"
+        android:layout_marginBottom="50dp"
         android:background="@android:color/transparent"
         android:onClick="cameraPress"
         android:src="@drawable/submit_defense_button" />
-
-    <ImageView
-        android:id="@+id/jpgview_p2_offense"
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="84dp"
-        android:src="@android:drawable/ic_menu_gallery" />
 
 </RelativeLayout>
