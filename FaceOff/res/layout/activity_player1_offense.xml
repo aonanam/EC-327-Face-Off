@@ -17,26 +17,8 @@
         android:layout_centerHorizontal="true"
         android:text="Player 1 Offense"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="50dp"
+        android:textSize="40dp"
         android:textColor="#ffffff" />
-    
-    <TextView
-        android:id="@+id/instructions_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/player_1_offense"
-        android:text="Player 1, submit a face that you think Player 2 won't be able to match"
-        android:textSize="30dp" />
-    
-    <TextView
-        android:id="@+id/instructions_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/instructions_1"
-        android:text="*Note: Taking a picture with your face centered and straight will award you more points"
-        android:textSize="30dp" />
 
     <ImageButton
         android:id="@+id/submit_offense_button"
@@ -48,5 +30,25 @@
         android:background="@android:color/transparent"
         android:onClick="cameraPress"
         android:src="@drawable/submit_offense_button" />
+
+    <TextView
+        android:id="@+id/instructions_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/player_1_offense"
+        android:layout_alignTop="@+id/player_1_offense"
+        android:layout_marginTop="78dp"
+        android:text="Player 1, submit a face that you think Player 2 won&apos;t be able to match"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/instructions_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/instructions_1"
+        android:layout_below="@+id/instructions_1"
+        android:layout_marginTop="21dp"
+        android:text="*Note: Taking a picture with your face centered and straight will award you more points"
+        android:textSize="25dp" />
 
 </RelativeLayout>
