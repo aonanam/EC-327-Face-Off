@@ -49,4 +49,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="69dp" />
 
+    <Spinner
+        android:id="@+id/profiles_spinner_p2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/p2"
+        android:layout_alignLeft="@+id/profiles_spinner_p1"
+        android:layout_marginBottom="26dp" />
+
 </RelativeLayout>
