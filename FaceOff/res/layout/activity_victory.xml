@@ -19,16 +19,6 @@
         android:textColor="#ffffff"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <ImageButton
-        android:id="@+id/main_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="66dp"
-        android:background="@android:color/transparent"
-        android:src="@drawable/main_menu_button" />
-
     <ImageView
         android:id="@+id/victory_logo"
         android:layout_width="wrap_content"
@@ -47,5 +37,15 @@
         android:layout_marginBottom="20dp"
         android:text="Player 1 Wins !"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageButton
+        android:id="@+id/main_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="99dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/main_menu_button" />
     
 </RelativeLayout>

@@ -50,14 +50,14 @@
         android:text="*Note: Taking a picture with your face centered and straight will award you more points"
         android:textColor="#ffffff"
         android:textSize="20dp" />
- 
+
     <ImageView
         android:id="@+id/jpgview_p1_offense"
         android:layout_width="wrap_content"
         android:layout_height="170dp"
         android:layout_above="@+id/instructions_1"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="33dp"
+        android:layout_marginBottom="47dp"
         android:src="@android:drawable/ic_menu_gallery" />
  
 </RelativeLayout>
