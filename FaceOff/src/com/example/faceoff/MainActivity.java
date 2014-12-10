@@ -56,7 +56,7 @@ public class MainActivity extends Activity {
 			public void onClick(View arg0) {
 			
 				//Start Tutorial class
-				Intent intent1 = new Intent(MainActivity.this, Tutorial.class);
+				Intent intent1 = new Intent(MainActivity.this, Victory.class);
 				startActivity(intent1);
 			}
 		});
@@ -76,7 +76,6 @@ public class MainActivity extends Activity {
 					// set title
 					alertDialogBuilder.setTitle("Missing Profiles");
 		 
-					
 					// set dialog message
 					alertDialogBuilder
 						.setMessage("Looks like you haven't created enough profiles yet. You need " + num_profiles_left + " more to continue.")

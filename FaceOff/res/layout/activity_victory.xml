@@ -17,8 +17,7 @@
         android:layout_centerHorizontal="true"
         android:text="Victory !"
         android:textColor="#ffffff"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="30dp" />
+        android:textSize="50dp" />
 
     <ImageButton
         android:id="@+id/main_menu"
@@ -30,14 +29,6 @@
         android:background="@android:color/transparent"
         android:src="@drawable/main_menu_button" />
 
-    <ImageView
-        android:id="@+id/victory_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/victory"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/player_1_victory_logo" />
-
     <TextView
         android:id="@+id/player_wins"
         android:layout_width="wrap_content"
@@ -46,7 +37,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="29dp"
         android:text="Player 1 Wins !"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="30dp" />
+        android:textSize="50dp" />
+
+    <ImageView
+        android:id="@+id/victory_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/victory"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:src="@drawable/player_1_victory_logo" />
     
 </RelativeLayout>
