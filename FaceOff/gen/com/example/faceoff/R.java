@@ -94,17 +94,17 @@ public final class R {
         public static final int base_face_help_button=0x7f080007;
         public static final int baseface_button=0x7f080006;
         public static final int camera_button=0x7f080001;
-        public static final int continue_button=0x7f08000a;
+        public static final int continue_button=0x7f080009;
         public static final int create_profile=0x7f080004;
         public static final int face_off_name=0x7f080013;
-        public static final int imageView1=0x7f08000c;
-        public static final int imageView2=0x7f08000b;
+        public static final int imageView1=0x7f08000b;
+        public static final int imageView2=0x7f08000c;
         public static final int instructions_1=0x7f080017;
         public static final int instructions_2=0x7f080016;
         public static final int jpgview_p1_offense=0x7f08001e;
         public static final int jpgview_p2_offense=0x7f080018;
         public static final int logo=0x7f08000f;
-        public static final int main_menu=0x7f080026;
+        public static final int main_menu=0x7f080027;
         public static final int main_menu_button=0x7f080003;
         public static final int name_entry=0x7f080005;
         public static final int p1=0x7f080020;
@@ -117,7 +117,7 @@ public final class R {
         public static final int profiles_spinner_p1=0x7f08001c;
         public static final int profiles_spinner_p2=0x7f080023;
         public static final int results=0x7f080008;
-        public static final int score=0x7f080009;
+        public static final int score=0x7f08000a;
         public static final int single_phone_button=0x7f080011;
         public static final int start_button=0x7f08001b;
         public static final int start_face_off=0x7f080021;
@@ -126,7 +126,7 @@ public final class R {
         public static final int textView1=0x7f080000;
         public static final int tut_button=0x7f080010;
         public static final int victory=0x7f080025;
-        public static final int victory_logo=0x7f080027;
+        public static final int victory_logo=0x7f080026;
     }
     public static final class layout {
         public static final int activity_base_face=0x7f030000;
