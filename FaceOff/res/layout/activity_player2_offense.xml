@@ -37,7 +37,6 @@
         android:layout_alignLeft="@+id/player_2_offense"
         android:layout_alignTop="@+id/player_2_offense"
         android:layout_marginTop="79dp"
-        android:text="Player 2, submit a face that you think Player 1 won&apos;t be able to match"
         android:textSize="30dp"
         android:textColor="#ffffff" />
 

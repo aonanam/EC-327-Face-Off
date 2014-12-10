@@ -129,6 +129,7 @@ public class Player1Defense extends Activity {
   	    //Changes font for instructions_1
         TextView tv2 = (TextView) findViewById(R.id.instructions_1);
         tv2.setTypeface(tf);
+        tv2.setText(MainActivity.activePlayers.get(0).getProfileName()+", it's your turn to try to match " + MainActivity.activePlayers.get(1).getProfileName() + "'s offense face !");
           
         //Changes font for instructions_2
         TextView tv3 = (TextView) findViewById(R.id.instructions_2);

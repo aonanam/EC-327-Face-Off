@@ -19,6 +19,7 @@ public class Victory extends Activity
 {
 	ImageButton main_menu_button;
 	
+	@Override
 	protected void onCreate(Bundle savedInstanceState) 
 	{
 		super.onCreate(savedInstanceState);
@@ -30,6 +31,12 @@ public class Victory extends Activity
 		//Capture button clicks
 		main_menu_button.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
+				
+				//Clears the activeplayers array to prep a new game
+				for(int x = 0; x < MainActivity.activePlayers.size(); x++)
+				{
+					MainActivity.activePlayers.remove(x);
+				}
 				
 				//Start player 1 offense class
 				Intent intent1 = new Intent(Victory.this, MainActivity.class);

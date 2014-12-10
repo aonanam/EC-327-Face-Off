@@ -38,7 +38,6 @@
         android:layout_alignLeft="@+id/player_1_offense"
         android:layout_alignTop="@+id/player_1_offense"
         android:layout_marginTop="78dp"
-        android:text="Player 1, submit a face that you think Player 2 won&apos;t be able to match"
         android:textSize="30dp" />
 
     <TextView

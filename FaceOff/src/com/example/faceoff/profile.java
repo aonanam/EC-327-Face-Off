@@ -11,7 +11,7 @@ public class profile
 		String profileName;
 		
 		//Amount of points this profile is carrying
-		int points;
+		double points;
 		
 		/* ArrayList of specified points on the face, 68 (x,y) coordinates packed into a 135 element array with the format of:
 		 * X coordinates first (0-67) followed by the y coordinates (68-135)
@@ -50,7 +50,7 @@ public class profile
 			baseFace = arrayMap;
 		}
 		
-		public int getPoints()
+		public double getPoints()
 		{
 			return this.points;
 		}

@@ -75,20 +75,16 @@ public class PictureInterpretation
 					if(code == "base")
 					{
 						profile.addBaseFace(interpretedVals);
-						//System.out.println(profile.baseFace);
 					}
 					else if(code == "face")
 					{
 						profile.setNewFace(interpretedVals);
-						//System.out.println(profile.newFace);
 					}
 				}
 				catch(Exception e)
 				{
 					e.printStackTrace();
 				}
-				
-				//progress.dismiss();
 				System.out.println("InterpretedVals Length: " + interpretedVals.size());
 	    	}
 		}

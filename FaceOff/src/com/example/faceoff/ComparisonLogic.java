@@ -94,9 +94,9 @@ public class ComparisonLogic
 		}
 		System.out.println("Scale(x): " + scaleX);
 		//System.out.println("Scale(y): " + scaleY);
-		System.out.println(shiftedBase);
-		System.out.println(newFace);
-		System.out.println(diffFromBase);
+		//System.out.println(shiftedBase);
+		//System.out.println(newFace);
+		//System.out.println(diffFromBase);
 		
 		return diffFromBase;
 	}
@@ -123,7 +123,7 @@ public class ComparisonLogic
 		/*The following are the X values of landmark points being compared. If the are in the general direction of the moved point, the user will
 		 * get points for it :)*/
 		
-		for(int x = 0; x < faceOne.size(); x++)
+		for(int x = 0; x <= faceOne.size()/2; x++)
 		{
 			if(faceOne.get(x) > 0 && faceTwo.get(x) > 0)
 			{
@@ -134,7 +134,6 @@ public class ComparisonLogic
 				++points;
 			}
 		}
-		
 		return (points/135)*100;
 	}
 }

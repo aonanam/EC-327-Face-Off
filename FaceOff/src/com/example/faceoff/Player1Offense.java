@@ -88,6 +88,7 @@ public class Player1Offense extends Activity {
         //Changes font for instructions_1
         TextView tv2 = (TextView) findViewById(R.id.instructions_1);
         tv2.setTypeface(tf);
+        tv2.setText(MainActivity.activePlayers.get(0).getProfileName() + ", submit a face that you think " + MainActivity.activePlayers.get(1).getProfileName()+ " won't be able to match");
           
         //Changes font for instructions_2
         TextView tv3 = (TextView) findViewById(R.id.instructions_2);
@@ -132,7 +133,7 @@ public class Player1Offense extends Activity {
 	    //Changes font for instructions_1
         TextView tv2 = (TextView) findViewById(R.id.instructions_1);
         tv2.setTypeface(tf);
-        //tv2.setText(MainActivity.profileArray.get(0) + ", submit a face that you think " +MainActivity.profileArray.get(1) +" won't be able to match");
+        tv2.setText(MainActivity.activePlayers.get(0).getProfileName() + ", submit a face that you think " + MainActivity.activePlayers.get(1).getProfileName()+ " won't be able to match");
           
         //Changes font for instructions_2
         TextView tv3 = (TextView) findViewById(R.id.instructions_2);

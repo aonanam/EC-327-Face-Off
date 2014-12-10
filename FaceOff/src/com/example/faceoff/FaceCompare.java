@@ -28,13 +28,7 @@ public class FaceCompare extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_face_compare);
-<<<<<<< HEAD
 		
-		//ArrayList<Double> faceOne = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(0).newFace);
-		//ArrayList<Double> faceTwo = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(1),MainActivity.activePlayers.get(1).newFace);
-		
-		//double score = ComparisonLogic.FaceVsFace(faceOne,faceTwo);
-=======
 		//Changes font for results
 		Typeface tf = Typeface.createFromAsset(getAssets(),
                "fonts/CaviarDreams.ttf");
@@ -44,7 +38,6 @@ public class FaceCompare extends Activity {
         //Changes font for score
         TextView tv2 = (TextView) findViewById(R.id.score);
         tv2.setTypeface(tf);
->>>>>>> origin/Dev
 		
 		//Displays the two pictures taken on offense vs defense side by side
 		
@@ -115,12 +108,6 @@ private class processData extends AsyncTask <String, Integer, Double>
 	
 	protected Double doInBackground(String... params)
 	{
-		System.out.println("Yes");
-		/*while(MainActivity.activePlayers.get(0).newFace.size() == 0 || MainActivity.activePlayers.get(1).newFace.size() == 0)
-		{
-			System.out.println("Waiting....");
-		}*/
-		System.out.println("Finished!");
 		faceOne = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(0).newFace);
 		faceTwo = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(1),MainActivity.activePlayers.get(1).newFace);
 		return ComparisonLogic.FaceVsFace(faceOne,faceTwo);
@@ -132,7 +119,9 @@ private class processData extends AsyncTask <String, Integer, Double>
 	               "fonts/CaviarDreams.ttf");
 		 TextView tv2 = (TextView) findViewById(R.id.score);
 	        tv2.setTypeface(tf);
-		tv2.setText("Score: 1523");
+		//tv2.setText("Score: 1523");
+		tv2.setText("Score: " + score.intValue());
+		MainActivity.activePlayers.get(1).points = score;
 		progress.dismiss();
 	}
 }

@@ -39,12 +39,6 @@ public class FaceCompare2 extends Activity {
         TextView tv2 = (TextView) findViewById(R.id.score);
         tv2.setTypeface(tf);
 		
-<<<<<<< HEAD
-		//ArrayList<Double> faceOne = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(0).newFace);
-		//ArrayList<Double> faceTwo = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(1),MainActivity.activePlayers.get(1).newFace);
-		
-		//double score = ComparisonLogic.FaceVsFace(faceOne,faceTwo);
-=======
 		//Displays image taken by player 1 on offense
 		String path1 = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Offense.jpg";
 		ImageView jpgview1 = (ImageView)findViewById(R.id.imageView1);
@@ -60,7 +54,6 @@ public class FaceCompare2 extends Activity {
 		options2.inSampleSize = 2;
 		Bitmap bm2 = BitmapFactory.decodeFile(path2, options2);
 		jpgview2.setImageBitmap(bm2);
->>>>>>> origin/Dev
 		
 		new processData().execute();
 
@@ -75,14 +68,17 @@ public class FaceCompare2 extends Activity {
 				//If player 1 wins go to victory screen
 				//If player 2 wins go to victory2 screen
 				
-				
-				//Start MainActivity class
-				/*VICTORY2 IS ONLY BEING CALLED FOR THE VIDEO!!
-				 * 
-				 * 
-				 * */
-				Intent intent1 = new Intent(FaceCompare2.this, Victory.class);
-				startActivity(intent1);
+				if(MainActivity.activePlayers.get(0).points > MainActivity.activePlayers.get(1).points)
+				{
+					//Start MainActivity class
+					Intent intent1 = new Intent(FaceCompare2.this, Victory.class);
+					startActivity(intent1);
+				}
+				else
+				{
+					Intent intent1 = new Intent(FaceCompare2.this, Victory2.class);
+					startActivity(intent1);
+				}
 			}
 		});		
 		another_round_button.setOnClickListener(new OnClickListener() {
@@ -129,9 +125,8 @@ public class FaceCompare2 extends Activity {
 		
 		protected Double doInBackground(String... params)
 		{
-			System.out.println("Finished!");
-			faceOne = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(0).newFace);
-			faceTwo = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(1),MainActivity.activePlayers.get(1).newFace);
+			faceOne = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(1),MainActivity.activePlayers.get(0).newFace);
+			faceTwo = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(1).newFace);
 			return ComparisonLogic.FaceVsFace(faceOne,faceTwo);
 		}
 		
@@ -141,7 +136,9 @@ public class FaceCompare2 extends Activity {
 		               "fonts/CaviarDreams.ttf");
 			TextView tv2 = (TextView) findViewById(R.id.score);
 	        tv2.setTypeface(tf);
-			tv2.setText("Score: 1367");
+	        //tv2.setText("Score: 1367");
+	        tv2.setText("Score: " + score.intValue());
+			MainActivity.activePlayers.get(0).points = score;
 			progress.dismiss();
 		}
 	}

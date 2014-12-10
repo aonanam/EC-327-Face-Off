@@ -124,6 +124,8 @@ public class BaseFace extends Activity
 		{
 			PictureInterpretation.Decode(fileUri,ProfileCreationLogic.Profiles.get(ProfileCreationLogic.Profiles.size()-1),"base");
 			ProfileCreationLogic.Profiles.get(ProfileCreationLogic.Profiles.size()-1).setPath(fileUri.getPath());
+			Toast toast = Toast.makeText(getApplicationContext(), "Successfully created profile!", Toast.LENGTH_SHORT);
+			toast.show();
 			Intent intent1 = new Intent(BaseFace.this, MainActivity.class);
 			startActivity(intent1);
 		}
