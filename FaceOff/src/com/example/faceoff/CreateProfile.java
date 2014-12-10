@@ -71,7 +71,7 @@ public class CreateProfile extends Activity
                                 // set dialog message
                                 alertDialogBuilder
                                         .setMessage("A Base Face is our way of comparing your photos in the face off to what your normal face looks like. " +
-                                                        "So take a simple picture with your face centered in the camera, and we'll use it to reward you points later!")
+                                                        "So take a simple picture with your neutral face centered in the camera, and we'll use it to reward you points later!")
                                         .setCancelable(false)
                                         .setNegativeButton("Return",new DialogInterface.OnClickListener() {
                                                 public void onClick(DialogInterface dialog,int id) {

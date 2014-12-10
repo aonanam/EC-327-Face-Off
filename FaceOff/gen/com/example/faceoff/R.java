@@ -97,8 +97,8 @@ public final class R {
         public static final int continue_button=0x7f08000a;
         public static final int create_profile=0x7f080004;
         public static final int face_off_name=0x7f080013;
-        public static final int imageView1=0x7f08000b;
-        public static final int imageView2=0x7f08000c;
+        public static final int imageView1=0x7f08000c;
+        public static final int imageView2=0x7f08000b;
         public static final int instructions_1=0x7f080016;
         public static final int instructions_2=0x7f080015;
         public static final int jpgview_p1_offense=0x7f08001e;
