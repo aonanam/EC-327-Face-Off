@@ -120,8 +120,8 @@ private class processData extends AsyncTask <String, Integer, Double>
 		 TextView tv2 = (TextView) findViewById(R.id.score);
 	        tv2.setTypeface(tf);
 		//tv2.setText("Score: 1523");
-		tv2.setText("Score: " + score.intValue());
-		MainActivity.activePlayers.get(1).points = score;
+		tv2.setText(MainActivity.activePlayers.get(1).profileName + "'s Score: " + score.intValue());
+		MainActivity.activePlayers.get(1).points += score;
 		progress.dismiss();
 	}
 }

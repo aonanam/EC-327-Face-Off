@@ -137,8 +137,8 @@ public class FaceCompare2 extends Activity {
 			TextView tv2 = (TextView) findViewById(R.id.score);
 	        tv2.setTypeface(tf);
 	        //tv2.setText("Score: 1367");
-	        tv2.setText("Score: " + score.intValue());
-			MainActivity.activePlayers.get(0).points = score;
+	        tv2.setText(MainActivity.activePlayers.get(0).profileName + "'s Score: " + score.intValue());
+			MainActivity.activePlayers.get(0).points += score;
 			progress.dismiss();
 		}
 	}

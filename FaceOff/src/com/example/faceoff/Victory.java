@@ -25,6 +25,9 @@ public class Victory extends Activity
 		super.onCreate(savedInstanceState);
   		setContentView(R.layout.activity_victory);
   		
+  		TextView tv = (TextView) findViewById(R.id.player_wins);
+        tv.setText(MainActivity.activePlayers.get(0).profileName + " Wins !");
+  		
   		//Locate buttons in victory.xml
 		main_menu_button = (ImageButton) findViewById(R.id.main_menu);
 		

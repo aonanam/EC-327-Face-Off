@@ -28,7 +28,7 @@
         android:layout_below="@+id/results"
         android:text="Score:"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="50dp"
+        android:textSize="35dp"
         android:textColor="#ff8330" />
 
     <ImageButton
