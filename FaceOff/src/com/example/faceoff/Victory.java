@@ -24,8 +24,18 @@ public class Victory extends Activity
 		super.onCreate(savedInstanceState);
   		setContentView(R.layout.activity_victory);
   		
+  		//Changes fonts
+  		Typeface tf = Typeface.createFromAsset(getAssets(),
+  	           "fonts/CaviarDreams.ttf");
+  		
+  	    TextView tv = (TextView) findViewById(R.id.victory);
+  	    tv.setTypeface(tf);
+  	    
+  	    TextView tv2 = (TextView) findViewById(R.id.player_wins);
+	    tv2.setTypeface(tf);
+  		
   		//Locate buttons in victory.xml
-		main_menu_button = (ImageButton) findViewById(R.id.main_menu);
+		main_menu_button = (ImageButton) findViewById(R.id.start_face_off);
 		
 		//Capture button clicks
 		main_menu_button.setOnClickListener(new OnClickListener() {

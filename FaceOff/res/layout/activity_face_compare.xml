@@ -6,9 +6,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.faceoff.FaceCompare" 
+    tools:context="com.example.faceoff.FaceCompare"
     android:background="@drawable/compare_background">
-
+ 
     <TextView
         android:id="@+id/results"
         android:layout_width="wrap_content"
@@ -19,7 +19,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#ffffff"
         android:textSize="50dp" />
-
+ 
     <TextView
         android:id="@+id/score"
         android:layout_width="wrap_content"
@@ -30,7 +30,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="50dp"
         android:textColor="#ff8330" />
-
+ 
     <ImageButton
         android:id="@+id/continue_button"
         android:layout_width="wrap_content"
@@ -41,34 +41,30 @@
         android:background="@android:color/transparent"
         android:onClick="activity_player2_offense"
         android:src="@drawable/continue_button" />
-
+ 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-<<<<<<< HEAD
-        android:layout_height="100dp"
-        android:layout_alignParentRight="true"
+        android:layout_width="180dp"
+        android:layout_height="200dp"
         android:layout_centerVertical="true"
-=======
-        android:layout_height="180dp"
-        android:layout_alignTop="@+id/imageView1"
-        android:layout_marginTop="8dp"
         android:layout_toRightOf="@+id/results"
->>>>>>> origin/Dev
+        android:maxHeight="200dip"
+        android:maxWidth="250dip"
+        android:minHeight="200dip"
+        android:minWidth="250dip"
         android:src="@android:drawable/ic_menu_gallery" />
-
+ 
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
-<<<<<<< HEAD
-        android:layout_height="100dp"
-        android:layout_alignParentLeft="true"
+        android:layout_height="200dp"
+        android:maxHeight="200dip"
+        android:maxWidth="250dip"
+        android:minHeight="200dip"
+        android:minWidth="250dip"
         android:layout_alignTop="@+id/imageView2"
-=======
-        android:layout_height="180dp"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
->>>>>>> origin/Dev
+        android:layout_marginRight="17dp"
+        android:layout_toLeftOf="@+id/continue_button"
         android:src="@android:drawable/ic_menu_gallery" />
-
+ 
 </RelativeLayout>

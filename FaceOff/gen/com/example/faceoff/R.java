@@ -88,7 +88,7 @@ public final class R {
         public static final int P1_Offense_button=0x7f080024;
         public static final int Profile_button=0x7f080012;
         public static final int Quit_button=0x7f08000d;
-        public static final int action_settings=0x7f08002a;
+        public static final int action_settings=0x7f080029;
         public static final int another_profile_button=0x7f080002;
         public static final int another_round_button=0x7f08000e;
         public static final int base_face_help_button=0x7f080007;
@@ -99,13 +99,8 @@ public final class R {
         public static final int face_off_name=0x7f080013;
         public static final int imageView1=0x7f08000c;
         public static final int imageView2=0x7f08000b;
-<<<<<<< HEAD
-        public static final int instructions_1=0x7f080016;
-        public static final int instructions_2=0x7f080015;
-=======
         public static final int instructions_1=0x7f080017;
         public static final int instructions_2=0x7f080016;
->>>>>>> origin/Dev
         public static final int jpgview_p1_offense=0x7f08001e;
         public static final int jpgview_p2_offense=0x7f080018;
         public static final int logo=0x7f08000f;
@@ -114,7 +109,6 @@ public final class R {
         public static final int name_entry=0x7f080005;
         public static final int p1=0x7f080020;
         public static final int p2=0x7f080022;
-        public static final int player2_wins=0x7f080029;
         public static final int player_1_defense=0x7f080014;
         public static final int player_1_offense=0x7f080019;
         public static final int player_2_defense=0x7f08001d;

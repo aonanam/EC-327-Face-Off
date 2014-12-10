@@ -33,18 +33,18 @@
         android:id="@+id/victory_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/victory"
+        android:layout_above="@+id/main_menu"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginBottom="48dp"
         android:src="@drawable/player_1_victory_logo" />
 
     <TextView
         android:id="@+id/player_wins"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/victory_logo"
+        android:layout_above="@+id/main_menu"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
+        android:layout_marginBottom="20dp"
         android:text="Player 1 Wins !"
         android:textAppearance="?android:attr/textAppearanceLarge" />
     

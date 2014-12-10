@@ -24,6 +24,16 @@ public class Victory2 extends Activity
 		super.onCreate(savedInstanceState);
   		setContentView(R.layout.activity_victory);
   		
+  		//Changes fonts
+  		Typeface tf = Typeface.createFromAsset(getAssets(),
+  	           "fonts/CaviarDreams.ttf");
+  		
+  	    TextView tv = (TextView) findViewById(R.id.victory);
+  	    tv.setTypeface(tf);
+  	    
+  	    TextView tv2 = (TextView) findViewById(R.id.player_wins);
+	    tv2.setTypeface(tf);
+	    
   		//Locate buttons in victory.xml
 		main_menu_button = (ImageButton) findViewById(R.id.start_face_off);
 		
@@ -31,6 +41,7 @@ public class Victory2 extends Activity
 		main_menu_button.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
 				
+				//Start player 1 offense class
 				Intent intent1 = new Intent(Victory2.this, MainActivity.class);
 				startActivity(intent1);
 			}
