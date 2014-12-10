@@ -45,9 +45,9 @@
         android:id="@+id/instructions_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/submit_offense_button"
         android:layout_alignLeft="@+id/player_2_offense"
-        android:layout_below="@+id/player_2_offense"
-        android:layout_marginTop="18dp"
+        android:layout_marginBottom="40dp"
         android:text="Player 2, submit a face that you think Player 1 won&apos;t be able to match"
         android:textColor="#ffffff"
         android:textSize="30dp" />

@@ -45,15 +45,14 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/score"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="36dp" >
+        android:layout_below="@+id/score"
+        android:layout_centerHorizontal="true" >
 
         <ImageView
             android:id="@+id/imageView1"
             android:layout_width="wrap_content"
             android:layout_height="200dp"
-            android:layout_marginRight="110dp"
+            android:layout_marginRight="60dp"
             android:src="@android:drawable/ic_menu_gallery" />
 
         <ImageView
