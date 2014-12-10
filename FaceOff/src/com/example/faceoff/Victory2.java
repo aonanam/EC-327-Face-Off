@@ -31,7 +31,6 @@ public class Victory2 extends Activity
 		main_menu_button.setOnClickListener(new OnClickListener() {
 			public void onClick(View arg0) {
 				
-				//Start player 1 offense class
 				Intent intent1 = new Intent(Victory2.this, MainActivity.class);
 				startActivity(intent1);
 			}

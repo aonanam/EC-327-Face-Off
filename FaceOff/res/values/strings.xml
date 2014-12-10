@@ -18,5 +18,7 @@
     <string name="btnTxt">CreateProfile</string>
     <string name="title_activity_face_compare">FaceCompare</string>
     <string name="title_activity_face_compare2">FaceCompare2</string>
+    <string name="title_activity_victory">Victory</string>
+    <string name="title_activity_victory2">Victory2</string>
 
 </resources>

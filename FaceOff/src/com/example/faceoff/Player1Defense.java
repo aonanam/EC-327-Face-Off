@@ -112,7 +112,7 @@ public class Player1Defense extends Activity {
 	    setContentView(R.layout.activity_player1_defense);
 		
 		//Displays image of previously taken picture.
-		String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player1Defense.jpg";
+		String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Offense.jpg";
 		ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p2_offense);
 		BitmapFactory.Options options = new BitmapFactory.Options();
 		options.inSampleSize = 2;

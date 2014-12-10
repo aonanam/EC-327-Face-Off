@@ -124,11 +124,12 @@ public class Player2Defense extends Activity {
 	    setContentView(R.layout.activity_player2_defense);
 		
 		//Displays image of previously taken picture.
-		/*String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player2Defense.jpg";
-		//ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p2_defense);
-		BitmapFactory.Options options = new BitmapFactory.Options();
-		options.inSampleSize = 2;
-		Bitmap bm = BitmapFactory.decodeFile(path, options);*/
+	     String path = Environment.getExternalStorageDirectory()+ "/Pictures/FaceOff/Player1Offense.jpg";
+		 ImageView jpgview = (ImageView)findViewById(R.id.jpgview_p1_offense);
+		 BitmapFactory.Options options = new BitmapFactory.Options();
+		 options.inSampleSize = 2;
+		 Bitmap bm = BitmapFactory.decodeFile(path, options);
+		 jpgview.setImageBitmap(bm);
 
 	    //Changes font for player_2_defense
   		Typeface tf = Typeface.createFromAsset(getAssets(),

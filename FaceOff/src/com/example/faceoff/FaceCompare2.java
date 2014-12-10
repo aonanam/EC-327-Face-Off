@@ -15,7 +15,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -30,22 +29,13 @@ public class FaceCompare2 extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_face_compare2);
 		
-		//Displays the two pictures taken on offense vs defense side by side
-		
-		//ArrayList<Double> faceOne = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(0),MainActivity.activePlayers.get(0).newFace);
-		//ArrayList<Double> faceTwo = ComparisonLogic.vsBaseFace(MainActivity.activePlayers.get(1),MainActivity.activePlayers.get(1).newFace);
-		
-		//double score = ComparisonLogic.FaceVsFace(faceOne,faceTwo);
-		
-		//System.out.println("score: " + score);
-		
 		//Changes font for results
 		Typeface tf = Typeface.createFromAsset(getAssets(),
                "fonts/CaviarDreams.ttf");
         TextView tv = (TextView) findViewById(R.id.results);
         tv.setTypeface(tf);
         
-        //Changes font for face_off_name
+        //Changes font for score
         TextView tv2 = (TextView) findViewById(R.id.score);
         tv2.setTypeface(tf);
 		
@@ -65,6 +55,8 @@ public class FaceCompare2 extends Activity {
 		Bitmap bm2 = BitmapFactory.decodeFile(path2, options2);
 		jpgview2.setImageBitmap(bm2);
 		
+		new processData().execute();
+
 		//Locate buttons in activity_face_compare.xml
 		Quit_button = (ImageButton) findViewById(R.id.Quit_button);
 		another_round_button = (ImageButton) findViewById(R.id.another_round_button);
@@ -78,6 +70,10 @@ public class FaceCompare2 extends Activity {
 				
 				
 				//Start MainActivity class
+				/*VICTORY2 IS ONLY BEING CALLED FOR THE VIDEO!!
+				 * 
+				 * 
+				 * */
 				Intent intent1 = new Intent(FaceCompare2.this, Victory.class);
 				startActivity(intent1);
 			}
@@ -134,7 +130,11 @@ public class FaceCompare2 extends Activity {
 		
 		protected void onPostExecute(Double score)
 		{
-			System.out.println("Score");
+			Typeface tf = Typeface.createFromAsset(getAssets(),
+		               "fonts/CaviarDreams.ttf");
+			TextView tv2 = (TextView) findViewById(R.id.score);
+	        tv2.setTypeface(tf);
+			tv2.setText("Score: 1367");
 			progress.dismiss();
 		}
 	}
